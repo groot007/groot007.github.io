@@ -1,0 +1,339 @@
+@import "_colors";
+.main-blocks {
+			width: 100%;
+			height: 300px;
+			background: $bg;
+			position: relative;
+			display: flex;
+			-webkit-flex-wrap: nowrap; /* Safari */
+			flex-wrap: nowrap;
+
+			.v-border{
+				height: 100%;
+				width: 20px;
+				background: $borderColor;
+				margin: 0;
+				padding: 0;
+			}
+			.left-border{
+				border-right: 1px solid $grey;
+			}
+
+			.block{
+				height: 80%;
+
+				.header{
+					background: $headerBg;
+					height: 15%;
+					// width: 100%;
+					border-bottom: 1px solid $headerBorder;
+				}
+			}
+
+			.props-block{
+				width: 50%;
+				position: relative;
+				.header{
+					overflow: hidden;
+					position: relative;
+					.tabs{
+						float: left;
+						margin-left: 30px;
+						.tab{
+							// width: 50px;
+							border-radius: 3px;
+							padding: 3px 10px;;
+							margin-top: 3px;
+							text-transform: uppercase;
+							color: rgba(255,255,255, .9);
+							text-align: center;
+							font-size: 14px;
+							font-weight: 400;
+							line-height: 24px;
+							height: 24px;
+							background: #343436;
+							display: inline-block;
+							transition: all .4s ease-in-out;
+							&.active{
+								background: #4d4d50;
+								font-weight: 600;
+								padding: 3px 15px;
+							}
+							&:hover{
+
+								cursor: pointer;
+							}
+						}
+					}
+					.add-input{
+						position: absolute;
+						right: 10px;
+						top: -5px;
+
+						font-size: 20px;
+						color: #fff;
+						opacity: 1;
+						height: 30px;
+						// width: 100px;
+						overflow: hidden;
+						transition: all .1s ease-in-out;
+						transition-delay: .2s;
+
+						span{
+							line-height: 30px;
+							display: inline-block;
+							font-size: 14px;
+							margin-right: 10px;
+						}
+						&:hover{
+							cursor: pointer;
+						}
+						&.hide{
+							// width: 0;
+							// height: 0;
+							// right: -40px;
+							// top: -5px;
+							opacity: 0;
+							transition: all .2s ease-in-out;
+							transition-delay: .2s;
+						}
+					}
+					.select{
+						float: right;
+						display: none;
+						width: 150px;
+						&.active{
+							display: block;
+							margin-top: 5px;
+							margin-right: 10px;
+							transition: all .2s ease-in-out;
+							transition-delay: .1s;
+							// padding: 2px 4px;
+							position: relative;
+							&:after{
+								content: "";
+								position: absolute;
+								display: block;
+								height: 20px;
+								top: 0;
+								width: 0%;
+								right: 0;
+								transition: all .2s ease-in-out;
+								transition-delay: .2s;
+								background: rgba(255,255,255, .3);
+							}
+							&.anim-active{
+								border-left: 1px solid #000;
+								// border-bottom: 1px solid #000;
+								// background: #3a3838;
+								&:after{
+									width: 100%;
+								}
+							}
+						}
+						input{
+						    background: transparent;
+						    color: #fff;
+						    width: 100%;
+						    font-size: 12px;
+						    padding: 2px 2px 4px 4px;
+						    border: none;
+						    height: 100%;
+						    opacity: 0;
+						    pointer-events: none;
+						    transition: all .4s ease-in-out;
+						    position: relative;
+							&:focus{
+								pointer-events: all;
+								opacity: 1;
+								// padding: 2px 2px 4px 4px;
+								//  font-size: 12px;
+								outline: none;
+							}
+						}
+					}
+				}
+				.values{
+					// width: 100%;props-block
+					height: 100%;
+					padding: 15px;
+					color: $textColor;
+					.tabs-content{
+						.tab-cont{
+							display: none;
+							&.active{
+								display: block;
+							}
+						}
+					}
+					.nice-select{
+						display: inline-block;
+						float: none;
+						height: 20px;
+						line-height: 20px;
+						background: transparent;
+						border-radius: 0;
+						border: none;
+						border-left: 1px solid #000;
+						border-bottom: 1px solid #000;
+
+						.list{
+							background: #1d1f20;
+							z-index: 11;
+						}
+					}
+					.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus{
+						background: #343436;
+					}
+					.group{
+						margin-bottom: 8px;
+
+						label{
+							text-align: right;
+							position: relative;
+							padding-top: 20px;
+							margin-right: 10px;
+							vertical-align: bottom;
+						}
+
+						input{
+							background: $grey;
+							color: #fff;
+							padding: 2px 2px 4px 4px;
+							border: none;
+							border-left: 2px solid #000;
+							border-bottom: 1px solid #000;
+							&.atention{
+								border-color: #f00;
+							}
+							&:focus{
+								outline: none;
+							}
+
+						}
+
+						button{
+							outline: none;
+							border:none;
+							background: $grey;
+							color: #fff;
+							padding: 4px 12px 4px 12px;
+						}
+
+					}
+
+				}
+				.keyframe-tab{
+					display: none;
+					&.active{
+						display: block;
+					}
+				}
+				.curve-wrap{
+					width: 320px;
+					height: 440px;
+					position: absolute;
+					top: 0;
+					padding: 6px;
+					z-index: 99;
+					background: $borderColor;
+					border: 1px solid #000;
+
+					&.hidden{
+						display: block;
+						position: absolute;
+						left: -9999px
+					}
+					.header{
+						height: 40px;
+						text-transform: uppercase;
+						font-size: 18px;
+						text-align: left;
+						font-weight: bold;
+						background: $headerBg;
+
+						span{
+							display: inline-block;
+							height: 100%;
+							line-height: 40px;
+							margin-left: 20px;
+							vertical-align: bottom;
+						}
+					}
+					.curve-block{
+						height: 330px;
+						width: 320px;
+						background: $bg;
+						position: relative;
+						.svg-block{
+							width: 290px;
+							height: 290px;
+							border: 1px solid #000;
+							background: url('/img/grid.png');
+							margin: 5px 0 0 5px;
+						}
+
+						.curve-line{
+							background: $skype;
+						}
+					}
+					.group-buttons{
+						height: 40px;
+						margin-top: 20px;
+						width: 100%;
+						// background: $grey;
+						// border-top: 1px solid $grey;
+						font-size:0;
+
+						.btn{
+							float: left;
+							width: 50%;
+							height: 40px;
+							outline: none;
+							border:none;
+							margin: 0;
+							color: $textColor;
+							text-transform: uppercase;
+							font-size: 18px;
+							line-height: 40px;
+							text-align: center;
+							font-weight: bold;
+							background: $headerBg;
+							transition: background .2s ease-in;
+
+							&:hover, &:focus, &.active{
+								cursor: pointer;
+								box-shadow: none;
+								border: none;
+								outline: none;
+								color: #fff;
+								background: $grey;
+							}
+						}
+					}
+				}
+			}
+
+			.css-block{
+				// min-width: 300px;
+				width: 50%;
+				// max-width: 650px;
+				.header{
+					padding: 0 30px;
+					h2{
+						text-transform: uppercase;
+						font-size: 14px;
+						line-height: 35px;
+						margin: 0;
+						font-size: 16px;
+						font-weight: 600;
+						color: #fff;
+					}
+				}
+				#editor{
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+		}

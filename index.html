@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Firefly</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script> -->
+	<script>
+    	// require.config({
+	    //     paths: {
+	    //         "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min",
+	    //         "ace": "./ace/ace",
+	    //         "keyframe": "./js/keyframe",
+	    //         "niceSelect": "./libs/niceSelect/jquery.nice-select.min",
+	    //     },
+
+	    // });
+	</script>
+	<style>
+		#anim-element{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			color: #fff;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<!-- start .logo-wrap -->
+		<div class="logo-wrap">
+			<img src="img/logo.png" alt="" />
+			<span>Firefly</span>
+		</div>
+		 <!-- end .logo-wrap -->
+		 <!-- start .reg-controls -->
+		 <div class="reg-controls">
+		 	<!-- start .sign-in -->
+		 	<!-- <div class="sign-in">Sign in</div> -->
+		 	<!-- <div class="sign-in">Sign in</div> -->
+		 	<!-- start .change-view -->
+		 	<div class="change-view">Change view</div>
+		 	 <!-- end .change-view -->
+		 	 <!-- end .sign-in -->
+		 	 <!-- start .sign-up -->
+		 	 <!-- <div class="sign-up">Sign up</div> -->
+		 	  <!-- end .sign-up -->
+		 </div>
+		  <!-- end .reg-controls -->
+	</header>
+	<div class="wrap">
+		<div class="top-border h-border"></div>
+		<div class="main-blocks">
+			<div class="v-border left-border"></div>
+			<div class="props-block block">
+				<div class="header">
+					<!-- start .tabs -->
+					<div class="tabs">
+						<!-- start .tab-animation-props -->
+						<div class="tab active tab-animation-props" data-target="anim-props"><i class="fa fa-cog" aria-hidden="true"></i> main</div>
+						 <!-- end .tab-animation-props -->
+						<!-- start .tab-css-props -->
+						<div class="tab tab-css-props" data-target="css-props"><i class="fa fa-cog" aria-hidden="true"></i> css props </div>
+						 <!-- end .tab-css-props -->
+
+					</div>
+					 <!-- end .tabs -->
+					<!-- start .select -->
+					<div class="select active" id="anim-select">
+					<span class="add-input"><i class="fa fa-sliders" aria-hidden="true"></i></span>
+						<input type='text'
+				       placeholder='Choose preset'
+				       class='flexdatalist anim'
+				       id = "anim"
+				       data-data='./js/animlib.json'
+				       data-search-in='name'
+				       data-selection-required='true'
+				       data-search-by-word='true'
+				       data-min-length='0'
+				       name='country_name_suggestion'>
+					</div>
+					<!-- end .select -->
+					<!-- start .select -->
+
+					<div class="select" id="css-select">
+						<span class="add-input"><i class="fa fa-wrench" aria-hidden="true"></i></span>
+						<input type='text'
+					       placeholder='scroll or search'
+					       id = "css"
+					       class='flexdatalist'
+					       data-data='./js/cssprops.json'
+					       data-search-in= '["name"]'
+					       data-selection-required='true'
+					       data-search-by-word='true'
+					       data-min-length='0'
+					       data-visible-properties='["name", "value", "group-name"]'
+					       name='country_name_suggestion'>
+					</div>
+					<!-- end .select -->
+				</div>
+				<div class="values">
+					<!-- start .tab-content -->
+					<div class="tabs-content">
+						<!-- start .tab-cont -->
+						<div class="tab-cont active" id="anim-props">
+							<div class="group">
+								<label for="check2">name</label>
+								<input type="text" name="animation-name" id="name" value="example">
+							</div>
+							<div class="group">
+								<label for="check2">delay</label>
+								<input  name="animation-delay" id="delay" value="0">
+							</div>
+							<div class="group">
+								<label for="check2">duration</label>
+								<input  name="animation-duration" id="duration" value="1000">
+							</div>
+							<div class="group">
+								<label for="check2">iteration-count</label>
+								<input type="text" name="animation-iteration-count" id="iterationCount" value="1">
+							</div>
+							<div class="group">
+								<label for="check2">direction</label>
+								<select size=1 name="animation-direction">
+									<option value="normal">normal</option>
+									<option value="reverse">reverse</option>
+									<option value="alternate">alternate</option>
+									<option value="alternate-reverse">alternate-reverse</option>
+								</select>
+							</div>
+							<div class="group">
+								<label for="check2">fill-mode</label>
+								<select size=1 name="animation-fill-mode">
+									<option value="none">none</option>
+									<option value="forwards">forwards</option>
+									<option value="backwards">backwards</option>
+									<option value="both">both</option>
+								</select>
+
+							</div>
+							<div class="group">
+								<label for="check2">timing-function</label>
+								<select size=1 name="animation-timing-function">
+									<option value="linear">linear</option>
+									<option value="ease">ease</option>
+									<option value="ease-in">ease-in</option>
+									<option value="ease-out">ease-out</option>
+									<option value="ease-in-out">ease-in-out</option>
+									<option value="bezier" class="bezier">custom bezier</option>
+								</select>
+							</div>
+							<div class="curve-wrap hidden">
+								<div class="header"><span>curve</span></div>
+								<div class="curve-block">
+									<figure></figure>
+									<!-- <svg class="svg-block">
+										 <line x1="282" y1="8" x2="98" y2="8" stroke="violet" stroke-width="2"   stroke-dasharray="4%"/>
+		            					 <line x1="8" y1="282" x2="192" y2="282" stroke="violet" stroke-width="2"   stroke-dasharray="4%"/>
+										<path   class="curve-line" d="M0,290 C281,254 74,40 290,0" fill="none" stroke="#00aff0" stroke-width="2px"/>
+										 <circle r="8" cx="8" cy="282"
+		             fill="orangered" stroke="crimson" stroke-width="1" />
+		             <circle r="8" cx="282" cy="8"
+		             fill="orangered" stroke="crimson" stroke-width="1" />
+		             <circle r="8" cx="98" cy="8"
+		             fill="orangered" stroke="crimson" stroke-width="1" />
+		             <circle r="8" cx="192" cy="282"
+		             fill="orangered" stroke="crimson" stroke-width="1" />
+
+									</svg> -->
+<header class="hidden">
+	<h1>
+		<a href="#.17,.67,.83,.67"><code>cubic-bezier(<span id="values"><span id="P1x" class="param">.17</span>,<span id="P1y" class="param">.67</span>,<span id="P2x" class="param">.83</span>,<span id="P2y" class="param">.67</span></span>)</code></a>
+		<button id="save">Save</button>
+	</h1>
+	<p><strong>This curve contains values out of range.</strong> But fear not young padawan! Just use <code>a fallback</code> as well for Webkit until the <a href="https://bugs.webkit.org/show_bug.cgi?id=45761" tabindex="-1">bug #45761</a> fix propagates to Safari.</p>
+</header>
+
+<div class="coordinate-plane" data-time="31" data-progression="108">
+	<span class="control-point" id="P0"></span>
+	<button class="control-point" id="P1" style="left:150px; top: 300px;"></button>
+	<button class="control-point" id="P2" style="left:300px; top: 150px;"></button>
+	<span class="control-point" id="P3"></span>
+
+	<canvas height="300" width="300" id="curve"></canvas>
+</div>
+
+<section id="preview" class="hidden">
+	<h1>
+		Preview &amp; compare
+		<button id="go">Go!</button>
+	</h1>
+	<p>
+		<label for="duration">Duration:</label>
+		<input type="range" id="duration" value="1" min="0.1" max="10" step="0.1" pattern="\d*\.?\d+" size="3">
+		<output for="duration">1 second</output>
+	</p>
+	<canvas id="current" width="60" height="60" style="transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);"></canvas>
+	<canvas id="compare" width="60" height="60" style="transition-timing-function: cubic-bezier(0.42, 0, 1, 1); transition-duration: 1s;"></canvas>
+</section>
+
+<section id="library" class="hidden">
+	<h1>
+		Library
+		<button id="import">Import</button>
+		<button id="export">Export</button>
+	</h1>
+	<p>Click on a curve to compare it with the current one.</p>
+	<a href="#.42,0,1,1" style="transition-timing-function: cubic-bezier(0.42, 0, 1, 1);" class="selected"><canvas width="100" height="100"></canvas><span title="ease-in">ease-in</span><button title="Remove from library">×</button></a><a href="#0,0,.58,1" style="transition-timing-function: cubic-bezier(0, 0, 0.58, 1);"><canvas width="100" height="100"></canvas><span title="ease-out">ease-out</span><button title="Remove from library">×</button></a><a href="#.42,0,.58,1" style="transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);"><canvas width="100" height="100"></canvas><span title="ease-in-out">ease-in-out</span><button title="Remove from library">×</button></a><footer><strong>Tip:</strong> Right click on any library curve and select “Copy Link Address” to get a permalink to it which you can share with others</footer>
+
+	<aside>
+		<script async="" type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1696&amp;serve=CVYD42T&amp;placement=cubicbeziercom" id="_carbonads_js"></script>
+	</aside>
+
+	<form id="importexport">
+		<label for="json">To import curves, paste the code below and click “Import”</label>
+		<label for="json">Copy the code and save to a file to export</label>
+		<textarea id="json"></textarea>
+		<button>Import</button>
+		<button>Close</button>
+	</form>
+</section>
+
+
+
+								</div>
+								<div class="group-buttons">
+									<div class="btn cancel">cancel</div>
+									<div class="btn  save">save</div>
+								</div>
+							</div>
+						</div>
+						 <!-- end .tab-cont -->
+						 <!-- start .tab-cont -->
+						 <div class="tab-cont" id="css-props">
+						 	<!-- start .keyframe-tab -->
+						 	<div class="keyframe-tab active" id="0">
+							 <!-- 	<div class="group">
+									<label for="check2">left</label>
+									<input type="text" name="left" value="0px">
+								</div>
+								<div class="group">
+									<label for="check2" >top</label>
+									<input type="text" name="top" value="0px">
+								</div> -->
+							</div>
+						 	 <!-- end .keyframe-tab -->
+						 </div>
+						  <!-- end .tab-cont -->
+					</div>
+					 <!-- end .tab-content -->
+
+				</div>
+
+			</div>
+			<div class="middle-border v-border"></div>
+			<div class="css-block block">
+				<div class="header">
+					<h2><i class="fa fa-code" aria-hidden="true"></i> Animation code</h2>
+				</div>
+				<div id="editor"></div>
+			</div>
+		</div>
+		<div class="bottom-border h-border"></div>
+		<div class="timeline">
+			<div class="v-border left-border"></div>
+			<div class="scales"></div>
+			<!-- start .anim-controls -->
+			<div class="anim-controls">
+				<!-- start .play -->
+				<div class="play"><i class="fa fa-play" aria-hidden="true"></i> P</div>
+				 <!-- end .play -->
+				<!-- start .pause -->
+				<div class="pause hidden"><i class="fa fa-pause" aria-hidden="true"></i></div>
+				 <!-- end .pause -->
+				 <!-- start .resume -->
+				<div class="resume  hidden"><i class="fa fa-play" aria-hidden="true"> R</i></div>
+				 <!-- end .resume -->
+				 <!-- start .stop -->
+				<div class="stop"><i class="fa fa-stop" aria-hidden="true"></i></div>
+				 <!-- end .pause -->
+
+			</div>
+			 <!-- end .anim-controls -->
+			<div class="frames-block">
+
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<div class="empty-frame">
+					<div class="subsidiary">
+						<div class="action">+</div>
+						<span class="percent">0%</span>
+					</div>
+				</div>
+				<!-- start .progress-block -->
+				<div class="progress-block"></div>
+				 <!-- end .progress-block -->
+			</div>
+		</div>
+		<div class="bottom-border h-border"></div>
+	</div>
+	<!-- start .anim-zone -->
+	<div class="anim-zone">
+		<!-- start .custom-el -->
+		<!-- start .edit-anim-el -->
+		<div class="edit-anim-el">
+			<span>Edit element</span>
+		</div>
+		 <!-- end .edit-anim-el -->
+		<div class="custom-el">
+			<!-- start .editor-el -->
+			<div id="editor-el" >
+
+			</div>
+			 <!-- end .editor-el -->
+			<button class="accept">accept</button>
+			<button class="reset">reset</button>
+		</div>
+		 <!-- end .custom-el -->
+		<!-- start .wrapper -->
+		<div class="wrapper">
+			<!-- start .anim-el -->
+			<div class="anim-el">
+				<!-- start .square -->
+				<div class="anim-element" id="anim-element"><span>Firefly</span></div>
+				 <!-- end .square -->
+			</div>
+			 <!-- end .anim-el -->
+		</div>
+		 <!-- end .wrapper -->
+
+	</div>
+	 <!-- end .anim-zone -->
+
+
+	<!-- <script src="ace/ace.js"></script> -->
+
+	<!-- <script src="libs/jquery.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+	<script src="ace/ace.js"></script>
+	<script src="js/keyframe.js"></script>
+	<script src="libs/niceSelect/jquery.nice-select.min.js"></script>
+
+
+	<script src="libs/jquery.mousewheel.min.js"></script>
+	<script src="libs/niceSelect/jquery.nice-select.min.js"></script>
+
+	<script src="libs/autocomplete/jquery.flexdatalist.js"></script>
+	<script src="libs/b2/chainvas.min.js"></script>
+    <script src="libs/b2/environment.js"></script>
+    <script src="libs/b2/cubic-bezier.js"></script>
+    <script src="libs/b2/interaction.js"></script>
+	<script src="js/keyframe.js"></script>
+	<script src="js/modules/editor.js"></script>
+	<script src="js/modules/timeline.js"></script>
+	<script src="js/modules/inputs.js"></script>
+	<script src="js/modules/animzone.js"></script>
+<script src="js/common.js"></script>
+    <!-- <script>(function(drawfunctions) {
+  with(drawfunctions) {
+    with(Math) { var curve = new Bezier(100,25 , 10,90 , 110,100 , 150,195);
+var draw = function() {
+  drawSkeleton(curve);
+  drawCurve(curve);
+}
+
+      draw();
+      handleInteraction(getCanvas(), curve).onupdate = function(evt) { reset(); draw(evt); }
+    }
+  }
+} (bindDrawFunctions( 1 )) );
+</script> -->
+    <!-- <script src="js/loader.js"></script> -->
+
+
+
+
+</body>
+</html>

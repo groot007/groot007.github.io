@@ -1,0 +1,204 @@
+@import "_colors";
+@import "_scrollbar";
+@import "_mixins";
+@import "../font-awesome/css/font-awesome.min";
+@import "../libs/niceSelect/nice-select.css";
+@import "../libs/autocomplete/jquery.flexdatalist.min.css";
+@import "../libs/b2/style.css";
+@import "../libs/range/range-slider.css";
+
+@keyframes progress{
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 100%;
+
+	}
+}
+*{
+	box-sizing: border-box;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255,255,255, .9);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(255,255,255, .9);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(255,255,255, .9);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255, .9);
+}
+
+body{
+	margin: 0px;
+
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	.pause{
+		-webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+   		 animation-play-state: paused;
+	}
+	.resume{
+		-webkit-animation-play-state: running; /* Safari 4.0 - 8.0 */
+   		 animation-play-state: running;
+	}
+	.hidden{
+		display: none;
+	}
+	.active{
+		display: block;
+	}
+	.flexdatalist-results{
+		border: none !important;
+		border-radius: 5px !important;
+		max-height: 200px;
+		box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
+		li{
+			background: #1d1f20;
+			color: #fff;
+			border: none;
+			&.active{
+				background: #343436;
+			}
+			span{
+				&.item-value{
+					display: none;
+				}
+				&.item-group-name{
+					font-size: 10px;
+				}
+			}
+		}
+	}
+
+	header{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		&:before{
+			content: "";
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.logo-wrap{
+			float: left;
+			max-height: 100%;
+			margin-left: 20px;
+			margin-top: 5px;
+			span{
+				display: inline-block;
+				color: #fff;
+				font-size: 18px;
+				vertical-align: middle;
+				line-height: 1px;
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+			img{
+				vertical-align: middle;
+				display: inline-block;
+				width: 50px;
+				max-height: 100%;
+			}
+		}
+		.reg-controls{
+			float: right;
+			margin-right: 20px;
+			.change-view{
+				margin-top: 10px;
+				height: 100%;
+				border-radius: 1px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 5px 10px;;
+				color: #fff;
+				background: rgba(255,255,255, .2);
+			}
+			.sign-in, .sign-up{
+				margin-top: 10px;
+				border-radius: 5px;
+				font-weight: 600;
+				display: inline-block;
+				padding: 5px 10px;;
+				color: #fff;
+				background: rgba(255,255,255, .2);
+			}
+
+		}
+	}
+	.wrap {
+		width: 100%;
+		height: auto;
+		padding: 0;
+
+		.h-border{
+				height: 10px;
+				width: 100%;
+				background: $borderColor;
+				z-index: 100;
+			}
+		.top-border {
+			border-bottom: 1px solid #000;
+			top: 0;
+		}
+		.bottom-border{
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+			bottom: 0;
+
+		}
+
+		@import "main-blocks";
+		@import "./timeline";
+
+
+	}
+	.anim-zone{
+		min-height: 400px;
+		position: relative;
+		.wrapper{
+			width: 700px;
+			height: 700px;
+			position: relative;
+			margin: 20px auto;
+			border: 1px solid #000;
+			.anim-element{
+
+			}
+		}
+		.edit-anim-el{
+			width: 100px;
+			background: $bg;
+			color: #fff;
+			padding: 10px;
+			font-size: 12px;
+			box-sizing: border-box;
+			transition: all .4s ease-in-out;
+			&.active{
+				width: 300px;
+			}
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		.custom-el{
+			position: absolute;
+			top: 30px;;
+			left: 0;
+			transform: translateX(-300px);
+			transition: all .4s ease-in-out;
+			&.visible{
+				transform: translateX(0);
+			}
+		}
+		#editor-el{
+			width: 300px;
+			height: 200px;
+		}
+	}
+}

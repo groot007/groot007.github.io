@@ -1,0 +1,120 @@
+{
+   "clear": {
+      "main": {
+         "name": "example",
+         "className": "className"
+      },
+      "anim":{
+         "animation-duration": "1s",
+         "animation-name": "example"
+      },
+      "css": {
+         "0":{
+         },
+         "100":{
+         }
+      }
+   },
+   "bounce-in": {
+      "main": {
+         "name": "bounce-in",
+         "className": "bounceIn"
+      },
+      "anim": {
+         "animation-name": "bounce-in",
+         "animation-duration": ".75s",
+         "animation-timing-function": "cubic-bezier(0.215, 0.610, 0.355, 1.000)"
+      },
+      "css": {
+         "0": {
+            "opacity": "0",
+            "transform": "scale3d(.3, .3, .3)"
+         },
+
+         "20": {
+            "transform": "scale3d(1.1, 1.1, 1.1)"
+         },
+
+         "40": {
+            "transform": "scale3d(.9, .9, .9)"
+         },
+
+         "60": {
+            "opacity": "1",
+            "transform": "scale3d(1.03, 1.03, 1.03)"
+         },
+
+         "80": {
+            "transform": "scale3d(.97, .97, .97)"
+         },
+
+         "100": {
+            "opacity": "1",
+            "transform": "scale3d(1, 1, 1)"
+         }
+      }
+   },
+   "fade-in": {
+      "main": {
+         "name": "fade-in",
+         "className": "fadeIn"
+      },
+      "anim":{
+         "animation-duration": ".75s"
+      },
+      "css": {
+         "0":{
+            "opacity": "0"
+         },
+         "100":{
+            "opacity": "1"
+         }
+      }
+   },
+   "rotate-in": {
+      "main": {
+         "name": "rotate-in",
+         "className": "rotateIn"
+      },
+      "anim":{
+         "animation-duration": ".75s",
+         "animation-name": "rotate-in"
+      },
+      "css": {
+         "0":{
+            "transform-origin": "center",
+            "transform": "rotate3d(0, 0, 1, -200deg)",
+            "opacity": "0"
+         },
+         "100":{
+            "transform-origin": "center",
+            "transform": "none",
+            "opacity": "1"
+         }
+      }
+   },
+   "flipOutY": {
+      "main": {
+         "name": "flip-out-y",
+         "className": "flipOutY"
+      },
+      "anim":{
+         "animation-name": "flip-out-y",
+         "animation-duration": ".75s"
+      },
+      "css": {
+         "0":{
+            "transform": "perspective(400px)"
+         },
+         "30":{
+          "transform": "perspective(400px) rotate3d(0, 1, 0, -15deg)",
+          "opacity": "1"
+        },
+
+         "100" : {
+          "transform" : "perspective(400px) rotate3d(0, 1, 0, 90deg)",
+          "opacity" : "0"
+        }
+      }
+   }
+}
