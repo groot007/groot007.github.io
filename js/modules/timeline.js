@@ -460,7 +460,7 @@
 				var percent = +(100 / length).toFixed(2);
 				var rez = 0;
 				var $temp;
-				$el.eq(0).find(".percent").html(0 + "%");
+				// $el.eq(0).find(".percent").html(0 + "%");
 				$el.eq(length).find(".percent").html(100 + "%");
 				for (var i = 1; i < length; i++) {
 					rez = i * percent;

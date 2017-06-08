@@ -134,7 +134,22 @@ $(document).on("ready", function(){
 	  	}
 	});
 
+	$(document).on("click", ".skip-btn", function(e){
+		$(this).closest(".tips-block").addClass("hide");
+	});
 
+	$(document).on("click", ".change-view", function(e){
+		var b = $("body");
+		if(b.hasClass("vertical")){
+			b.removeClass("vertical");
+			$(".bottom-border.first, .timeline, .bottom-border.second").insertAfter(".main-blocks");
+			$(".top-border.h-border").insertBefore(".main-blocks");
+		}else{
+			b.addClass("vertical");
+			$(".bottom-border.first, .timeline, .bottom-border.second").insertAfter("body > header");
+			$(".top-border.h-border").insertAfter(".main-blocks");
+		}
+	});
 
 
 });

@@ -9,12 +9,20 @@
 	text-align: center;
 
 	.anim-controls{
-		width: 40px;
-		float: left;
+		position: absolute;
+		left: 40px;
+		top: 10px;
 		// display: inline-block;
 		&>div{
+			color: #fff;
+			width: 20px;
+			margin-right: 2px;
 			float: left;
+			font-size: 24px;
 			margin-left: 5px;
+			&:hover{
+				cursor: pointer;
+			}
 		}
 	}
 	.v-border{
@@ -31,15 +39,10 @@
 	.scales{
 		height: 0px;
 	}
-	.frames-block{
+	.adding-wrapper{
 		position: relative;
-		display: inline-block;
-		height: 60px;
-
 		width: auto;
-		white-space: nowrap;
-		font-size: 0;
-
+		display: inline-block;
 		.progress-block{
 			position: absolute;
 			width: 10px;
@@ -48,6 +51,8 @@
 			left: 0;
 			margin-left: -10px;
 			background: #ff0;
+
+
 			&.play{
 				animation-name: progress;
 			}
@@ -58,6 +63,18 @@
 				animation-play-state: running;
 			}
 		}
+	}
+
+	.frames-block{
+		position: relative;
+		display: inline-block;
+		height: 60px;
+
+		width: auto;
+		white-space: nowrap;
+		font-size: 0;
+
+
 
 		.empty-frame{
 			display: inline-block;
@@ -79,6 +96,7 @@
 					display:block;
 				}
 			}
+
 			&:first-child{
 				&:hover{
 					.subsidiary{
@@ -96,7 +114,7 @@
 						display: none;
 					}
 					left: -10px;
-					display:block;
+					display: block;
 				}
 			}
 			&:last-child{
@@ -137,7 +155,7 @@
 
 			.subsidiary{
 				display: none;
-				width: 60px;
+				width: 80px;
 				padding-left: 10px;
 				padding-right: 10px;
 				height: 19px;
@@ -154,6 +172,7 @@
 					height: 15px;
 					margin-right: 5px;
 					font-size: 14px;
+					line-height: 15px;
 					border-radius: 50%;
 					background: $grey;
 					float: left;

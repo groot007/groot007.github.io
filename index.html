@@ -27,12 +27,18 @@
 		}
 	</style>
 </head>
-<body>
+<body class="">
 	<header>
 		<!-- start .logo-wrap -->
 		<div class="logo-wrap">
 			<img src="img/logo.png" alt="" />
-			<span>Firefly</span>
+			<!-- start .slogan -->
+			<div class="slogan">
+				<span>Firefly</span> <br />
+				<span class="by">by Kolya Stanislavchuk</span>
+			</div>
+			 <!-- end .slogan -->
+
 		</div>
 		 <!-- end .logo-wrap -->
 		 <!-- start .reg-controls -->
@@ -41,7 +47,7 @@
 		 	<!-- <div class="sign-in">Sign in</div> -->
 		 	<!-- <div class="sign-in">Sign in</div> -->
 		 	<!-- start .change-view -->
-		 	<div class="change-view">Change view</div>
+		 	<div class="change-view"><span class="change">Change</span> <span class="view">view</span></div>
 		 	 <!-- end .change-view -->
 		 	 <!-- end .sign-in -->
 		 	 <!-- start .sign-up -->
@@ -262,20 +268,20 @@
 				<div id="editor"></div>
 			</div>
 		</div>
-		<div class="bottom-border h-border"></div>
+		<div class="bottom-border h-border first"></div>
 		<div class="timeline">
 			<div class="v-border left-border"></div>
 			<div class="scales"></div>
 			<!-- start .anim-controls -->
 			<div class="anim-controls">
 				<!-- start .play -->
-				<div class="play"><i class="fa fa-play" aria-hidden="true"></i> P</div>
+				<div class="play"><i class="fa fa-play" aria-hidden="true"></i></div>
 				 <!-- end .play -->
 				<!-- start .pause -->
 				<div class="pause hidden"><i class="fa fa-pause" aria-hidden="true"></i></div>
 				 <!-- end .pause -->
 				 <!-- start .resume -->
-				<div class="resume  hidden"><i class="fa fa-play" aria-hidden="true"> R</i></div>
+				<div class="resume  hidden"><i class="fa fa-play" aria-hidden="true"></i></div>
 				 <!-- end .resume -->
 				 <!-- start .stop -->
 				<div class="stop"><i class="fa fa-stop" aria-hidden="true"></i></div>
@@ -283,6 +289,7 @@
 
 			</div>
 			 <!-- end .anim-controls -->
+			 <div class="adding-wrapper">
 			<div class="frames-block">
 
 				<div class="empty-frame">
@@ -885,18 +892,20 @@
 						<span class="percent">0%</span>
 					</div>
 				</div>
+
 				<div class="empty-frame">
 					<div class="subsidiary">
 						<div class="action">+</div>
 						<span class="percent">0%</span>
 					</div>
 				</div>
-				<!-- start .progress-block -->
+			</div>
+			<!-- start .progress-block -->
 				<div class="progress-block"></div>
-				 <!-- end .progress-block -->
+			<!-- end .progress-block -->
 			</div>
 		</div>
-		<div class="bottom-border h-border"></div>
+		<div class="bottom-border h-border second"></div>
 	</div>
 	<!-- start .anim-zone -->
 	<div class="anim-zone">
@@ -930,7 +939,38 @@
 
 	</div>
 	 <!-- end .anim-zone -->
-
+	<!-- start .tips-block -->
+	<div class="tips-block hide">
+		<!-- start .tip1 -->
+		<div class="tip1">
+			 ^ <br />
+ 			|| <br />
+ 			<i class="fa fa-reply" aria-hidden="true"></i>
+			Choose preset of popular css animation
+		</div>
+		 <!-- end .tip1 -->
+		 <!-- start .tip1 -->
+		<div class="tip2">
+			<- Change value of animation or cs properties
+		</div>
+		 <!-- end .tip1 -->
+		 <!-- start .tip3 -->
+		 <div class="tip3">
+		 	Manipulate with keyframes of animation
+		 </div>
+		  <!-- end .tip3 -->
+		  <!-- start .tip4 -->
+		  <div class="tip4">
+		  	Control animation(play, pause, resume, stop)
+		  </div>
+		   <!-- end .tip4 -->
+		   <!-- start .skip-btn -->
+		   <div class="skip-btn">
+		   		<span>SKIP</span>
+		   </div>
+		    <!-- end .skip-btn -->
+	</div>
+	 <!-- end .tips-block -->
 
 	<!-- <script src="ace/ace.js"></script> -->
 
