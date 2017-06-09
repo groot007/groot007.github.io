@@ -1,7 +1,7 @@
 function pluginEvents (root, $, name) {
-	$(document).on("click", ".css-block .header", function(){
-		$("#editor").editor("parsingToObj");
-	});
+	// $(document).on("click", ".css-block .header", function(){
+	// 	$("#editor").editor("parsingToObj");
+	// });
 }
 
 

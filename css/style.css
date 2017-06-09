@@ -2952,7 +2952,7 @@
 body {
   margin: 0px;
   padding: 0;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
 }
 
 body.vertical .wrap {
@@ -3519,11 +3519,50 @@ body .wrap .main-blocks .css-block .header {
 body .wrap .main-blocks .css-block .header h2 {
   text-transform: uppercase;
   font-size: 14px;
+  display: inline-block;
   line-height: 35px;
   margin: 0;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
+}
+
+body .wrap .main-blocks .css-block .header .export,body .wrap .main-blocks .css-block .header .copy,body .wrap .main-blocks .css-block .header .import {
+  float: right;
+  margin-right: 10px;
+  background: #fff;
+  display: inline-block;
+}
+
+body .wrap .main-blocks .css-block .header .import {
+  position: relative;
+  width: 60px;
+  overflow: hidden;
+}
+
+body .wrap .main-blocks .css-block .header [type=file] {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  text-align: left;
+  position: absolute;
+}
+
+body .wrap .main-blocks .css-block .fantom {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: all;
+}
+
+body .wrap .main-blocks .css-block .drag-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 body .wrap .main-blocks .css-block #editor {
@@ -3581,6 +3620,20 @@ body .anim-zone .custom-el.visible {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
+}
+
+body .anim-zone .custom-el button {
+  width: 50%;
+  float: left;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  height: 20px;
+  font-size: 12px;
+  background: #000;
+}
+
+body .anim-zone .custom-el button:hover {
+  background: #1a1c1d;
 }
 
 body .anim-zone #editor-el {
@@ -3658,11 +3711,11 @@ body .anim-zone #editor-el {
 
 .timeline .adding-wrapper .progress-block {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 45px;
+  width: 8px;
+  height: 35px;
+  top: 20px;
   left: 0;
-  margin-left: -10px;
+  margin-left: -8px;
   background: #ff0;
 }
 
@@ -3950,6 +4003,30 @@ body .anim-zone #editor-el {
   left: 50%;
   margin-left: -50px;
   top: 500px;
+}
+
+@font-face {
+  font-family:"OpenSans";font-style:normal;font-weight:800;src:url("../fonts/OpenSans/OpenSansExtraBold/OpenSansExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansExtraBold/OpenSansExtraBold.woff") format("woff"), url("../fonts/OpenSans/OpenSansExtraBold/OpenSansExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"OpenSans";font-style:normal;font-weight:700;src:url("../fonts/OpenSans/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSans/OpenSansBold/OpenSansBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"OpenSans";font-style:normal;font-weight:600;src:url("../fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"), url("../fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"OpenSans";font-style:italic;font-weight:300;src:url("../fonts/OpenSans/OpenSansLightItalic/OpenSansLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansLightItalic/OpenSansLightItalic.woff") format("woff"), url("../fonts/OpenSans/OpenSansLightItalic/OpenSansLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"OpenSans";font-style:normal;font-weight:normal;src:url("../fonts/OpenSans/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSans/OpenSansLight/OpenSansLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"Impact";font-style:normal;font-weight:normal;src:url("../fonts/ImpactRegular/ImpactRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/ImpactRegular/ImpactRegular.woff") format("woff"), url("../fonts/ImpactRegular/ImpactRegular.ttf") format("truetype");
 }
 
 @font-face {

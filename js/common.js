@@ -101,6 +101,7 @@ $(document).on("ready", function(){
 	$.getJSON('js/animations.json', function(data){
 		obj = data["clear"]
 		$(".props-block").inputs("setObj", obj);
+
 	});
 
 	$(document).on("click", ".anim-zone button.accept", function(e){
@@ -150,6 +151,62 @@ $(document).on("ready", function(){
 			$(".top-border.h-border").insertAfter(".main-blocks");
 		}
 	});
+
+	var blob;
+	$(document).on("click", ".css-block .export", function(e){
+		var text = $("#editor").editor("getValue");
+		blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+		saveAs(blob, "hello world.css");
+	});
+
+	$(document).on("click", ".css-block .copy", function(e){
+		var copyTextarea = $(".css-block .fantom");
+		var value = $("#editor").editor("getValue");
+          copyTextarea.val(value);
+          copyTextarea.select();
+          document.execCommand('copy');
+          // Reset textarea
+          // copyTextarea.value = "";
+	});
+
+
+
+
+
+function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var target =  evt.dataTransfer || evt.target;
+    var file = target.files[0] ||  target.files[0]; // FileList object.
+        var reader = new FileReader();
+        reader.onload = (function(reader)
+        {
+            return function()
+            {
+                var contents = reader.result;
+                var lines = contents.split('\n');
+                $("#editor").editor("setValue", contents);
+            }
+        })(reader);
+
+        reader.readAsText(file);
+        $(".drag-block").addClass("hidden");
+  }
+
+  function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    $(".drag-block").removeClass("hidden");
+    $(".drag-block").appendTo("#editor");
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+
+  }
+
+  // Setup the dnd listeners.
+  var dropZone = $("#editor")[0];
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+  $("#file")[0].addEventListener('change', handleFileSelect, false);
 
 
 });

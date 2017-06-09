@@ -45,13 +45,12 @@
 		display: inline-block;
 		.progress-block{
 			position: absolute;
-			width: 10px;
-			height: 10px;
-			top: 45px;
-			left: 0;
-			margin-left: -10px;
-			background: #ff0;
-
+		    width: 8px;
+		    height: 35px;
+		    top: 20px;
+		    left: 0;
+		    margin-left: -8px;
+		    background: #ff0;
 
 			&.play{
 				animation-name: progress;

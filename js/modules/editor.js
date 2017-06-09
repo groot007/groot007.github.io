@@ -445,12 +445,16 @@
 			editor.$blockScrolling = Infinity;
 			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/css");
+			var that = this;
+			editor.on("blur", function () {
+				that.parsingToObj();
+			});
 		}
 
 		_createClass(Editor, [{
 			key: "setValue",
 			value: function setValue(value) {
-				editor.setValue(value);
+				editor.setValue(value, 1);
 			}
 		}, {
 			key: "getValue",
@@ -470,6 +474,7 @@
 				var cssParsed = {};
 				var animProps = "";
 				var animParsed = {};
+				console.log(this);
 				var className = /\.\w+/.exec(this.getValue())[0].replace(/\./, "");
 				anim = /(?:.+){([^\}]*)}/.exec(this.getValue())[0];
 				css = this.getValue().match(/(\d+%)\s+{([\s\w:;().,]+)}/g);
@@ -479,11 +484,17 @@
 				for (var k = 0; k < animProps.length - 1; k++) {
 					animParsed[$.trim(animProps[k].split(":")[0])] = $.trim(animProps[k].split(":")[1]);
 				}
-				console.log(animParsed);
 
 				for (var i = 0; i < css.length; i++) {
 					var props = {};
-					cssNotParse[i] = css[i].match(/[^%{\s\d]([\s\w:;().,]+)[^}]/)[0];
+					var values = css[i].match(/[^%{\s\d]([\s\w:;().,]+)[^}]/);
+					if (!values) {
+						values = "";
+						cssNotParse[i] = values;
+					} else {
+						cssNotParse[i] = values[0];
+					}
+
 					simple = cssNotParse[i].split(";");
 
 					for (var j = 0; j < simple.length - 1; j++) {
@@ -524,9 +535,9 @@
 	"use strict";
 
 	function pluginEvents(root, $, name) {
-		$(document).on("click", ".css-block .header", function () {
-			$("#editor").editor("parsingToObj");
-		});
+		// $(document).on("click", ".css-block .header", function(){
+		// 	$("#editor").editor("parsingToObj");
+		// });
 	}
 
 	module.exports = pluginEvents;

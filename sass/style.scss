@@ -1,6 +1,7 @@
 @import "_colors";
 @import "_scrollbar";
 @import "_mixins";
+@import "fonts";
 @import "../font-awesome/css/font-awesome.min";
 @import "../libs/niceSelect/nice-select.css";
 @import "../libs/autocomplete/jquery.flexdatalist.min.css";
@@ -37,7 +38,7 @@ body{
 	margin: 0px;
 
 	padding: 0;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: "OpenSans", Arial, Helvetica, sans-serif;
 
 
 	&.vertical{
@@ -260,6 +261,19 @@ body{
 			transition: all .4s ease-in-out;
 			&.visible{
 				transform: translateX(0);
+			}
+			button{
+				width: 50%;
+				// display: inline-block;
+				float: left;
+				-webkit-border-radius: 0;
+				border-radius: 0;
+				height: 20px;
+				font-size: 12px;
+					background: #000;
+				&:hover{
+				background: #1a1c1d;
+				}
 			}
 		}
 		#editor-el{

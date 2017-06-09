@@ -47,7 +47,7 @@
 		 	<!-- <div class="sign-in">Sign in</div> -->
 		 	<!-- <div class="sign-in">Sign in</div> -->
 		 	<!-- start .change-view -->
-		 	<div class="change-view"><span class="change">Change</span> <span class="view">view</span></div>
+		 	<div class="change-view"><span class="change">Змінити</span> <span class="view">вигляд</span></div>
 		 	 <!-- end .change-view -->
 		 	 <!-- end .sign-in -->
 		 	 <!-- start .sign-up -->
@@ -65,10 +65,10 @@
 					<!-- start .tabs -->
 					<div class="tabs">
 						<!-- start .tab-animation-props -->
-						<div class="tab active tab-animation-props" data-target="anim-props"><i class="fa fa-cog" aria-hidden="true"></i> main</div>
+						<div class="tab active tab-animation-props" data-target="anim-props"><i class="fa fa-cog" aria-hidden="true"></i> Клас</div>
 						 <!-- end .tab-animation-props -->
 						<!-- start .tab-css-props -->
-						<div class="tab tab-css-props" data-target="css-props"><i class="fa fa-cog" aria-hidden="true"></i> css props </div>
+						<div class="tab tab-css-props" data-target="css-props"><i class="fa fa-cog" aria-hidden="true"></i> Кадри </div>
 						 <!-- end .tab-css-props -->
 
 					</div>
@@ -264,8 +264,22 @@
 			<div class="css-block block">
 				<div class="header">
 					<h2><i class="fa fa-code" aria-hidden="true"></i> Animation code</h2>
+					<!-- start .export -->
+					<div class="export">exprort .txt</div>
+					<div class="import">
+						<span>import</span>
+						<input type="file" id="file" accept=".txt,.css">
+					</div>
+					<div class="copy">copy</div>
+					 <!-- end .export -->
 				</div>
-				<div id="editor"></div>
+				<!-- start .drag-block -->
+					<div class="drag-block hidden">Drop here</div>
+					 <!-- end .drag-block -->
+				<div id="editor">
+
+				</div>
+				<textarea class="fantom"></textarea>
 			</div>
 		</div>
 		<div class="bottom-border h-border first"></div>
@@ -912,7 +926,7 @@
 		<!-- start .custom-el -->
 		<!-- start .edit-anim-el -->
 		<div class="edit-anim-el">
-			<span>Edit element</span>
+			<span>Редагувати елемент</span>
 		</div>
 		 <!-- end .edit-anim-el -->
 		<div class="custom-el">
@@ -980,6 +994,7 @@
 	<script src="ace/ace.js"></script>
 	<script src="js/keyframe.js"></script>
 	<script src="libs/niceSelect/jquery.nice-select.min.js"></script>
+	<script src="libs/FileSaver.min.js"></script>
 
 
 	<script src="libs/jquery.mousewheel.min.js"></script>
