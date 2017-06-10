@@ -7,7 +7,8 @@
 	background: $bg;
 	position: relative;
 	text-align: center;
-
+	overflow-y: hidden;
+	overflow-x: auto;
 	.anim-controls{
 		position: absolute;
 		left: 40px;
@@ -42,15 +43,17 @@
 	.adding-wrapper{
 		position: relative;
 		width: auto;
+		max-width: 900px;
 		display: inline-block;
 		.progress-block{
+
 			position: absolute;
 		    width: 8px;
 		    height: 35px;
 		    top: 20px;
 		    left: 0;
 		    margin-left: -8px;
-		    background: #ff0;
+		    background: #f9f920;
 
 			&.play{
 				animation-name: progress;
@@ -79,6 +82,7 @@
 			display: inline-block;
 			margin-top: 20px;
 			margin-bottom: 1px;
+			box-sizing: border-box;
 			width: 10px;
 			height: 35px;
 			border: 1px solid $grey;
@@ -163,10 +167,11 @@
 				color: #fff;
 				position: absolute;
 				top: -20px;
-				left: -25px;
+				left: -15px;
 				z-index: 10;
 
 				.action{
+					display: none;
 					width: 15px;
 					height: 15px;
 					margin-right: 5px;

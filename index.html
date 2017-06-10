@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Firefly</title>
+	<title>FIREFLY</title>
 	<link rel="stylesheet" href="./css/style.css">
-
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script> -->
 	<script>
     	// require.config({
@@ -20,10 +20,18 @@
 	<style>
 		#anim-element{
 			position: absolute;
-			width: 50px;
-			height: 50px;
+			width: 100px;
+			height: 100px;
 			color: #fff;
+			padding: 5px;
+			margin: 5px;
+			line-height: 1;
+			text-align: center;
 			background: #000;
+		}
+		#anim-element span{
+			font-weight: bold;
+			font-size: 18px;
 		}
 	</style>
 </head>
@@ -48,6 +56,12 @@
 		 	<!-- <div class="sign-in">Sign in</div> -->
 		 	<!-- start .change-view -->
 		 	<div class="change-view"><span class="change">Змінити</span> <span class="view">вигляд</span></div>
+		 	<div class="about">
+		 		<span class="">Про автора</span>
+		 	</div>
+		 	<div class="help">
+		 		<span class="">?</span>
+		 	</div>
 		 	 <!-- end .change-view -->
 		 	 <!-- end .sign-in -->
 		 	 <!-- start .sign-up -->
@@ -112,23 +126,23 @@
 						<!-- start .tab-cont -->
 						<div class="tab-cont active" id="anim-props">
 							<div class="group">
-								<label for="check2">name</label>
+								<label for="check2">Ім'я</label>
 								<input type="text" name="animation-name" id="name" value="example">
 							</div>
 							<div class="group">
-								<label for="check2">delay</label>
+								<label for="check2">Затримка</label>
 								<input  name="animation-delay" id="delay" value="0">
 							</div>
 							<div class="group">
-								<label for="check2">duration</label>
+								<label for="check2">Тривалість</label>
 								<input  name="animation-duration" id="duration" value="1000">
 							</div>
 							<div class="group">
-								<label for="check2">iteration-count</label>
+								<label for="check2">Кількість відтворень</label>
 								<input type="text" name="animation-iteration-count" id="iterationCount" value="1">
 							</div>
 							<div class="group">
-								<label for="check2">direction</label>
+								<label for="check2">Напрям</label>
 								<select size=1 name="animation-direction">
 									<option value="normal">normal</option>
 									<option value="reverse">reverse</option>
@@ -137,7 +151,7 @@
 								</select>
 							</div>
 							<div class="group">
-								<label for="check2">fill-mode</label>
+								<label for="check2">Закінчення</label>
 								<select size=1 name="animation-fill-mode">
 									<option value="none">none</option>
 									<option value="forwards">forwards</option>
@@ -147,7 +161,7 @@
 
 							</div>
 							<div class="group">
-								<label for="check2">timing-function</label>
+								<label for="check2">Часова функція</label>
 								<select size=1 name="animation-timing-function">
 									<option value="linear">linear</option>
 									<option value="ease">ease</option>
@@ -232,8 +246,8 @@
 
 								</div>
 								<div class="group-buttons">
-									<div class="btn cancel">cancel</div>
 									<div class="btn  save">save</div>
+									<div class="btn cancel">cancel</div>
 								</div>
 							</div>
 						</div>
@@ -265,12 +279,28 @@
 				<div class="header">
 					<h2><i class="fa fa-code" aria-hidden="true"></i> Animation code</h2>
 					<!-- start .export -->
-					<div class="export">exprort .txt</div>
+					<div class="export">
+						<span class="text">експорт</span>
+						<i class="fa fa-level-up" aria-hidden="true"></i>
+						<!-- start .input-add -->
+						<div class="input-add">
+							<input type="text" value="animation.css"/>
+							<i class="fa fa-level-up export-btn" aria-hidden="true"></i>
+						</div>
+						 <!-- end .input-add -->
+					</div>
 					<div class="import">
-						<span>import</span>
+						<span>імпорт</span>
+						<i class="fa fa-level-down" aria-hidden="true"></i>
 						<input type="file" id="file" accept=".txt,.css">
 					</div>
-					<div class="copy">copy</div>
+					<div class="copy">
+						<span>copy</span>
+						<i class="fa fa-files-o" aria-hidden="true"></i>
+						<!-- start .note -->
+						<div class="note">Скопійовано в буфер</div>
+						 <!-- end .note -->
+					</div>
 					 <!-- end .export -->
 				</div>
 				<!-- start .drag-block -->
@@ -944,7 +974,10 @@
 			<!-- start .anim-el -->
 			<div class="anim-el">
 				<!-- start .square -->
-				<div class="anim-element" id="anim-element"><span>Firefly</span></div>
+				<div class="anim-element" id="anim-element">
+					<img src="img/logo.png" alt="" />
+					<span>FIREFLY</span>
+				</div>
 				 <!-- end .square -->
 			</div>
 			 <!-- end .anim-el -->
@@ -983,6 +1016,27 @@
 		   		<span>SKIP</span>
 		   </div>
 		    <!-- end .skip-btn -->
+	</div>
+	 <!-- end .tips-block -->
+
+	 <!-- start .tips-block -->
+	<div class="about-block hide">
+		<!-- start .about-wrap -->
+		<div class="about-wrap">
+			<h2>Про автора</h2>
+			<!-- start .text -->
+			<div class="text">
+				<p>Станіславчук Микола</p>
+				<p>Студент групи КН-41</p>
+			</div>
+			 <!-- end .text -->
+			 <!-- start .photo -->
+			 <div class="photo">
+			 	<img src="img/photo.jpg" alt="" />
+			 </div>
+			  <!-- end .photo -->
+		</div>
+		 <!-- end .about-wrap -->
 	</div>
 	 <!-- end .tips-block -->
 

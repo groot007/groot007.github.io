@@ -3094,7 +3094,7 @@ body header .reg-controls {
   margin-right: 20px;
 }
 
-body header .reg-controls .change-view {
+body header .reg-controls .change-view,body header .reg-controls .about,body header .reg-controls .help {
   margin-top: 10px;
   height: 100%;
   -webkit-border-radius: 1px;
@@ -3106,11 +3106,11 @@ body header .reg-controls .change-view {
   background: rgba(255, 255, 255, 0.2);
 }
 
-body header .reg-controls .change-view:hover {
+body header .reg-controls .change-view:hover,body header .reg-controls .about:hover,body header .reg-controls .help:hover {
   cursor: pointer;
 }
 
-body header .reg-controls .change-view:hover .change {
+body header .reg-controls .change-view:hover .change,body header .reg-controls .about:hover .change,body header .reg-controls .help:hover .change {
   display: inline-block;
   -webkit-animation-name: slideInLeft;
           animation-name: slideInLeft;
@@ -3118,7 +3118,7 @@ body header .reg-controls .change-view:hover .change {
           animation-duration: .5s;
 }
 
-body header .reg-controls .change-view:hover .view {
+body header .reg-controls .change-view:hover .view,body header .reg-controls .about:hover .view,body header .reg-controls .help:hover .view {
   display: inline-block;
   -webkit-animation-name: hinge;
           animation-name: hinge;
@@ -3225,7 +3225,7 @@ body .wrap .main-blocks .props-block .header .tabs .tab {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 20px;
   height: 24px;
   background: #343436;
   display: inline-block;
@@ -3248,7 +3248,6 @@ body .wrap .main-blocks .props-block .header .add-input {
   right: 10px;
   top: -5px;
   font-size: 20px;
-  z-index: 10000;
   color: #fff;
   opacity: 1;
   height: 30px;
@@ -3345,6 +3344,26 @@ body .wrap .main-blocks .props-block .values {
   color: #e0dcdc;
 }
 
+body .wrap .main-blocks .props-block .values #css-props {
+  height: 232px;
+  overflow: auto;
+}
+
+body .wrap .main-blocks .props-block .values #css-props .delete-input {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #e0dcdc;
+  margin-left: 4px;
+  font-size: 18px;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+body .wrap .main-blocks .props-block .values #css-props .delete-input:hover {
+  color: #f00;
+  cursor: pointer;
+}
+
 body .wrap .main-blocks .props-block .values .tabs-content .tab-cont {
   display: none;
 }
@@ -3361,9 +3380,19 @@ body .wrap .main-blocks .props-block .values .nice-select {
   background: transparent;
   -webkit-border-radius: 0;
           border-radius: 0;
+  text-align: center !important;
   border: none;
+  width: 177px;
   border-left: 1px solid #000;
   border-bottom: 1px solid #000;
+}
+
+body .wrap .main-blocks .props-block .values .nice-select .current {
+  display: inline-block;
+  max-width: 90%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 body .wrap .main-blocks .props-block .values .nice-select .list {
@@ -3373,6 +3402,13 @@ body .wrap .main-blocks .props-block .values .nice-select .list {
 
 body .wrap .main-blocks .props-block .values .nice-select .option:hover,body .wrap .main-blocks .props-block .values .nice-select .option.focus,body .wrap .main-blocks .props-block .values .nice-select .option.selected.focus {
   background: #343436;
+}
+
+body .wrap .main-blocks .props-block .values label {
+  display: inline-block;
+  padding-top: 0 !important;
+  width: 155px;
+  text-align: left !important;
 }
 
 body .wrap .main-blocks .props-block .values .group {
@@ -3421,8 +3457,9 @@ body .wrap .main-blocks .props-block .keyframe-tab.active {
 }
 
 body .wrap .main-blocks .props-block .curve-wrap {
-  width: 320px;
+  width: 338px;
   height: 440px;
+  padding-right: 20px;
   position: absolute;
   top: 0;
   padding: 6px;
@@ -3473,6 +3510,11 @@ body .wrap .main-blocks .props-block .curve-wrap .curve-block .curve-line {
   background: #00aff0;
 }
 
+body .wrap .main-blocks .props-block .curve-wrap .curve-block .coordinate-plane {
+  left: 20px;
+  right: auto;
+}
+
 body .wrap .main-blocks .props-block .curve-wrap .group-buttons {
   height: 40px;
   margin-top: 20px;
@@ -3514,6 +3556,14 @@ body .wrap .main-blocks .css-block {
 
 body .wrap .main-blocks .css-block .header {
   padding: 0 30px;
+  font-size: 13px;
+}
+
+body .wrap .main-blocks .css-block .header:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }
 
 body .wrap .main-blocks .css-block .header h2 {
@@ -3527,17 +3577,123 @@ body .wrap .main-blocks .css-block .header h2 {
   color: #fff;
 }
 
+body .wrap .main-blocks .css-block .header .controls-data {
+  float: right;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 body .wrap .main-blocks .css-block .header .export,body .wrap .main-blocks .css-block .header .copy,body .wrap .main-blocks .css-block .header .import {
   float: right;
+  margin-top: 8px;
   margin-right: 10px;
-  background: #fff;
+  padding: 2px 6px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: rgba(255, 255, 255, 0.9);
+  background: #343436;
+  vertical-align: middle;
   display: inline-block;
+}
+
+body .wrap .main-blocks .css-block .header .export:hover,body .wrap .main-blocks .css-block .header .copy:hover,body .wrap .main-blocks .css-block .header .import:hover {
+  cursor: pointer;
+}
+
+body .wrap .main-blocks .css-block .header .export {
+  position: relative;
+}
+
+body .wrap .main-blocks .css-block .header .export .input-add {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all .0s ease;
+  transition: all .0s ease;
+  position: relative;
+}
+
+body .wrap .main-blocks .css-block .header .export .input-add input {
+  width: 0;
+  max-width: 100%;
+  display: block;
+  height: 0;
+  background: #474748;
+  color: #fff;
+  border: 0;
+}
+
+body .wrap .main-blocks .css-block .header .export .input-add input:focus {
+  outline: none;
+}
+
+body .wrap .main-blocks .css-block .header .export .input-add .export-btn {
+  float: right;
+  background: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+ /* margin-top: 3px; */
+  padding: 3px 10px 4px 10px;
+}
+
+body .wrap .main-blocks .css-block .header .export.show-input .text,body .wrap .main-blocks .css-block .header .export.show-input .fa:not(.export-btn) {
+  display: none;
+}
+
+body .wrap .main-blocks .css-block .header .export.show-input .input-add {
+  width: 138px;
+  opacity: 1;
+  height: 20px;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+body .wrap .main-blocks .css-block .header .export.show-input .input-add input {
+  float: left;
+  border-left: 2px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 2px 32px 4px 4px;
+  width: 138px;
+  height: 20px;
 }
 
 body .wrap .main-blocks .css-block .header .import {
   position: relative;
-  width: 60px;
+  width: 65px;
   overflow: hidden;
+}
+
+body .wrap .main-blocks .css-block .header .import:hover {
+  cursor: pointer;
+}
+
+body .wrap .main-blocks .css-block .header .copy {
+  position: relative;
+}
+
+body .wrap .main-blocks .css-block .header .copy .note {
+  position: absolute;
+  font-size: 13px;
+  overflow: hidden;
+  height: 0;
+  z-index: 99;
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
+  padding: 0 0;
+  top: 100%;
+  background: #000;
+  text-align: center;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+body .wrap .main-blocks .css-block .header .copy .note.visible {
+  height: 40px;
+  width: 100px;
+  padding: 3px 5px;
+  font-size: 13px;
 }
 
 body .wrap .main-blocks .css-block .header [type=file] {
@@ -3546,8 +3702,13 @@ body .wrap .main-blocks .css-block .header [type=file] {
   opacity: 0;
   left: 0;
   top: 0;
+  font-size: 0;
   text-align: left;
   position: absolute;
+}
+
+body .wrap .main-blocks .css-block .header [type=file]:hover {
+  cursor: pointer;
 }
 
 body .wrap .main-blocks .css-block .fantom {
@@ -3573,22 +3734,28 @@ body .wrap .main-blocks .css-block #editor {
 body .anim-zone {
   min-height: 400px;
   overflow: hidden;
+  background: url(../img/bg.png);
   position: relative;
 }
 
 body .anim-zone .wrapper {
-  width: 700px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   position: relative;
-  margin: 20px auto;
+  margin: 35px auto;
   border: 1px solid #000;
 }
 
+body .anim-zone .wrapper .anim-element img {
+  max-width: 100%;
+}
+
 body .anim-zone .edit-anim-el {
-  width: 100px;
+  position: absolute;
+  width: 140px;
   background: #1d1f20;
   color: #fff;
-  padding: 10px;
+  padding: 5px 10px;
   font-size: 12px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3606,7 +3773,7 @@ body .anim-zone .edit-anim-el:hover {
 
 body .anim-zone .custom-el {
   position: absolute;
-  top: 30px;
+  top: 26px;
   left: 0;
   z-index: 999;
   -webkit-transform: translateX(-300px);
@@ -3665,6 +3832,8 @@ body .anim-zone #editor-el {
   background: #1d1f20;
   position: relative;
   text-align: center;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .timeline .anim-controls {
@@ -3706,6 +3875,7 @@ body .anim-zone #editor-el {
 .timeline .adding-wrapper {
   position: relative;
   width: auto;
+  max-width: 900px;
   display: inline-block;
 }
 
@@ -3716,7 +3886,7 @@ body .anim-zone #editor-el {
   top: 20px;
   left: 0;
   margin-left: -8px;
-  background: #ff0;
+  background: #f9f920;
 }
 
 .timeline .adding-wrapper .progress-block.play {
@@ -3747,6 +3917,8 @@ body .anim-zone #editor-el {
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 10px;
   height: 35px;
   border: 1px solid #474748;
@@ -3824,11 +3996,12 @@ body .anim-zone #editor-el {
   color: #fff;
   position: absolute;
   top: -20px;
-  left: -25px;
+  left: -15px;
   z-index: 10;
 }
 
 .timeline .frames-block .empty-frame .subsidiary .action {
+  display: none;
   width: 15px;
   height: 15px;
   margin-right: 5px;
@@ -3945,7 +4118,7 @@ body .anim-zone #editor-el {
   border-top: 5px solid #00aff0;
 }
 
-.tips-block {
+.tips-block,.about-block {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -3960,39 +4133,39 @@ body .anim-zone #editor-el {
   transition: all .4s ease-in-out;
 }
 
-.tips-block.hide {
+.tips-block.hide,.about-block.hide {
   left: 50%;
   top: 50%;
   width: 0;
   height: 0;
 }
 
-.tips-block .tip1 {
+.tips-block .tip1,.about-block .tip1 {
   position: absolute;
   top: 100px;
   left: 500px;
 }
 
-.tips-block .tip2 {
+.tips-block .tip2,.about-block .tip2 {
   position: absolute;
   top: 200px;
   left: 400px;
 }
 
-.tips-block .tip3 {
+.tips-block .tip3,.about-block .tip3 {
   position: absolute;
   top: 360px;
   left: 50%;
   margin-left: -50px;
 }
 
-.tips-block .tip4 {
+.tips-block .tip4,.about-block .tip4 {
   position: absolute;
   top: 350px;
   left: 60px;
 }
 
-.tips-block .skip-btn {
+.tips-block .skip-btn,.about-block .skip-btn {
   width: 100px;
   height: 40px;
   text-align: center;
@@ -4003,6 +4176,39 @@ body .anim-zone #editor-el {
   left: 50%;
   margin-left: -50px;
   top: 500px;
+}
+
+.about-block {
+  text-align: center;
+}
+
+.about-block .about-wrap {
+  width: 600px;
+  height: 500px;
+  border: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -250px;
+  margin-left: -300px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+}
+
+.about-block .about-wrap .text {
+  width: 250px;
+  float: left;
+  margin-right: 20px;
+}
+
+.about-block .about-wrap .photo {
+  display: inline-block;
+  width: 250px;
+  float: left;
+}
+
+.about-block .about-wrap .photo img {
+  max-width: 100%;
 }
 
 @font-face {

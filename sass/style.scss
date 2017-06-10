@@ -159,7 +159,7 @@ body{
 		.reg-controls{
 			float: right;
 			margin-right: 20px;
-			.change-view{
+			.change-view, .about, .help{
 				margin-top: 10px;
 				height: 100%;
 				border-radius: 1px;
@@ -226,25 +226,30 @@ body{
 	.anim-zone{
 		min-height: 400px;
 		overflow: hidden;
+		background: url(../img/bg.png);
 		position: relative;
 		.wrapper{
-			width: 700px;
-			height: 700px;
+			width: 500px;
+			height: 500px;
 			position: relative;
-			margin: 20px auto;
+			margin: 35px auto;
 			border: 1px solid #000;
 			.anim-element{
-
+				img{
+					max-width: 100%;
+				}
 			}
 		}
 		.edit-anim-el{
-			width: 100px;
+			position: absolute;
+			width: 140px;
 			background: $bg;
 			color: #fff;
-			padding: 10px;
+			padding: 5px 10px;
 			font-size: 12px;
 			box-sizing: border-box;
 			transition: all .4s ease-in-out;
+
 			&.active{
 				width: 300px;
 			}
@@ -254,7 +259,7 @@ body{
 		}
 		.custom-el{
 			position: absolute;
-			top: 30px;;
+			top: 26px;;
 			left: 0;
 			z-index: 999;
 			transform: translateX(-300px);
@@ -302,7 +307,7 @@ body{
 
 @import "./timeline";
 
-.tips-block{
+.tips-block, .about-block{
 	background: rgba(0,0,0, .5);
 	position: fixed;
 	top: 0;
@@ -355,6 +360,37 @@ body{
 		top: 500px;
 	}
 }
+.about-block{
+	text-align: center;
+	.about-wrap{
+		width: 600px;
+		height: 500px;
+		border: none;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -250px;
+		margin-left: -300px;
+		background: rgba(0,0,0, .9);
+		padding: 20px;
+		.text{
+			width: 250px;
+			float: left;
+			margin-right: 20px;
+		}
+		.photo{
+			display: inline-block;
+			width: 250px;
+			float: left;
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+
+
 
 @keyframes hinge {
   0% {

@@ -80,7 +80,7 @@ function pluginEvents (root, $, name) {
 
 
 	$(document).on("mouseenter", "#css-props .group", function(e){
-		$("<span class='delete-input'>X</span>").appendTo($(this));
+		$("<div class='delete-input'><i class='fa fa-times' aria-hidden='true'></i></div>").appendTo($(this));
 	});
 
 	$(document).on("mouseleave", "#css-props .group ", function(e){
@@ -94,7 +94,7 @@ function pluginEvents (root, $, name) {
 		// var value = $(".props-block").inputs("getValue");
 		// $(".props-block").inputs("setObj", value);
 	});
-	$(document).on("click", ".curve-wrap .cancel", function(e){
+	$(document).on("click", ".curve-wrap .save", function(e){
 		$(this).closest(".curve-wrap").addClass("hidden");
 		$("select[name='animation-timing-function'] option:last-child").text("cubic-bezier(" + bezier.coordinates.toString() + ")");
 		$("select[name='animation-timing-function'] option:last-child").attr("value", "cubic-bezier(" + bezier.coordinates.toString() + ")");
@@ -102,8 +102,8 @@ function pluginEvents (root, $, name) {
 		jQuery("select").niceSelect("update");
 		$("#anim-props select").trigger("change");
 	});
-	$(document).on("click", ".curve-wrap .save", function(e){
-		renderCurve([0.215, 0.610, 0.355, 1.000])
+	$(document).on("click", ".curve-wrap .cancel", function(e){
+		$(this).closest(".curve-wrap").addClass("hidden");
 	});
 
 	$(document).on("click", ".nice-select .list li:last-child", function(e){

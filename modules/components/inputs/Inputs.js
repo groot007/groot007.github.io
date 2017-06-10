@@ -86,7 +86,7 @@ class Inputs {
 
 	generateString(obj){
 		var name = obj["main"]["name"] || "example";
-		var className = "className";
+		var className = obj["main"]["className"] || "className";
 		var animStr = "." + className + "{\n";
 		var cssStr = "@keyframes " + name + " { \n";
 

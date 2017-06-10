@@ -18,8 +18,8 @@ $(document).on("ready", function(){
 	var borderWidth = $(".v-border").width();
 	var width = (((docWidth - borderWidth * 2) / docWidth)) * 100;
 	var editorEl;
-	var html = "<span>Firefly</span>\n";
-	var styles = "<style>\n #anim-element{\n\tposition: absolute;\n\twidth: 50px;\n\theight: 50px;\n\tcolor: #fff;\n\tbackground: #000;\n}</style>\n\n";
+	var html = "<img src='img/logo.png' alt=''>\n<span>FIREFLY</span>";
+	var styles = "<style>\n #anim-element{\n\tmargin:5px;\n\tposition: absolute;\n\tpadding: 5px;\n\tline-height: 1;\n\ttext-align: center;\n\twidth: 100px;\n\theight: 100px;\n\tcolor: #fff;\n\tbackground: #000;\n}\n#anim-element span{\n\tfont-weight: bold;\n\tfont-size: 18px;\n\t}\n</style>\n\n";
 
 	setTimeout(function(){
 		$("#editor").editor();
@@ -139,6 +139,10 @@ $(document).on("ready", function(){
 		$(this).closest(".tips-block").addClass("hide");
 	});
 
+	$(document).on("click", ".reg-controls .help", function(e){
+		$(".tips-block").removeClass("hide");
+	});
+
 	$(document).on("click", ".change-view", function(e){
 		var b = $("body");
 		if(b.hasClass("vertical")){
@@ -152,14 +156,57 @@ $(document).on("ready", function(){
 		}
 	});
 
+	$(document).on("click", ".reg-controls .about", function(e){
+		var b = $(".about-block");
+		b.removeClass("hide");
+	});
+
+	$(document).on("click", ".about-block", function(e){
+		var target = $(e.target);
+		if (!target.is(".about-block .about-wrap")){
+			$(".about-block").addClass("hide");
+		}
+	});
+
+
 	var blob;
-	$(document).on("click", ".css-block .export", function(e){
+
+	$(document).on("click", ".css-block .export:not(.show-input)", function(e){
+		e.stopPropagation();
+
+		var className = $(".props-block").inputs("getValue")["main"]["className"];
+		var $this = $(this);
+		$this.addClass("show-input");
+		$this.closest(".export").find("input").focus();
+
+		$this.find("input").val(className + ".css")
+	});
+
+
+	$(document).on("blur", ".css-block .export input", function(e){
+		var exportBlock = $(this).closest(".export");
+		// exportBlock.removeClass("show-input");
+	})
+
+
+	$(document).on("click", ".css-block .export .export-btn", function(e){
+		e.stopPropagation();
+
 		var text = $("#editor").editor("getValue");
+		var exportBlock = $(this).closest(".export");
+		var fileName = exportBlock.find("input").val();
+		exportBlock.removeClass("show-input");
+
 		blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-		saveAs(blob, "hello world.css");
+		saveAs(blob, fileName);
 	});
 
 	$(document).on("click", ".css-block .copy", function(e){
+		var note = $(this).find(".note");
+		note.addClass("visible");
+		setTimeout(function(){
+			note.removeClass("visible");
+		}, 2000)
 		var copyTextarea = $(".css-block .fantom");
 		var value = $("#editor").editor("getValue");
           copyTextarea.val(value);

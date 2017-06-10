@@ -49,7 +49,7 @@
 							text-align: center;
 							font-size: 14px;
 							font-weight: 400;
-							line-height: 24px;
+							line-height: 20px;
 							height: 24px;
 							background: #343436;
 							display: inline-block;
@@ -71,7 +71,7 @@
 						top: -5px;
 
 						font-size: 20px;
-						z-index: 10000;
+						// z-index: 10000;
 						color: #fff;
 						opacity: 1;
 						height: 30px;
@@ -157,8 +157,25 @@
 				.values{
 					// width: 100%;props-block
 					height: 100%;
+
 					padding: 15px;
 					color: $textColor;
+					#css-props{
+						height: 232px;
+						overflow:auto;
+						.delete-input{
+							display: inline-block;
+							vertical-align: bottom;
+							color: $textColor;
+							margin-left: 4px;
+							font-size: 18px;
+							transition: all .4s ease-in-out;
+							&:hover{
+								color: #f00;
+								cursor: pointer;
+							}
+						}
+					}
 					.tabs-content{
 						.tab-cont{
 							display: none;
@@ -174,10 +191,18 @@
 						line-height: 20px;
 						background: transparent;
 						border-radius: 0;
+						text-align: center !important;
 						border: none;
+						width: 177px;
 						border-left: 1px solid #000;
 						border-bottom: 1px solid #000;
-
+						.current{
+							display: inline-block;
+							max-width: 90%;
+							overflow: hidden;
+							-ms-text-overflow: ellipsis;
+							text-overflow: ellipsis;
+						}
 						.list{
 							background: #1d1f20;
 							z-index: 11;
@@ -186,6 +211,14 @@
 					.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus{
 						background: #343436;
 					}
+					// #anim-props{
+						label{
+							display: inline-block;
+							padding-top: 0 !important;
+							width: 155px;
+							text-align: left !important;
+						}
+					// }
 					.group{
 						margin-bottom: 8px;
 
@@ -231,8 +264,9 @@
 					}
 				}
 				.curve-wrap{
-					width: 320px;
+					width: 338px;
 					height: 440px;
+					padding-right: 20px;
 					position: absolute;
 					top: 0;
 					padding: 6px;
@@ -276,6 +310,10 @@
 
 						.curve-line{
 							background: $skype;
+						}
+						.coordinate-plane{
+							left: 20px;
+							right: auto;
 						}
 					}
 					.group-buttons{
@@ -321,6 +359,13 @@
 				// max-width: 650px;
 				.header{
 					padding: 0 30px;
+					font-size: 13px;
+					&:before{
+						content: "";
+						display: inline-block;
+						vertical-align: middle;
+						height: 100%;
+					}
 					h2{
 						text-transform: uppercase;
 						font-size: 14px;
@@ -331,16 +376,125 @@
 						font-weight: 600;
 						color: #fff;
 					}
+					.controls-data{
+						float: right;
+						vertical-align: middle;
+						display: inline-block;
+					}
 					.export, .copy, .import{
 						float: right;
+						margin-top: 8px;
 						margin-right: 10px;
-						background: #fff;
+						padding: 2px 6px;
+						    border-radius: 3px;
+						color: rgba(255, 255, 255, 0.9);
+						    background: #343436;
+						vertical-align: middle;
 						display: inline-block;
+
+						&:hover{
+							cursor: pointer;
+						}
+					}
+					.export{
+						position: relative;
+						.text{
+
+						}
+						.input-add{
+							width: 0;
+							height: 0;
+							opacity: 0;
+							transition: all .0s ease;
+							position: relative;
+
+							input{
+								width: 0;
+								max-width: 100%;
+								display: block;
+								height: 0;
+								background: #474748;
+							    color: #fff;
+							    border: 0;
+
+								&:focus{
+									outline: none;
+								}
+
+							}
+							.export-btn{
+								float: right;
+							    background: #000;
+							    position: absolute;
+							    top: 0;
+							    right: 0;
+							    /* margin-top: 3px; */
+							    padding: 3px 10px 4px 10px;
+							}
+
+						}
+						&.show-input{
+							.text, .fa:not(.export-btn){
+								display: none;
+							}
+
+							.export-btn{
+
+							}
+							.input-add{
+								width: 138px;
+
+								opacity: 1;
+								height: 20px;
+								// margin-right: 5px;
+								// float: left;
+								transition: all .4s ease-in-out;
+
+								input{
+									float: left;
+									border-left: 2px solid #000;
+							    border-bottom: 1px solid #000;
+
+							        padding: 2px 32px 4px 4px;
+   									 width: 138px;
+
+									height: 20px;
+								}
+							}
+
+						}
 					}
 					.import{
 						position: relative;
-						width: 60px;
+						width: 65px;
 						overflow: hidden;
+						&:hover{
+							cursor: pointer;
+						}
+					}
+					.copy{
+						position: relative;
+						.note{
+							position: absolute;
+							font-size: 13px;
+							overflow: hidden;
+							height: 0;
+						    z-index: 99;
+						    width: 100px;
+						    left: 50%;
+						    margin-left: -50px;
+						  	padding: 0 0;
+						  	top: 100%;
+						    background: #000;
+						    text-align: center;
+						    transition: all .4s ease-in-out;
+							&.visible{
+								height: 40px;
+								width: 100px;
+								  padding: 3px 5px;
+								font-size: 13px;
+							}
+						}
 					}
 					[type=file]{
 						width: 100%;
@@ -348,8 +502,12 @@
 						opacity: 0;
 						left: 0;
 						top: 0;
+						font-size: 0;
 						text-align: left;
 						position: absolute;
+						&:hover{
+							cursor: pointer;
+						}
 					}
 				}
 				.fantom{

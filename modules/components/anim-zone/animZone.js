@@ -28,14 +28,14 @@ class AnimZone {
 		var count = 0;
 		var duration = $(".props-block").inputs("getValue")["anim"]["animation-duration"];
 		var iteration = $(".props-block").inputs("getValue")["anim"]["animation-iteration-count"];
-		var className = $(".props-block").inputs("getValue")["main"]["animation-iteration-count"];
+		var className = $(".props-block").inputs("getValue")["main"]["className"];
 		$(".progress-block").css({
 			"animation-duration" : duration,
 			"animation-iteration-count" : iteration,
 		})
 		$(".progress-block").addClass("play");
 		$("#anim-element").attr("style", "");
-		$("#anim-element").addClass("className");
+		$("#anim-element").addClass(className);
 		$(".timeline .anim-controls .play").addClass("hidden");
 		$(".timeline .anim-controls .pause").removeClass("hidden");
 	}
