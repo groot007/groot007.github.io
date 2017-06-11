@@ -28,7 +28,7 @@ class Editor {
 	    }
 	    else{
 	    	$.getJSON('js/animations.json', function(data){
-				obj = data["clear"]
+				var obj = data["clear"]
 				$(".props-block").inputs("setObj", obj);
 			});
 	    }
