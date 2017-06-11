@@ -449,6 +449,14 @@
 			editor.on("blur", function () {
 				that.parsingToObj();
 			});
+
+			editor.getSession().on("changeAnnotation", function () {
+
+				var annot = editor.getSession().getAnnotations();
+				for (var key in annot) {
+					if (annot.hasOwnProperty(key)) console.log("editor errors [" + annot[key].row + " , " + annot[key].column + "] - \t" + annot[key].text);
+				}
+			});
 			if (localStorage.getItem('css-animation')) {
 				editor.setValue(localStorage.getItem('css-animation'));
 				this.parsingToObj();

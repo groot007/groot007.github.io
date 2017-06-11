@@ -3947,7 +3947,6 @@ body .anim-zone #editor-el {
 .timeline .adding-wrapper {
   position: relative;
   width: auto;
-  max-width: 900px;
   display: inline-block;
 }
 
@@ -4105,6 +4104,9 @@ body .anim-zone #editor-el {
   margin: 0;
   padding: 0;
   width: 15px;
+  margin-left: 3px;
+  line-height: 19px;
+  text-align: center;
   height: 15px;
   margin-bottom: 10px;
   -webkit-border-radius: 50%;
@@ -4118,8 +4120,9 @@ body .anim-zone #editor-el {
 
 .timeline .frames-block .empty-frame .subsidiary .percent.clear:before {
   position: absolute;
-  top: -4px;
-  left: 4px;
+  top: -3px;
+  left: 5px;
+  color: #fff;
   font-size: 18px;
   content: "-";
 }

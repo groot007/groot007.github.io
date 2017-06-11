@@ -43,7 +43,7 @@
 	.adding-wrapper{
 		position: relative;
 		width: auto;
-		max-width: 900px;
+		// max-width: 900px;
 		display: inline-block;
 		.progress-block{
 
@@ -175,6 +175,8 @@
 					width: 15px;
 					height: 15px;
 					margin-right: 5px;
+
+
 					font-size: 14px;
 					line-height: 15px;
 					border-radius: 50%;
@@ -201,6 +203,9 @@
 					margin: 0;
 					padding: 0;
 					width: 15px;
+					margin-left: 3px;
+					line-height: 19px;
+					text-align: center;
 					height: 15px;
 					margin-bottom: 10px;
 					border-radius: 50%;
@@ -211,8 +216,9 @@
 
 					&:before{
 						position: absolute;
-						top: -4px;
-						left: 4px;
+						top: -3px;
+						left: 5px;
+						color: #fff;
 						font-size: 18px;
 						content: "-";
 					}

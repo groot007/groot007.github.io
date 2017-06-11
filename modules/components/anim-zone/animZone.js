@@ -26,12 +26,16 @@ class AnimZone {
 	}
 	animationPlay(){
 		var count = 0;
-		var duration = $(".props-block").inputs("getValue")["anim"]["animation-duration"];
-		var iteration = $(".props-block").inputs("getValue")["anim"]["animation-iteration-count"];
-		var className = $(".props-block").inputs("getValue")["main"]["className"];
+		var value = $(".props-block").inputs("getValue");
+		var duration = value["anim"]["animation-duration"] || "1s";
+		var iteration = value["anim"]["animation-iteration-count"] || 1;
+		var timeF = value["anim"]["animation-timinig-function"] || "linear";
+		console.log(timeF)
+		var className = value["main"]["className"];
 		$(".progress-block").css({
 			"animation-duration" : duration,
 			"animation-iteration-count" : iteration,
+			"animation-timing-function" : timeF,
 		})
 		$(".progress-block").addClass("play");
 		$("#anim-element").attr("style", "");
