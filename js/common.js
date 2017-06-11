@@ -154,12 +154,14 @@ $(document).on("ready", function(){
 	});
 
 	$(document).on("click", ".reg-controls .help", function(e){
+		updateTips();
 		$(".tips-block").removeClass("hide");
 		$("body").addClass("fixed");
 	});
 
 	$(document).on("click", ".change-view", function(e){
 		var b = $("body");
+
 		if(b.hasClass("vertical")){
 			b.removeClass("vertical");
 			$(".bottom-border.first, .timeline, .bottom-border.second").insertAfter(".main-blocks");
@@ -282,33 +284,38 @@ function handleFileSelect(evt) {
 
   $("#file")[0].addEventListener('change', handleFileSelect, false);
 
+  function updateTips(){
 
-  var input = $(".select.active .add-input").offset();
-  var editor = $(".css-block .import").offset();
-  var timeline = $(".timeline .empty-frame").eq(40).offset();
-  var editEl = $(".edit-anim-el").offset();
-  var tabs = $(".tab-css-props").offset();
-  console.log(tabs)
-  $(".tip1").css({
-  	left: input.left - 120,
-  	top: input.top + 30
-  });
-   $(".tip2").css({
-  	left: editor.left - 150,
-  	top: editor.top + 50
-  });
-    $(".tip3").css({
-  	left: timeline.left - 120,
-  	top: timeline.top - 110
-  });
-   $(".tip4").css({
-  	left: editEl.left + 80,
-  	top: editEl.top + 40
-  });
-    $(".tip5").css({
-  	left: tabs.left - 50,
-  	top: tabs.top + 35
-  });
+
+	  var input = $(".select.active .add-input").offset();
+	  var editor = $(".css-block .import").offset();
+	  var timeline = $(".timeline .empty-frame").eq(40).offset();
+	  var editEl = $(".edit-anim-el").offset();
+	  var tabs = $(".tab-css-props").offset();
+
+	  $(".tip1").css({
+	  	left: input.left - 120,
+	  	top: input.top + 30
+	  });
+	   $(".tip2").css({
+	  	left: editor.left - 200,
+	  	top: editor.top + 50
+	  });
+	    $(".tip3").css({
+	  	left: timeline.left - 120,
+	  	top: timeline.top - 80
+	  });
+	   $(".tip4").css({
+	  	left: editEl.left + 90,
+	  	top: editEl.top + 40
+	  });
+	    $(".tip5").css({
+	  	left: tabs.left - 50,
+	  	top: tabs.top + 35
+	  });
+	}
+
+	updateTips();
 });
 
 

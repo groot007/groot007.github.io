@@ -4218,7 +4218,7 @@ body .anim-zone #editor-el {
 .tips-block .tip,.about-block .tip {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 300px;
+  width: 400px;
   position: absolute;
   font-size: 15px;
   -webkit-border-radius: 15px;
@@ -4235,7 +4235,7 @@ body .anim-zone #editor-el {
 .tips-block .tip1 .fa,.about-block .tip1 .fa {
   position: absolute;
   top: -24px;
-  left: 50%;
+  left: 36%;
   font-size: 36px;
 }
 
