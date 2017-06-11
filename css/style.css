@@ -2956,6 +2956,7 @@ a {
 body {
   margin: 0px;
   padding: 0;
+  min-width: 1000px;
   font-family: "OpenSans", Arial, Helvetica, sans-serif;
 }
 
@@ -3013,12 +3014,20 @@ body #page-preloader {
 
 body #page-preloader .spinner {
   width: 152px;
-  height: 152px;
+  height: 22px;
   position: absolute;
   left: 50%;
   top: 50%;
-  background: url("http://artelectronics.ru/preloader.gif") no-repeat 0 0;
-  margin: -77px 0 0 -77px;
+  background: #FFF;
+  -webkit-animation-name: infinite-all;
+          animation-name: infinite-all;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  margin: -11px 0 0 -77px;
 }
 
 body .pause {
@@ -3753,6 +3762,23 @@ body .wrap .main-blocks .css-block .drag-block {
   height: 100%;
   z-index: 999;
   background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+body .wrap .main-blocks .css-block .drag-block.hidden {
+  pointer-events: all;
+}
+
+body .wrap .main-blocks .css-block .drag-block span {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -10px;
+  margin-left: -40px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 body .wrap .main-blocks .css-block #editor {
@@ -4282,23 +4308,32 @@ body .anim-zone #editor-el {
 
 .about-block .about-wrap h3 {
   margin-top: 20px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .about-block .about-wrap p {
+  font-size: 14px;
   text-align: left;
+}
+
+.about-block .about-wrap p .fa {
+  margin: 0 4px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .about-block .about-wrap .text {
   width: 250px;
   float: left;
-  margin-right: 20px;
+  padding-top: 0px;
 }
 
 .about-block .about-wrap .photo {
   display: inline-block;
   width: 250px;
   float: left;
+  margin-right: 20px;
 }
 
 .about-block .about-wrap .photo img {
@@ -4522,5 +4557,29 @@ body .anim-zone #editor-el {
   100% {
     -webkit-box-shadow: 0 0px 15px #fff;
             box-shadow: 0 0px 15px #fff;
+  }
+}
+
+@-webkit-keyframes infinite-all {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes infinite-all {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }

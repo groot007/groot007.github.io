@@ -447,9 +447,10 @@
 		}, {
 			key: "animationStop",
 			value: function animationStop() {
+				var className = $(".props-block").inputs("getValue")["main"]["className"];
 				$(".timeline .anim-controls .resume, .timeline .anim-controls .pause").addClass("hidden");
 				$(".timeline .anim-controls .play").removeClass("hidden");
-				$("#anim-element").removeClass("class pause resume");
+				$("#anim-element").removeClass(className + " pause resume");
 				$(".timeline .empty-frame").removeClass("progress");
 				$(".progress-block").removeClass("play pause running");
 			}

@@ -40,6 +40,7 @@ body{
 	margin: 0px;
 
 	padding: 0;
+	min-width: 1000px;
 	font-family: "OpenSans", Arial, Helvetica, sans-serif;
 
 	&.fixed{
@@ -92,12 +93,17 @@ body{
 
 	#page-preloader .spinner {
 	    width: 152px;
-	    height: 152px;
+	    height: 22px;
 	    position: absolute;
 	    left: 50%;
 	    top: 50%;
-	    background: url('http://artelectronics.ru/preloader.gif') no-repeat 0 0;
-	    margin: -77px 0 0 -77px;
+	    background: #FFF;
+	    animation-name: infinite-all;
+	    animation-duration: 1s;
+	    animation-timing-function: linear;
+	    animation-iteration-count: infinite;
+	    // background: url('http://artelectronics.ru/preloader.gif') no-repeat 0 0;
+	    margin: -11px 0 0 -77px;
 	}
 
 	.pause{
@@ -439,21 +445,30 @@ body{
 		}
 		h3{
 			margin-top: 20px;
+			font-size: 20px;
 			margin-bottom: 10px;
 		}
 		p{
+			font-size: 14px;
 			text-align: left;
+			.fa{
+				margin: 0 4px;
+				font-size: 20px;
+				font-weight: 300;
+			}
 
 		}
 		.text{
 			width: 250px;
 			float: left;
-			margin-right: 20px;
+			padding-top: 0px;
+
 		}
 		.photo{
 			display: inline-block;
 			width: 250px;
 			float: left;
+			margin-right: 20px;
 			img{
 				max-width: 100%;
 			}
@@ -518,4 +533,14 @@ to{
 		box-shadow: 0 0px 15px #fff;
 	}
 
+}
+
+
+@keyframes infinite-all{
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

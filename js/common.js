@@ -258,10 +258,22 @@ function handleFileSelect(evt) {
 
   }
 
+   function handleLeave(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    console.log(evt.target)
+    if($(evt.target).closest("#editor").length){
+    	$(".drag-block").addClass("hidden");
+
+    }
+  }
+
   // Setup the dnd listeners.
   var dropZone = $("#editor")[0];
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
+  dropZone.addEventListener('dragleave', handleLeave, false);
+
   $("#file")[0].addEventListener('change', handleFileSelect, false);
 
 

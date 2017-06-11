@@ -522,6 +522,21 @@
 						height: 100%;
 						z-index: 999;
 						background: rgba(0,0,0, .5);
+						pointer-events: none;
+						&.hidden{
+							pointer-events: all;
+						}
+						span{
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							margin-top: -10px;
+							margin-left: -40px;
+							font-size: 18px;
+							text-transform: uppercase;
+							font-weight: bold;
+						}
 					}
 				#editor{
 					width: 100%;
