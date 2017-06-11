@@ -53,7 +53,13 @@ $(document).on("ready", function(){
 		old = e.pageX;
 	});
 
+	$(document).on("click", "#anim-props .infinite", function(e){
+		$(this).closest("#anim-props")
+			.find("#iterationCount")
+			.val("infinite")
+			.trigger("input");
 
+	});
 
 	// tabs
 	$(document).on("click", ".props-block .tabs .tab", function(e){

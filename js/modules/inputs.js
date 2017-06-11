@@ -696,7 +696,7 @@
 			return false;
 		});
 
-		$(document).on("blur", "#anim-props input", function (e) {
+		$(document).on("blur input", "#anim-props input", function (e) {
 			var inputs = new name();
 			inputs.setAnimObj($(this));
 			console.log($(this));

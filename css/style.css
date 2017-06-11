@@ -2998,7 +2998,7 @@ body.vertical .wrap .main-blocks .props-block {
 }
 
 body.vertical .wrap .main-blocks .css-block {
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 body #page-preloader {
@@ -3476,6 +3476,23 @@ body .wrap .main-blocks .props-block .values .group input.atention {
 
 body .wrap .main-blocks .props-block .values .group input:focus {
   outline: none;
+}
+
+body .wrap .main-blocks .props-block .values .group .infinite {
+  display: inline-block;
+  width: 22px;
+  -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+          transform: translateY(6px);
+  height: 20px;
+  background: url(../img/infinite.png);
+  background-size: cover;
+}
+
+body .wrap .main-blocks .props-block .values .group .infinite:hover {
+  cursor: pointer;
+  background: url(../img/infinite-white.png);
+  background-size: cover;
 }
 
 body .wrap .main-blocks .props-block .values .group button {

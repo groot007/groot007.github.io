@@ -245,7 +245,21 @@
 							}
 
 						}
-
+						.infinite{
+							display: inline-block;
+							width: 22px;
+							transform: translateY(6px);
+							height: 20px;
+							background: url(../img/infinite.png);
+							-webkit-background-size: cover;
+							-o-background-size: cover;
+							background-size: cover;
+							&:hover{
+								cursor: pointer;
+								background: url(../img/infinite-white.png);
+								background-size: cover;
+							}
+						}
 						button{
 							outline: none;
 							border:none;
