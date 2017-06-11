@@ -98,11 +98,11 @@ $(document).on("ready", function(){
 			$(".props-block").inputs("setObj", obj);
 		})
 	});
-	$.getJSON('js/animations.json', function(data){
-		obj = data["clear"]
-		$(".props-block").inputs("setObj", obj);
+	// $.getJSON('js/animations.json', function(data){
+	// 	obj = data["clear"]
+	// 	$(".props-block").inputs("setObj", obj);
 
-	});
+	// });
 
 	$(document).on("click", ".anim-zone button.accept", function(e){
 		var value = editorEl.getValue()
@@ -134,13 +134,22 @@ $(document).on("ready", function(){
 	  		el.addClass("visible");
 	  	}
 	});
+	if (localStorage.getItem('skipped') != "true"){
+		setTimeout(function(){
+	    	$(".tips-block").removeClass("hide");
+			$("body").addClass("fixed");
+    	}, 2000)
+	}
 
-	$(document).on("click", ".skip-btn", function(e){
+	$(document).on("click", ".tips-block:not(.hide)", function(e){
+		localStorage.setItem('skipped', 'true');
 		$(this).closest(".tips-block").addClass("hide");
+		$("body").removeClass("fixed");
 	});
 
 	$(document).on("click", ".reg-controls .help", function(e){
 		$(".tips-block").removeClass("hide");
+		$("body").addClass("fixed");
 	});
 
 	$(document).on("click", ".change-view", function(e){
@@ -255,5 +264,40 @@ function handleFileSelect(evt) {
   dropZone.addEventListener('drop', handleFileSelect, false);
   $("#file")[0].addEventListener('change', handleFileSelect, false);
 
+
+  var input = $(".select.active .add-input").offset();
+  var editor = $(".css-block .import").offset();
+  var timeline = $(".timeline .empty-frame").eq(40).offset();
+  var editEl = $(".edit-anim-el").offset();
+  var tabs = $(".tab-css-props").offset();
+  console.log(tabs)
+  $(".tip1").css({
+  	left: input.left - 120,
+  	top: input.top + 30
+  });
+   $(".tip2").css({
+  	left: editor.left - 150,
+  	top: editor.top + 50
+  });
+    $(".tip3").css({
+  	left: timeline.left - 120,
+  	top: timeline.top - 110
+  });
+   $(".tip4").css({
+  	left: editEl.left + 80,
+  	top: editEl.top + 40
+  });
+    $(".tip5").css({
+  	left: tabs.left - 50,
+  	top: tabs.top + 35
+  });
+});
+
+
+$(window).on('load', function () {
+    var $preloader = $('#page-preloader'),
+        $spinner   = $preloader.find('.spinner');
+    $spinner.fadeOut();
+    $preloader.delay(200).fadeOut('slow');
 
 });

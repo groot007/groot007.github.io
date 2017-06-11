@@ -78,9 +78,10 @@ var progress = $(".progress-block")[0];
     el.addEventListener("animationend", AnimationListener, false);
     progress.addEventListener("animationend", stopProgress, false);
     function AnimationListener(){
+    	var className = $(".props-block").inputs("getValue")["main"]["className"];
     	$(".timeline .anim-controls .pause, .timeline .anim-controls .resume").addClass("hidden");
     	$(".timeline .anim-controls .play").removeClass("hidden");
-    	$("#anim-element").removeClass("className");
+    	$("#anim-element").removeClass(className);
     	clearInterval(timer);
  }
  function stopProgress(){

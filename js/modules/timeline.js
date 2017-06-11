@@ -447,7 +447,7 @@
 			_classCallCheck(this, Timeline);
 
 			this.time();
-			this.setActiveItem(0);
+			// this.setActiveItem(0);
 			// this.setActiveItem(100);
 			// this.getElement().html(template());
 		}

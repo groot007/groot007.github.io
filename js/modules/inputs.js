@@ -457,6 +457,7 @@
 				mainObj = obj["main"];
 				this.generateString(obj);
 				var string = this.getString();
+				localStorage.setItem('css-animation', string);
 				$("#editor").editor("setValue", string);
 				$(".anim-zone").animZone("setPropsAnimation", obj["main"]);
 			}
@@ -479,6 +480,7 @@
 					} else {
 						animObj[$(elem).attr("name")] = $(elem).val();
 					}
+					console.log(animObj, 1);
 					return;
 				}
 				$("#anim-props .group").each(function (i, el) {
@@ -532,7 +534,7 @@
 		}, {
 			key: "generateString",
 			value: function generateString(obj) {
-				var name = obj["main"]["name"] || "example";
+				var name = obj["anim"]["animation-name"] || "example";
 				var className = obj["main"]["className"] || "className";
 				var animStr = "." + className + "{\n";
 				var cssStr = "@keyframes " + name + " { \n";
@@ -697,7 +699,7 @@
 		$(document).on("blur", "#anim-props input", function (e) {
 			var inputs = new name();
 			inputs.setAnimObj($(this));
-
+			console.log($(this));
 			inputs.generateString(inputs.getValue());
 			setTimeout(function () {
 				$("#editor").editor("setValue", inputs.getString());

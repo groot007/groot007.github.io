@@ -54,7 +54,7 @@ function pluginEvents (root, $, name) {
 	$(document).on("blur", "#anim-props input", function(e){
 		let inputs = new name();
 		inputs.setAnimObj($(this));
-
+		console.log($(this));
 		inputs.generateString(inputs.getValue());
 		setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation", inputs.getCssObj(), inputs.getAnimObj())

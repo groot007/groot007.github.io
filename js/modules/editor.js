@@ -449,6 +449,15 @@
 			editor.on("blur", function () {
 				that.parsingToObj();
 			});
+			if (localStorage.getItem('css-animation')) {
+				editor.setValue(localStorage.getItem('css-animation'));
+				this.parsingToObj();
+			} else {
+				$.getJSON('js/animations.json', function (data) {
+					obj = data["clear"];
+					$(".props-block").inputs("setObj", obj);
+				});
+			}
 		}
 
 		_createClass(Editor, [{
@@ -474,10 +483,10 @@
 				var cssParsed = {};
 				var animProps = "";
 				var animParsed = {};
-				console.log(this);
+
 				var className = /\.\w+/.exec(this.getValue())[0].replace(/\./, "");
 				anim = /(?:.+){([^\}]*)}/.exec(this.getValue())[0];
-				css = this.getValue().match(/(\d+%)\s+{([\s\w:;().,]+)}/g);
+				css = this.getValue().match(/(\d+%)\s+{([\s\w:;().\-,]+)}/g);
 
 				animProps = /{([\s\w:;()-.,]+)[^}\s]/.exec(anim)[0].replace(/[{\s]+/, "").split(";");
 
@@ -487,7 +496,7 @@
 
 				for (var i = 0; i < css.length; i++) {
 					var props = {};
-					var values = css[i].match(/[^%{\s\d]([\s\w:;().,]+)[^}]/);
+					var values = css[i].match(/[^%{\s\d]([\s\w:;().,\-]+)[^}]/);
 					if (!values) {
 						values = "";
 						cssNotParse[i] = values;
@@ -510,7 +519,7 @@
 				};
 				rez["anim"] = animParsed;
 				rez["css"] = cssParsed;
-
+				console.log(rez);
 				$(".props-block").inputs("setObj", rez);
 			}
 		}]);

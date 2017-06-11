@@ -3,7 +3,7 @@ let template = require("./template");
 class Timeline {
 	constructor() {
 		this.time();
-		this.setActiveItem(0);
+		// this.setActiveItem(0);
 		// this.setActiveItem(100);
 		// this.getElement().html(template());
 	}

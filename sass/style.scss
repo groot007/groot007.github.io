@@ -33,14 +33,18 @@
 :-moz-placeholder { /* Firefox 18- */
   color: rgba(255,255,255, .9);
 }
-
+a{
+	color: $textColor;
+}
 body{
 	margin: 0px;
 
 	padding: 0;
 	font-family: "OpenSans", Arial, Helvetica, sans-serif;
 
-
+	&.fixed{
+		overflow: hidden;
+	}
 	&.vertical{
 		.wrap{
 			float: left;
@@ -75,7 +79,26 @@ body{
 		}
 	}
 
+	#page-preloader {
+	    position: fixed;
+	    width: 100vw;
+	    height: 100vh;
+	    overflow: hidden;
+	    right: 0;
+	    bottom: 0;
+	    background: #000;
+	    z-index: 100500;
+	}
 
+	#page-preloader .spinner {
+	    width: 152px;
+	    height: 152px;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    background: url('http://artelectronics.ru/preloader.gif') no-repeat 0 0;
+	    margin: -77px 0 0 -77px;
+	}
 
 	.pause{
 		-webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
@@ -325,41 +348,77 @@ body{
 		width: 0;
 		height: 0;
 	}
-	.tip1{
+	.tip{
+		box-sizing: border-box;
+		width: 300px;
 		position: absolute;
+		font-size: 15px;
+		border-radius: 15px;
+		padding: 15px 25px;
+		background: rgba(0,0,0, .5);
+	}
+	.tip1{
+
 		top: 100px;
 		left: 500px;
+		.fa{
+			position: absolute;
+		    top: -24px;
+		    left: 50%;
+		    font-size: 36px;
+		}
 	}
 	.tip2{
-		position: absolute;
 		top: 200px;
 		left: 400px;
 	}
 	.tip3{
-		position: absolute;
 		top: 360px;
 		left: 50%;
 		margin-left: -50px;
+		.fa{
+			position: absolute;
+		    bottom: -11px;
+		    left: 43px;
+		    transform: rotate(197deg);
+		    font-size: 26px;
+		}
 	}
 	.tip4{
-		position: absolute;
 		top: 350px;
 		left: 60px;
+		.fa{
+			position: absolute;
+		    font-size: 24px;
+		    top: -16px;
+		    transform: rotate(30deg);
+		}
 
 	}
 	.skip-btn{
-		width: 100px;
+		width: 150px;
 		height: 40px;
 		text-align: center;
 		font-size: 20px;
 		background: #000;
-		line-height: 40px;
+		line-height: 38px;
 		position: absolute;
 		left: 50%;
+		font-weight: bold;
 		margin-left: -50px;
-		top: 500px;
+		bottom: 50px;
+		transition: all .4s ease-in-out;
+		box-shadow: 0 0px 15px #fff;
+		animation-name: pulse-shadow;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		&:hover{
+			cursor: pointer;
+			background: #4d4d50;
+		}
 	}
 }
+
 .about-block{
 	text-align: center;
 	.about-wrap{
@@ -372,7 +431,20 @@ body{
 		margin-top: -250px;
 		margin-left: -300px;
 		background: rgba(0,0,0, .9);
-		padding: 20px;
+		padding: 15px 20px;
+		h2{
+			margin: 0;
+			font-size: 26px;
+			margin-bottom: 30px
+		}
+		h3{
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		p{
+			text-align: left;
+
+		}
 		.text{
 			width: 250px;
 			float: left;
@@ -431,5 +503,19 @@ transform: translate3d(-20%, 0, 0);
 to{
 	transform: translate3d(0, 0, 0);
 }
+
+}
+
+
+@keyframes pulse-shadow {
+	0% {
+			box-shadow: 0 0px 15px #fff;
+	}
+	50% {
+		box-shadow: 0 0px 0px #fff;
+	}
+	100% {
+		box-shadow: 0 0px 15px #fff;
+	}
 
 }

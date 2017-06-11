@@ -2949,10 +2949,18 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+a {
+  color: #e0dcdc;
+}
+
 body {
   margin: 0px;
   padding: 0;
   font-family: "OpenSans", Arial, Helvetica, sans-serif;
+}
+
+body.fixed {
+  overflow: hidden;
 }
 
 body.vertical .wrap {
@@ -2990,6 +2998,27 @@ body.vertical .wrap .main-blocks .props-block {
 
 body.vertical .wrap .main-blocks .css-block {
   margin-top: 28px;
+}
+
+body #page-preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 100500;
+}
+
+body #page-preloader .spinner {
+  width: 152px;
+  height: 152px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: url("http://artelectronics.ru/preloader.gif") no-repeat 0 0;
+  margin: -77px 0 0 -77px;
 }
 
 body .pause {
@@ -4140,42 +4169,92 @@ body .anim-zone #editor-el {
   height: 0;
 }
 
-.tips-block .tip1,.about-block .tip1 {
+.tips-block .tip,.about-block .tip {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 300px;
   position: absolute;
+  font-size: 15px;
+  -webkit-border-radius: 15px;
+          border-radius: 15px;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.tips-block .tip1,.about-block .tip1 {
   top: 100px;
   left: 500px;
 }
 
-.tips-block .tip2,.about-block .tip2 {
+.tips-block .tip1 .fa,.about-block .tip1 .fa {
   position: absolute;
+  top: -24px;
+  left: 50%;
+  font-size: 36px;
+}
+
+.tips-block .tip2,.about-block .tip2 {
   top: 200px;
   left: 400px;
 }
 
 .tips-block .tip3,.about-block .tip3 {
-  position: absolute;
   top: 360px;
   left: 50%;
   margin-left: -50px;
 }
 
-.tips-block .tip4,.about-block .tip4 {
+.tips-block .tip3 .fa,.about-block .tip3 .fa {
   position: absolute;
+  bottom: -11px;
+  left: 43px;
+  -webkit-transform: rotate(197deg);
+      -ms-transform: rotate(197deg);
+          transform: rotate(197deg);
+  font-size: 26px;
+}
+
+.tips-block .tip4,.about-block .tip4 {
   top: 350px;
   left: 60px;
 }
 
+.tips-block .tip4 .fa,.about-block .tip4 .fa {
+  position: absolute;
+  font-size: 24px;
+  top: -16px;
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
 .tips-block .skip-btn,.about-block .skip-btn {
-  width: 100px;
+  width: 150px;
   height: 40px;
   text-align: center;
   font-size: 20px;
   background: #000;
-  line-height: 40px;
+  line-height: 38px;
   position: absolute;
   left: 50%;
+  font-weight: bold;
   margin-left: -50px;
-  top: 500px;
+  bottom: 50px;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-box-shadow: 0 0px 15px #fff;
+          box-shadow: 0 0px 15px #fff;
+  -webkit-animation-name: pulse-shadow;
+          animation-name: pulse-shadow;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.tips-block .skip-btn:hover,.about-block .skip-btn:hover {
+  cursor: pointer;
+  background: #4d4d50;
 }
 
 .about-block {
@@ -4192,7 +4271,22 @@ body .anim-zone #editor-el {
   margin-top: -250px;
   margin-left: -300px;
   background: rgba(0, 0, 0, 0.9);
-  padding: 20px;
+  padding: 15px 20px;
+}
+
+.about-block .about-wrap h2 {
+  margin: 0;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.about-block .about-wrap h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-block .about-wrap p {
+  text-align: left;
 }
 
 .about-block .about-wrap .text {
@@ -4394,5 +4488,39 @@ body .anim-zone #editor-el {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes pulse-shadow {
+  0% {
+    -webkit-box-shadow: 0 0px 15px #fff;
+            box-shadow: 0 0px 15px #fff;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0px 0px #fff;
+            box-shadow: 0 0px 0px #fff;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0px 15px #fff;
+            box-shadow: 0 0px 15px #fff;
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    -webkit-box-shadow: 0 0px 15px #fff;
+            box-shadow: 0 0px 15px #fff;
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0px 0px #fff;
+            box-shadow: 0 0px 0px #fff;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0px 15px #fff;
+            box-shadow: 0 0px 15px #fff;
   }
 }
