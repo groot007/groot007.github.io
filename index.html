@@ -1078,32 +1078,6 @@
 
 
 
-<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBqan8f7O7XNBs851wlrFgo_4TwgvI7QaE",
-    authDomain: "firefly-ce3a1.firebaseapp.com",
-    databaseURL: "https://firefly-ce3a1.firebaseio.com",
-    projectId: "firefly-ce3a1",
-    storageBucket: "firefly-ce3a1.appspot.com",
-    messagingSenderId: "734288945438"
-  };
-  firebase.initializeApp(config);
-
-  var storage = firebase.storage();
-  var ref = storage.ref().child("anim/animation.txt");
-var message = 'Thi blooov sage.';
-ref.putString(message).then(function(snapshot) {
-
-	$("body").append($("<script src='https://apis.google.com/js/platform.js' async defer><\/script>"))
-	$("body").append($("<div class='g-savetodrive' data-src='https://storage.googleapis.com/firefly-ce3a1.appspot.com/anim/animation.txt'  data-filename='text.txt' data-sitename='My Company Name' </div>"));
-  console.log('Uploaded a raw string!');
-});
-</script>
-
-
-
 
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="ace/ace.js"></script>
