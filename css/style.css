@@ -3836,7 +3836,7 @@ body .anim-zone .edit-anim-el {
 }
 
 body .anim-zone .edit-anim-el.active {
-  width: 300px;
+  width: 350px;
 }
 
 body .anim-zone .edit-anim-el:hover {
@@ -3848,9 +3848,9 @@ body .anim-zone .custom-el {
   top: 26px;
   left: 0;
   z-index: 999;
-  -webkit-transform: translateX(-300px);
-      -ms-transform: translateX(-300px);
-          transform: translateX(-300px);
+  -webkit-transform: translateX(-350px);
+      -ms-transform: translateX(-350px);
+          transform: translateX(-350px);
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
@@ -3866,7 +3866,7 @@ body .anim-zone .custom-el button {
   float: left;
   -webkit-border-radius: 0;
   border-radius: 0;
-  height: 20px;
+  height: 36px;
   font-size: 12px;
   background: #000;
 }
@@ -3876,8 +3876,8 @@ body .anim-zone .custom-el button:hover {
 }
 
 body .anim-zone #editor-el {
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 270px;
 }
 
 .h-border {

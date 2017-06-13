@@ -63,6 +63,7 @@ function pluginEvents (root, $, name) {
 		let inputs = new name();
 		inputs.setAnimObj($(this));
 		inputs.generateString(inputs.getValue());
+
 		setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation", inputs.getCssObj(), inputs.getAnimObj())
 	});

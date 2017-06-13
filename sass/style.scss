@@ -280,7 +280,7 @@ body{
 			transition: all .4s ease-in-out;
 
 			&.active{
-				width: 300px;
+				width: 350px;
 			}
 			&:hover{
 				cursor: pointer;
@@ -291,7 +291,7 @@ body{
 			top: 26px;;
 			left: 0;
 			z-index: 999;
-			transform: translateX(-300px);
+			transform: translateX(-350px);
 			transition: all .4s ease-in-out;
 			&.visible{
 				transform: translateX(0);
@@ -302,7 +302,7 @@ body{
 				float: left;
 				-webkit-border-radius: 0;
 				border-radius: 0;
-				height: 20px;
+				height: 36px;
 				font-size: 12px;
 					background: #000;
 				&:hover{
@@ -311,8 +311,8 @@ body{
 			}
 		}
 		#editor-el{
-			width: 300px;
-			height: 200px;
+			width: 350px;
+			height: 270px;
 		}
 	}
 }
