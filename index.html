@@ -13,11 +13,6 @@
 	<meta name="keywords" CONTENT="firefly, css, анімація,
 	редактор, візуальний редактор, CSS-анімація">
 
-
-
-
-
-
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script> -->
 	<script>
     	// require.config({
@@ -292,10 +287,10 @@
 			<div class="middle-border v-border"></div>
 			<div class="css-block block">
 				<div class="header">
-					<h2><i class="fa fa-code" aria-hidden="true"></i> Animation code</h2>
+					<h2><i class="fa fa-code" aria-hidden="true"></i> Код анімації</h2>
 					<!-- start .export -->
 					<div class="export">
-						<span class="text">експорт</span>
+						<span class="text">Експорт</span>
 						<i class="fa fa-level-up" aria-hidden="true"></i>
 						<!-- start .input-add -->
 						<div class="input-add">
@@ -305,12 +300,12 @@
 						 <!-- end .input-add -->
 					</div>
 					<div class="import">
-						<span>імпорт</span>
+						<span>Імпорт</span>
 						<i class="fa fa-level-down" aria-hidden="true"></i>
 						<input type="file" id="file" accept=".txt,.css">
 					</div>
 					<div class="copy">
-						<span>copy</span>
+						<span>Копіювати</span>
 						<i class="fa fa-files-o" aria-hidden="true"></i>
 						<!-- start .note -->
 						<div class="note">Скопійовано в буфер</div>
@@ -981,7 +976,7 @@
 			</div>
 			 <!-- end .editor-el -->
 			<button class="accept">Примінити</button>
-			<button class="reset">До початкових налаштуваньchoose</button>
+			<button class="reset">Початкові налаштування</button>
 		</div>
 		 <!-- end .custom-el -->
 		<!-- start .wrapper -->
@@ -1074,12 +1069,15 @@
 		 <!-- end .about-wrap -->
 	</div>
 	 <!-- end .tips-block -->
-
+<center>
+        <button id="writeButton">Click to create <code>hello.txt</code> in Dropbox.</button>
+    </center>
 	<!-- <script src="ace/ace.js"></script> -->
 
 	<!-- <script src="libs/jquery.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="ace/ace.js"></script>
 	<script src="js/keyframe.js"></script>
 	<script src="libs/niceSelect/jquery.nice-select.min.js"></script>
@@ -1099,7 +1097,43 @@
 	<script src="js/modules/timeline.js"></script>
 	<script src="js/modules/inputs.js"></script>
 	<script src="js/modules/animzone.js"></script>
-<script src="js/common.js"></script>
+	<script src="js/common.js"></script>
+
+<script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
+ <script>
+        var client = new Dropbox.Client({ key: 'okuaay2byxzteja' });
+
+        function doHelloWorld() {
+            client.writeFile('hello.txt', 'Hello, World!', function (error) {
+                if (error) {
+                    alert('Error: ' + error);
+                } else {
+                    alert('File written successfully!');
+                }
+            });
+        }
+
+        // Try to complete OAuth flow.
+        client.authenticate({ interactive: false }, function (error, client) {
+            if (error) {
+                alert('Error: ' + error);
+            }
+        });
+
+        if (client.isAuthenticated()) {
+            doHelloWorld();
+        }
+
+        document.getElementById('writeButton').onclick = function () {
+            client.authenticate(function (error, client) {
+                if (error) {
+                    alert('Error: ' + error);
+                } else {
+                    doHelloWorld();
+                }
+            });
+        }
+    </script>
 
 
 <script>
