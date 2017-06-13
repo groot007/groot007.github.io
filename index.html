@@ -1069,14 +1069,42 @@
 		 <!-- end .about-wrap -->
 	</div>
 	 <!-- end .tips-block -->
-<center>
-        <button id="writeButton">Click to create <code>hello.txt</code> in Dropbox.</button>
-    </center>
+
 	<!-- <script src="ace/ace.js"></script> -->
 
 	<!-- <script src="libs/jquery.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBqan8f7O7XNBs851wlrFgo_4TwgvI7QaE",
+    authDomain: "firefly-ce3a1.firebaseapp.com",
+    databaseURL: "https://firefly-ce3a1.firebaseio.com",
+    projectId: "firefly-ce3a1",
+    storageBucket: "firefly-ce3a1.appspot.com",
+    messagingSenderId: "734288945438"
+  };
+  firebase.initializeApp(config);
+
+  var storage = firebase.storage();
+  var ref = storage.ref().child("anim/animation.txt");
+var message = 'Thi blooov sage.';
+ref.putString(message).then(function(snapshot) {
+
+	$("body").append($("<script src='https://apis.google.com/js/platform.js' async defer><\/script>"))
+	$("body").append($("<div class='g-savetodrive' data-src='https://storage.googleapis.com/firefly-ce3a1.appspot.com/anim/animation.txt'  data-filename='text.txt' data-sitename='My Company Name' </div>"));
+  console.log('Uploaded a raw string!');
+});
+</script>
+
+
+
+
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="ace/ace.js"></script>
 	<script src="js/keyframe.js"></script>
@@ -1098,43 +1126,6 @@
 	<script src="js/modules/inputs.js"></script>
 	<script src="js/modules/animzone.js"></script>
 	<script src="js/common.js"></script>
-
-<script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
- <script>
-        var client = new Dropbox.Client({ key: 'okuaay2byxzteja' });
-
-        function doHelloWorld() {
-            client.writeFile('hello.txt', 'Hello, World!', function (error) {
-                if (error) {
-                    alert('Error: ' + error);
-                } else {
-                    alert('File written successfully!');
-                }
-            });
-        }
-
-        // Try to complete OAuth flow.
-        client.authenticate({ interactive: false }, function (error, client) {
-            if (error) {
-                alert('Error: ' + error);
-            }
-        });
-
-        if (client.isAuthenticated()) {
-            doHelloWorld();
-        }
-
-        document.getElementById('writeButton').onclick = function () {
-            client.authenticate(function (error, client) {
-                if (error) {
-                    alert('Error: ' + error);
-                } else {
-                    doHelloWorld();
-                }
-            });
-        }
-    </script>
-
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
