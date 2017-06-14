@@ -54,7 +54,7 @@ function pluginEvents (root, $, name) {
 	$(document).on("blur input", "#anim-props input", function(e){
 		let inputs = new name();
 		inputs.setAnimObj($(this));
-		console.log($(this));
+
 		inputs.generateString(inputs.getValue());
 		setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation", inputs.getCssObj(), inputs.getAnimObj())
@@ -107,7 +107,7 @@ function pluginEvents (root, $, name) {
 		$(this).closest(".curve-wrap").addClass("hidden");
 	});
 
-	$(document).on("click", ".nice-select .list li:last-child", function(e){
+	$(document).on("click", "#tf + .nice-select .list li:last-child", function(e){
 		$(".curve-wrap").removeClass("hidden");
 		curveBoundingBox = curve.getBoundingClientRect();
 	});

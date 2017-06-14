@@ -8,8 +8,6 @@ var timer;
 class AnimZone {
 	constructor() {
 		Keyframe = window.Keyframe;
-		console.log(this);
-
 		// this.getElement().html(template());
 	}
 	setItem(){
@@ -30,7 +28,7 @@ class AnimZone {
 		var duration = value["anim"]["animation-duration"] || "1s";
 		var iteration = value["anim"]["animation-iteration-count"] || 1;
 		var timeF = value["anim"]["animation-timinig-function"] || "linear";
-		console.log(timeF)
+
 		var className = value["main"]["className"];
 		$(".progress-block").css({
 			"animation-duration" : duration,

@@ -184,33 +184,7 @@
 							}
 						}
 					}
-					.nice-select{
-						display: inline-block;
-						float: none;
-						height: 20px;
-						line-height: 20px;
-						background: transparent;
-						border-radius: 0;
-						text-align: center !important;
-						border: none;
-						width: 177px;
-						border-left: 1px solid #000;
-						border-bottom: 1px solid #000;
-						.current{
-							display: inline-block;
-							max-width: 90%;
-							overflow: hidden;
-							-ms-text-overflow: ellipsis;
-							text-overflow: ellipsis;
-						}
-						.list{
-							background: #1d1f20;
-							z-index: 11;
-						}
-					}
-					.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus{
-						background: #343436;
-					}
+
 					// #anim-props{
 						label{
 							display: inline-block;
@@ -560,3 +534,5 @@
 			}
 
 		}
+
+

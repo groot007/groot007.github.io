@@ -127,7 +127,6 @@ class Inputs {
 				$(".curve-wrap .save").trigger("click");
 				// $("#anim-props [name='" + key + "']").val(obj[key]);
 			}else{
-				console.log(key, obj[key])
 				$("#anim-props [name='" + key + "']").val(obj[key]);
 			}
 		}

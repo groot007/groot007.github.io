@@ -44,7 +44,8 @@
 	</style>
 </head>
 <body class="">
-	<div id="page-preloader"><span class="spinner"></span></div>
+
+	<!-- <div id="page-preloader"><span class="spinner"></span></div> -->
 	<header>
 		<!-- start .logo-wrap -->
 		<div class="logo-wrap">
@@ -59,24 +60,61 @@
 		</div>
 		 <!-- end .logo-wrap -->
 		 <!-- start .reg-controls -->
-		 <div class="reg-controls">
+		<!-- start .top-menu-wrap -->
+		<div class="top-menu-wrap">
+		 <!-- end .top-menu-wrap -->
+		 <div class="reg-controls line">
 		 	<!-- start .sign-in -->
-		 	<!-- <div class="sign-in">Sign in</div> -->
-		 	<!-- <div class="sign-in">Sign in</div> -->
-		 	<!-- start .change-view -->
-		 	<div class="change-view"><span class="change">Змінити</span> <span class="view">вигляд</span></div>
-		 	<div class="about">
+		 	<div class="for-logined line hidden">
+		 		<div class="save-btn line grey-btn">Зберегти</div>
+		 		<select size=1 name="saved" id="saved">
+					<option value="linear" selected disabled>Мої анімації</option>
+				</select>
+		 		<div class="profile-inf">
+		 			<!-- start .name -->
+		 			<span class="name"></span>
+		 			 <!-- end .name -->
+		 			<img  class="user-photo" src="" alt="" />
+		 		</div>
+		 		<!-- start .link-acount -->
+		 		<div class="link-acount line">
+		 			<a href="#" title="Прив'язати Facebook акаунт" class="fb"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+		 			<a href="#" title="Прив'язати Google акаунт" class="gl"><i class="fa fa-google"  aria-hidden="true"></i></a>
+		 			<a href="#" title="Прив'язати GitHub акаунт" class="gh"><i class="fa fa-github"  aria-hidden="true"></i></a>
+		 		</div>
+		 		 <!-- end .link-acount -->
+		 		<!-- start .sign-out -->
+		 		<div class="sign-out line">
+
+		 			<a href="#" title="Вийти"><i class="fa fa-sign-out" id="out" aria-hidden="true"></i></a>
+
+		 		</div>
+		 		 <!-- end .sign-out -->
+		 	 <!-- end .profile-inf -->
+		 	</div>
+		 	 <!-- end .for-logined -->
+
+		 	<div class="sign-in">
+		 		<span>Увійти через: </span>
+		 		<i class="fa fa-facebook-square" id="fb" aria-hidden="true"></i>
+		 		<i class="fa fa-google" id="gl" aria-hidden="true"></i>
+		 		<i class="fa fa-github" id="gh" aria-hidden="true"></i>
+		 	</div>
+		 	 <!-- end .sign-in -->
+		 </div>
+		<!-- start .other-btns line -->
+		<div class="other-btns line">
+		 <!-- end .other-btns line -->
+		 	<div class="change-view grey-btn"><span class="change">Змінити</span> <span class="view">вигляд</span></div>
+		 	<div class="about grey-btn">
 		 		<span class="">Про автора</span>
 		 	</div>
-		 	<div class="help">
+		 	<div class="help grey-btn">
 		 		<span class="">?</span>
 		 	</div>
-		 	 <!-- end .change-view -->
-		 	 <!-- end .sign-in -->
-		 	 <!-- start .sign-up -->
-		 	 <!-- <div class="sign-up">Sign up</div> -->
-		 	  <!-- end .sign-up -->
+
 		 </div>
+		</div>
 		  <!-- end .reg-controls -->
 	</header>
 	<div class="wrap">
@@ -172,7 +210,7 @@
 							</div>
 							<div class="group">
 								<label for="check2">Часова функція</label>
-								<select size=1 name="animation-timing-function">
+								<select size=1 name="animation-timing-function" id="tf">
 									<option value="linear">linear</option>
 									<option value="ease">ease</option>
 									<option value="ease-in">ease-in</option>
@@ -1084,25 +1122,6 @@
   };
   firebase.initializeApp(config);
 
-  var provider = new firebase.auth.FacebookAuthProvider();
- firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  console.log(user);
-  // ...
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  console.log(error)
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
 </script>
 
 
@@ -1135,6 +1154,8 @@
 	<script src="js/modules/timeline.js"></script>
 	<script src="js/modules/inputs.js"></script>
 	<script src="js/modules/animzone.js"></script>
+	<script src="js/auth.js"></script>
+
 	<script src="js/common.js"></script>
 
 <script>

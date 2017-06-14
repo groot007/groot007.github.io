@@ -86,7 +86,7 @@ class Editor {
 		};
 		rez["anim"] = animParsed;
 		rez["css"] = cssParsed;
-		console.log(rez);
+
 		$(".props-block").inputs("setObj", rez);
 	}
 }
