@@ -1070,14 +1070,48 @@
 	</div>
 	 <!-- end .tips-block -->
 
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBqan8f7O7XNBs851wlrFgo_4TwgvI7QaE",
+    authDomain: "firefly-ce3a1.firebaseapp.com",
+    databaseURL: "https://firefly-ce3a1.firebaseio.com",
+    projectId: "firefly-ce3a1",
+    storageBucket: "firefly-ce3a1.appspot.com",
+    messagingSenderId: "734288945438"
+  };
+  firebase.initializeApp(config);
+
+  var provider = new firebase.auth.FacebookAuthProvider();
+ firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+</script>
+
+
+
+
+
 	<!-- <script src="ace/ace.js"></script> -->
 
 	<!-- <script src="libs/jquery.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
-
-
-
 
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="ace/ace.js"></script>
