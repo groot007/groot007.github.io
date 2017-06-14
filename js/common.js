@@ -323,6 +323,6 @@ $(window).on('load', function () {
     var $preloader = $('#page-preloader'),
         $spinner   = $preloader.find('.spinner');
     $spinner.fadeOut();
-    $preloader.delay(200).fadeOut('slow');
+    $preloader.delay(100).fadeOut('slow');
 
 });
