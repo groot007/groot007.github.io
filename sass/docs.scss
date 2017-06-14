@@ -35,11 +35,32 @@ body.documentation{
 	.wrap{
 		width: 80%;
 		margin: 0 auto;
+		padding: 20px 15px;
 		text-align: center;
+		background: $headerBg;
 		section{
 			display: flex;
 			flex-direction: row;
 			align-items: stretch;
+			&.curve{
+				img{
+					max-width: 230px;
+				}
+			}
+			img{
+				max-width: 500px;
+				box-shadow: 0 0 10px rgba(0,0,0,.7);
+			}
+			strong{
+				display: inline-block;
+				margin-bottom: 20px;
+			}
+			ol{
+				text-align: left;
+				li{
+					margin-bottom: 15px;
+				}
+			}
 		}
 		.left{
 			flex: 1;
@@ -48,8 +69,12 @@ body.documentation{
 			flex: 1;
 		}
 		h2{
+			margin-top: 0;
 			margin-bottom: 20px;
 			font-size: 24px;
+		}
+		.deskr{
+			text-align: left;
 		}
 		.video-inst{
 			// text-align: center;
@@ -63,5 +88,10 @@ body.documentation{
 			}
 		}
 
+	}
+	.copyright{
+		padding: 10px 0;
+		background: #131415;
+		text-align: center;
 	}
 }

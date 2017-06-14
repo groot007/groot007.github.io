@@ -4339,7 +4339,9 @@ body.documentation .header .logo span.version {
 body.documentation .wrap {
   width: 80%;
   margin: 0 auto;
+  padding: 20px 15px;
   text-align: center;
+  background: #1a1c1d;
 }
 
 body.documentation .wrap section {
@@ -4358,6 +4360,29 @@ body.documentation .wrap section {
           align-items: stretch;
 }
 
+body.documentation .wrap section.curve img {
+  max-width: 230px;
+}
+
+body.documentation .wrap section img {
+  max-width: 500px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+body.documentation .wrap section strong {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+body.documentation .wrap section ol {
+  text-align: left;
+}
+
+body.documentation .wrap section ol li {
+  margin-bottom: 15px;
+}
+
 body.documentation .wrap .left {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -4373,8 +4398,13 @@ body.documentation .wrap .right {
 }
 
 body.documentation .wrap h2 {
+  margin-top: 0;
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+body.documentation .wrap .deskr {
+  text-align: left;
 }
 
 body.documentation .wrap .video-inst {
@@ -4397,6 +4427,12 @@ body.documentation .wrap .video-inst video {
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
+}
+
+body.documentation .copyright {
+  padding: 10px 0;
+  background: #131415;
+  text-align: center;
 }
 
 .tips-block,.about-block {
