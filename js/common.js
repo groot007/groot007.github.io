@@ -153,7 +153,7 @@ $(document).on("ready", function(){
 		$("body").removeClass("fixed");
 	});
 
-	$(document).on("click", ".reg-controls .help", function(e){
+	$(document).on("click", ".top-menu-wrap .help", function(e){
 		updateTips();
 		$(".tips-block").removeClass("hide");
 		$("body").addClass("fixed");
@@ -173,7 +173,7 @@ $(document).on("ready", function(){
 		}
 	});
 
-	$(document).on("click", ".reg-controls .about", function(e){
+	$(document).on("click", ".top-menu-wrap .about", function(e){
 		var b = $(".about-block");
 		b.removeClass("hide");
 	});
@@ -319,10 +319,10 @@ function handleFileSelect(evt) {
 });
 
 
-// $(window).on('load', function () {
-//     var $preloader = $('#page-preloader'),
-//         $spinner   = $preloader.find('.spinner');
-//     $spinner.fadeOut();
-//     $preloader.delay(200).fadeOut('slow');
+$(window).on('load', function () {
+    var $preloader = $('#page-preloader'),
+        $spinner   = $preloader.find('.spinner');
+    $spinner.fadeOut();
+    $preloader.delay(200).fadeOut('slow');
 
-// });
+});
