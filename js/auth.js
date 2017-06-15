@@ -1,4 +1,4 @@
-
+(function() {
 
 $(document).on("click", "#fb", function(){
   var provider = new firebase.auth.FacebookAuthProvider();
@@ -168,7 +168,11 @@ $(document).on("click", ".save-btn", function(){
   var user = firebase.auth().currentUser;
   var value = $(".props-block").inputs("getValue");
   var animName = value.anim["animation-name"];
-  firebase.database().ref('users/' + user.uid + '/animations/' +  animName).set(value);
+  user = firebase.auth().currentUser;
+  value = $(".props-block").inputs("getValue");
+  db = firebase.database();
+  node = ref('users/' + user.uid + '/animations/' +  animName)
+  node.set(value);
 })
 
 $(document).on("click", "#saved+div li", function(){
@@ -181,3 +185,6 @@ $(document).on("click", "#saved+div li", function(){
       $(".props-block").inputs("setObj", snapshot.val()[value]);
   });
 })
+
+
+})();

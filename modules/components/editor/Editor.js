@@ -53,9 +53,9 @@ class Editor {
 
 		var className = /\.\w+/.exec(this.getValue())[0].replace(/\./, "");
 		anim = /(?:.+){([^\}]*)}/.exec(this.getValue())[0];
-		css = this.getValue().match(/(\d+%)\s+{([\s\w:;().\-,]+)}/g);
+		css = this.getValue().match(/(\d+%)\s+{([^}]*)}/g);
 
-		animProps = /{([\s\w:;()-.,]+)[^}\s]/.exec(anim)[0].replace(/[{\s]+/, "").split(";");
+		animProps = /{([\s\S]+)}/.exec(anim)[0].replace(/[{\s]+/, "").split(";");
 
 		for(var k = 0; k < animProps.length - 1; k++){
 			animParsed[$.trim(animProps[k].split(":")[0])] = $.trim(animProps[k].split(":")[1])
@@ -63,7 +63,7 @@ class Editor {
 
 		for(var i = 0; i < css.length; i++){
 			var props = {};
-			var values = css[i].match(/[^%{\s\d]([\s\w:;().,\-]+)[^}]/);
+			var values = css[i].match(/[^%{\s\d]([^}]*)[^}]/);
 			if(!values){
 				values = "";
 				cssNotParse[i] = values;
@@ -86,7 +86,7 @@ class Editor {
 		};
 		rez["anim"] = animParsed;
 		rez["css"] = cssParsed;
-
+		console.log(rez);
 		$(".props-block").inputs("setObj", rez);
 	}
 }

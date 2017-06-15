@@ -10,8 +10,8 @@ function pluginEvents (root, $, name) {
 			$("<div class='group'> <label for=''>top</label><input value='0px' name='top'></input></div>")
 			.appendTo("#css-props .keyframe-tab.active");
 		}
-		left.val(ui.position.left + "px");
-		top.val(ui.position.top + "px");
+		left.val(Math.round(ui.position.left * 100) / 100 + "px");
+		top.val(Math.round(ui.position.top * 100) / 100 + "px");
 		left.trigger("input");
 	}});
 }
