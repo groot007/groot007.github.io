@@ -168,11 +168,7 @@ $(document).on("click", ".save-btn", function(){
   var user = firebase.auth().currentUser;
   var value = $(".props-block").inputs("getValue");
   var animName = value.anim["animation-name"];
-  user = firebase.auth().currentUser;
-  value = $(".props-block").inputs("getValue");
-  db = firebase.database();
-  node = ref('users/' + user.uid + '/animations/' +  animName)
-  node.set(value);
+  firebase.database().ref('users/' + user.uid + '/animations/' +  animName).set(value);
 })
 
 $(document).on("click", "#saved+div li", function(){
