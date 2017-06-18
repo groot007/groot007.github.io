@@ -98,7 +98,7 @@ $("#anim-element").on("click", function(e){
 });
 
 $(document).on("click", function(e){
-    if(!$(e.target).closest("#anim-element").length){
+    if(!$(e.target).closest("#anim-element").length && !$(e.target).closest(".hcp-color-picker").length){
         $("#anim-element").find(".control").addClass("hidden");
     }
 });

@@ -4646,6 +4646,9 @@ body.documentation .copyright {
   padding: 3px 5px;
   display: inline-block;
   border: none;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 
 .anim-element .control {
