@@ -19,7 +19,8 @@ class Inputs {
 		var string = this.getString();
 		localStorage.setItem('css-animation', string);
 		$("#editor").editor("setValue", string);
-		$(".anim-zone").animZone("setPropsAnimation", obj["main"])
+		$(".anim-zone").animZone("setPropsAnimation")
+		$(".anim-zone").animZone("setState")
 
 	}
 	render(setText){
@@ -89,6 +90,7 @@ class Inputs {
 	}
 
 	generateString(obj){
+		var obj = obj || this.getValue();
 		var name = obj["anim"]["animation-name"] || "example";
 		var className = obj["main"]["className"] || "className";
 		var animStr = "." + className + "{\n";

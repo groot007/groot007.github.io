@@ -72,6 +72,9 @@ function pluginEvents (root, $, name) {
 	$(document).on("input blur", "#css-props input", function(e){
 		let inputs = new name();
 		inputs.setCssObj();
+		$(".props-block").inputs("generateString");
+		var string = $(".props-block").inputs("getString");
+		localStorage.setItem('css-animation', string);
 		// inputs.generateString(inputs.getValue());
 		// setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation")
@@ -91,7 +94,11 @@ function pluginEvents (root, $, name) {
 	$(document).on("click", ".delete-input", function(e){
 		$(this).closest(".group").remove();
 		$(".props-block").inputs("setCssObj");
-
+		$(".props-block").inputs("generateString");
+		var string = $(".props-block").inputs("getString");
+		localStorage.setItem('css-animation', string);
+		$(".anim-zone").animZone("setPropsAnimation")
+		$(".anim-zone").animZone("setState");
 		// var value = $(".props-block").inputs("getValue");
 		// $(".props-block").inputs("setObj", value);
 	});

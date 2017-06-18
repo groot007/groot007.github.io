@@ -60,9 +60,13 @@ class AnimZone {
 	}
 	animationStop(){
 		var className = $(".props-block").inputs("getValue")["main"]["className"];
+		var active = $(".timeline").timeline("getActiveItem");
+		var css = $(".props-block").inputs("getValue")["css"][active];
 		$(".timeline .anim-controls .resume, .timeline .anim-controls .pause").addClass("hidden");
 		$(".timeline .anim-controls .play").removeClass("hidden");
 		$("#anim-element").removeClass(className + " pause resume");
+
+		$("#anim-element").css(css);
 		$(".timeline .empty-frame").removeClass("progress");
 		$(".progress-block").removeClass("play pause running")
 	}
@@ -85,6 +89,10 @@ var progress = $(".progress-block")[0];
     	$(".timeline .anim-controls .pause, .timeline .anim-controls .resume").addClass("hidden");
     	$(".timeline .anim-controls .play").removeClass("hidden");
     	$("#anim-element").removeClass(className);
+
+    	var active = $(".timeline").timeline("getActiveItem");
+		var css = $(".props-block").inputs("getValue")["css"][active];
+		$("#anim-element").css(css);
     	clearInterval(timer);
  }
  function stopProgress(){

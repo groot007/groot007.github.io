@@ -75,7 +75,7 @@ body{
 
 			}
 			.css-block{
-				margin-top: 18px;
+				margin-top: 15px;
 			}
 		}
 	}
@@ -648,6 +648,85 @@ body{
 	background: #343436;
 }
 
+.colors{
+	position: absolute;
+	left: -120px;
+	top: 40%;
+	width: 100px;
+	input{
+		max-width: 100%;
+		padding: 3px 5px;
+		display: inline-block;
+		border: none;
+	}
+}
+
+.anim-element .control{
+	display: block;
+	&.hidden{
+		display: none !important;
+	}
+}
+.resizable {
+    border: 1px dashed #ddd;
+    position: relative;
+    min-height: 50px;
+}
+.handle{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	right: -20px;
+	top: -20px;
+	color: #000;
+}
+.ui-resizable-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    position: absolute;
+}
+.ui-resizable-nw {
+    left: -5px;
+    top: -5px;
+    cursor: nw-resize;
+}
+.ui-resizable-ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+.ui-resizable-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+.ui-resizable-se {
+    bottom: -5px;
+    right:-5px;
+    cursor: se-resize;
+}
+.ui-resizable-n {
+    top: -5px;
+    left:50%;
+    cursor: n-resize;
+}
+.ui-resizable-s {
+    bottom: -5px;
+    left: 50%;
+    cursor: s-resize;
+}
+.ui-resizable-w {
+    left:-5px;
+    top:calc(50% - 5px);
+    cursor: w-resize;
+}
+.ui-resizable-e {
+    right:-5px;
+    top:calc(50% - 5px);
+    cursor: e-resize;
+}
 
 
 @keyframes hinge {
