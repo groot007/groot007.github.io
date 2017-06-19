@@ -21,7 +21,17 @@
    },
    {
       "id":"4",
-      "name":"flipOutY",
+      "name":"flip-out-y",
+      "updated":null
+   },
+   {
+      "id":"5",
+      "name":"shake-it",
+      "updated":null
+   },
+   {
+      "id":"6",
+      "name":"slide-down",
       "updated":null
    }
 ]

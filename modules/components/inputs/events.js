@@ -8,7 +8,7 @@ function pluginEvents (root, $, name) {
 	// 	let inputs = new name();
 	// 	inputs.setProps();
 	// });
-	$(document).on("mousewheel", "#css-props input", function(event, delta) {
+	$(document).on("mousewheel", "#css-props input[name='left'], #css-props input[name='top'], #css-props input[name='opacity'], #css-props input[name='width'], #css-props input[name='height']", function(event, delta) {
 		var num =  /-\d+|\d+/.exec($(this).val()) || 0;
 		var pre =  /\D+$/.exec($(this).val()) || "";
 
@@ -28,7 +28,7 @@ function pluginEvents (root, $, name) {
 		down = false;
 	});
 
-	$(document).on("mousedown","#css-props input", function(){
+	$(document).on("mousedown","#css-props input[name='left'], #css-props input[name='top'], #css-props input[name='opacity'], #css-props input[name='width'], #css-props input[name='height']", function(){
 		down = true;
 		$input = $(this);
 	});

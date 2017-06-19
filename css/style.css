@@ -4634,14 +4634,20 @@ body.documentation .copyright {
   background: #343436;
 }
 
-.colors {
+#anim-element .colors {
   position: absolute;
   left: -120px;
   top: 40%;
   width: 100px;
+  color: #000;
 }
 
-.colors input {
+#anim-element .colors span {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+#anim-element .colors input {
   max-width: 100%;
   padding: 3px 5px;
   display: inline-block;

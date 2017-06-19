@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>FIREFLY - CSS-редактор </title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<meta charset="UTF-8">
+
+
+	<meta name="description" CONTENT="FireFly - візуальний редактор CSS-анімації,
+	що дозволить вам без особливих зусиль створити свою анімацію. Або ж редагувати
+	вже існуючу анімацію з будь-якої популярної бібліотеки">
+	<meta name="keywords" CONTENT="firefly, css, анімація,
+	редактор, візуальний редактор, CSS-анімація">
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script> -->
+	<script>
+    	// require.config({
+	    //     paths: {
+	    //         "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min",
+	    //         "ace": "./ace/ace",
+	    //         "keyframe": "./js/keyframe",
+	    //         "niceSelect": "./libs/niceSelect/jquery.nice-select.min",
+	    //     },
+
+	    // });
+	</script>
+	<style>
+		body.anim{
+
+		}
+		body .wrap{
+			height: 100vh;
+			width: 100%;
+			background: #000;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			  flex-direction:column;
+			  justify-content:center;
+		}
+		h1{
+			font-size: 58px;
+			display: inline-block;
+		}
+		span{
+			display: inline-block;
+		}
+
+
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(0, 10px, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -300%, 0);
+    visibility: visible;
+
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+}
+
+.slideInDown {
+	animation-duration: .2s;
+animation-delay: 2s;
+ visibility: hidden;
+ animation-fill-mode: forwards;
+  animation-name: slideInDown;
+}
+/*.slideInDown.second{
+	animation-duration: .5s;
+	animation-delay: 3s;
+  animation-name: slideInDown;
+}*/
+
+.shake {
+	animation-duration: .5s;
+	animation-delay: 2.2s;
+  animation-iteration-count: 2;
+  animation-name: shake;
+}
+	</style>
+</head>
+<body class="anim">
+<!-- start .wrap -->
+<div class="wrap">
+	<h1><span class="main shake">Візуальний редактор </span> <span class="css slideInDown">CSS</span><span class="second slideInDown">-анімації</span></h1>
+
+</div>
+ <!-- end .wrap -->
+
+</body>
+</html>

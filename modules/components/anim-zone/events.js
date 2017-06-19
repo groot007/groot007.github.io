@@ -127,10 +127,11 @@ $("#anim-element .handle").on("mousedown", function (e) {
 
 });
 $(document).on("mousemove", function(e){
+  e.preventDefault();
     console.log(mouseDown)
     if(mouseDown ==true){
-        var center_x = (offset.left) + ((img.width() + 100) / 2);
-        var center_y = (offset.top) + ((img.height() + 100)/ 2);
+        var center_x = (offset.left) + ((img.width() - 50) / 2);
+        var center_y = (offset.top) + ((img.height() - 50)/ 2);
         var mouse_x = e.pageX;
         var mouse_y = e.pageY;
         var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);

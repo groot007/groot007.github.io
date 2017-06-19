@@ -648,11 +648,17 @@ body{
 	background: #343436;
 }
 
-.colors{
+#anim-element .colors{
 	position: absolute;
 	left: -120px;
 	top: 40%;
 	width: 100px;
+	color: #000;
+	span{
+		font-weight: 600;
+	font-size: 12px;
+	}
+
 	input{
 		max-width: 100%;
 		padding: 3px 5px;
