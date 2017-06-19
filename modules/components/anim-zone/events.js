@@ -110,7 +110,7 @@ $("#anim-element .handle").on("mousedown", function (e) {
     transformOrigin = $(".keyframe-tab.active input[name='transform-origin']");
     mouseDown=true;
     if(!transform.length){
-         $("<div class='group'> <label for=''>transform</label><input value='(0)' name='transform'></input></div>")
+         $("<div class='group'> <label for=''>transform</label><input value='rotate(0deg)' name='transform'></input></div>")
          .appendTo("#css-props .keyframe-tab.active");
          transform = $(".keyframe-tab.active input[name='transform']");
         }
