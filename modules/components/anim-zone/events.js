@@ -136,9 +136,10 @@ $(document).on("mousemove", function(e){
         var mouse_y = e.pageY;
         var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
         var degree = (radians * (180 / Math.PI) * -1) + 90;
+
         img.css('transform', 'rotate(' + degree + 'deg)');
         img.css('transform-origin', '50% 50%');
-            transform.val("rotate("+ degree  +"deg)");
+            transform.val("rotate("+ Math.round(degree * 100) / 100  +"deg)");
             transform.trigger("input");
         }
 
