@@ -1,9 +1,0 @@
-@import "bourbon";
-@include font-face("OpenSans", "../fonts/OpenSans/OpenSansExtraBold/OpenSansExtraBold", 800, $file-formats: eot woff ttf)
-@include font-face("OpenSans", "../fonts/OpenSans/OpenSansBold/OpenSansBold", 700, $file-formats: eot woff ttf)
-@include font-face("OpenSans", "../fonts/OpenSans/OpenSansSemiBold/OpenSansSemiBold", 600, $file-formats: eot woff ttf)
-@include font-face("OpenSans", "../fonts/OpenSans/OpenSansLightItalic/OpenSansLightItalic", 300, italic, $file-formats: eot woff ttf)
-@include font-face("OpenSans", "../fonts/OpenSans/OpenSansLight/OpenSansLight", $file-formats: eot woff ttf)
-@include font-face("Impact", "../fonts/ImpactRegular/ImpactRegular", $file-formats: eot woff ttf)
-// @include font-face("Exo2", "../fonts/Exo2/Exo2Light/Exo2Light", $file-formats: eot woff ttf)
-// @include font-face("Exo2", "../fonts/Exo2/Exo2Bold/Exo2Bold", bold, $file-formats: eot woff ttf)
