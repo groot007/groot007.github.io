@@ -167,7 +167,7 @@ header > p {
 	}
 
 	.coordinate-plane:before {
-		content: 'Progression';
+		content: 'Прогрес';
 
 		border-bottom: 1px solid;
 
@@ -184,17 +184,17 @@ header > p {
 	}
 
 	.coordinate-plane:after {
-		content: 'Time';
+		content: 'Час';
 		border-top: 1px solid;
 		margin-bottom: -1.5em;
 	}
 
 	.coordinate-plane:hover:before {
-		content: 'Progression (' attr(data-progression) '%)';
+		content: 'Прогрес (' attr(data-progression) '%)';
 	}
 
 	.coordinate-plane:hover:after {
-		content: 'Time (' attr(data-time) '%)';
+		content: 'Час (' attr(data-time) '%)';
 	}
 
 .control-point {

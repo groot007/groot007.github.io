@@ -8,7 +8,7 @@ function pluginEvents (root, $, name) {
 	// 	let inputs = new name();
 	// 	inputs.setProps();
 	// });
-	$(document).on("mousewheel", "#css-props input", function(event, delta) {
+	$(document).on("mousewheel", "#css-props input[name='left'], #css-props input[name='top'], #css-props input[name='opacity'], #css-props input[name='width'], #css-props input[name='height']", function(event, delta) {
 		var num =  /-\d+|\d+/.exec($(this).val()) || 0;
 		var pre =  /\D+$/.exec($(this).val()) || "";
 
@@ -28,7 +28,7 @@ function pluginEvents (root, $, name) {
 		down = false;
 	});
 
-	$(document).on("mousedown","#css-props input", function(){
+	$(document).on("mousedown","#css-props input[name='left'], #css-props input[name='top'], #css-props input[name='opacity'], #css-props input[name='width'], #css-props input[name='height']", function(){
 		down = true;
 		$input = $(this);
 	});
@@ -54,7 +54,7 @@ function pluginEvents (root, $, name) {
 	$(document).on("blur input", "#anim-props input", function(e){
 		let inputs = new name();
 		inputs.setAnimObj($(this));
-		console.log($(this));
+
 		inputs.generateString(inputs.getValue());
 		setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation", inputs.getCssObj(), inputs.getAnimObj())
@@ -63,6 +63,7 @@ function pluginEvents (root, $, name) {
 		let inputs = new name();
 		inputs.setAnimObj($(this));
 		inputs.generateString(inputs.getValue());
+
 		setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation", inputs.getCssObj(), inputs.getAnimObj())
 	});
@@ -71,6 +72,9 @@ function pluginEvents (root, $, name) {
 	$(document).on("input blur", "#css-props input", function(e){
 		let inputs = new name();
 		inputs.setCssObj();
+		$(".props-block").inputs("generateString");
+		var string = $(".props-block").inputs("getString");
+		localStorage.setItem('css-animation', string);
 		// inputs.generateString(inputs.getValue());
 		// setTimeout(function(){$("#editor").editor("setValue", inputs.getString());}, false);
 		$(".anim-zone").animZone("setPropsAnimation")
@@ -90,7 +94,11 @@ function pluginEvents (root, $, name) {
 	$(document).on("click", ".delete-input", function(e){
 		$(this).closest(".group").remove();
 		$(".props-block").inputs("setCssObj");
-
+		$(".props-block").inputs("generateString");
+		var string = $(".props-block").inputs("getString");
+		localStorage.setItem('css-animation', string);
+		$(".anim-zone").animZone("setPropsAnimation")
+		$(".anim-zone").animZone("setState");
 		// var value = $(".props-block").inputs("getValue");
 		// $(".props-block").inputs("setObj", value);
 	});
@@ -106,7 +114,7 @@ function pluginEvents (root, $, name) {
 		$(this).closest(".curve-wrap").addClass("hidden");
 	});
 
-	$(document).on("click", ".nice-select .list li:last-child", function(e){
+	$(document).on("click", "#tf + .nice-select .list li:last-child", function(e){
 		$(".curve-wrap").removeClass("hidden");
 		curveBoundingBox = curve.getBoundingClientRect();
 	});

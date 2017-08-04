@@ -121,7 +121,7 @@ $(document).on("ready", function(){
 	  	}else{
 	  		$( "<style id='custom'>" + styles + "</style>" ).appendTo( "head" );
 	  	}
-	  	$("#anim-element").empty();
+	  	$("#anim-element>*:not(.control)").remove();
 	  	$("#anim-element").append($(html));
 	});
 
@@ -153,7 +153,7 @@ $(document).on("ready", function(){
 		$("body").removeClass("fixed");
 	});
 
-	$(document).on("click", ".reg-controls .help", function(e){
+	$(document).on("click", ".top-menu-wrap .help", function(e){
 		updateTips();
 		$(".tips-block").removeClass("hide");
 		$("body").addClass("fixed");
@@ -173,7 +173,7 @@ $(document).on("ready", function(){
 		}
 	});
 
-	$(document).on("click", ".reg-controls .about", function(e){
+	$(document).on("click", ".top-menu-wrap .about", function(e){
 		var b = $(".about-block");
 		b.removeClass("hide");
 	});
@@ -316,6 +316,53 @@ function handleFileSelect(evt) {
 	}
 
 	updateTips();
+
+ 	$('.bg-color').colorPicker({
+ 		 doRender: "#anim-element",
+	 	renderCallback: function($elm, toggled) {
+	 		var bg = $(".keyframe-tab.active input[name='background-color']");
+	         if (toggled === true) { // simple, lightweight check
+       		 // ... like an open callback
+
+
+	    		if(!bg.length){
+	    			$("<div class='group'> <label for=''>background-color</label><input value='#fff' name='background-color'></input></div>")
+					.appendTo("#css-props .keyframe-tab.active");
+	    		}
+				bg.trigger("input");
+		    } else if (toggled === false) {
+		        // ... like a close callback
+		    } else {
+		    	bg.val($elm.text);
+		    	bg.trigger("input");
+		        $("#anim-element").css("background-color", $elm.text);
+		    };
+	    }
+	 });
+	 $('.color').colorPicker({
+	 	renderCallback: function($elm, toggled) {
+	 		var color = $(".keyframe-tab.active input[name='color']");
+	         if (toggled === true) { // simple, lightweight check
+       		 // ... like an open callback
+
+
+	    		if(!color.length){
+	    			$("<div class='group'> <label for=''>color</label><input value='#fff' name='color'></input></div>")
+					.appendTo("#css-props .keyframe-tab.active");
+	    		}
+				color.trigger("input");
+		    } else if (toggled === false) {
+		        // ... like a close callback
+		    } else {
+		    	color.val($elm.text);
+		    	color.trigger("input");
+		        $("#anim-element").css("color", $elm.text);
+		    };
+
+	    }
+	 });
+
+	// $('.handle').propeller({inertia: 0, speed: 0})
 });
 
 
@@ -323,6 +370,6 @@ $(window).on('load', function () {
     var $preloader = $('#page-preloader'),
         $spinner   = $preloader.find('.spinner');
     $spinner.fadeOut();
-    $preloader.delay(200).fadeOut('slow');
+    $preloader.delay(100).fadeOut('slow');
 
 });

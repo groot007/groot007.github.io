@@ -19,7 +19,8 @@ class Inputs {
 		var string = this.getString();
 		localStorage.setItem('css-animation', string);
 		$("#editor").editor("setValue", string);
-		$(".anim-zone").animZone("setPropsAnimation", obj["main"])
+		$(".anim-zone").animZone("setPropsAnimation")
+		$(".anim-zone").animZone("setState")
 
 	}
 	render(setText){
@@ -39,20 +40,21 @@ class Inputs {
 			else{
 				animObj[$(elem).attr("name")] = $(elem).val();
 			}
-			console.log(animObj, 1)
-			return;
+		}else{
+			$("#anim-props .group").each(function(i, el){
+				var elem = $(el).find("input");
+				if($(elem).attr("name") == "name"){
+					mainObj["name"] = $(elem).val();
+				}else if ($(elem).attr("type") == "number"){
+					animObj[$(elem).attr("name")] = +$(elem).val();
+				}else{
+					animObj[$(elem).attr("name")] = $(elem).val();
+				}
+			});
 		}
-		$("#anim-props .group").each(function(i, el){
-			var elem = $(el).find("input");
-			if($(elem).attr("name") == "name"){
-				mainObj["name"] = $(elem).val();
-			}else if ($(elem).attr("type") == "number"){
-				animObj[$(elem).attr("name")] = +$(elem).val();
-			}else{
-				animObj[$(elem).attr("name")] = $(elem).val();
-			}
-		});
-
+		this.generateString(this.getValue());
+		var string = this.getString();
+		localStorage.setItem('css-animation', string);
 	}
 
 	getAnimObj(){
@@ -88,6 +90,7 @@ class Inputs {
 	}
 
 	generateString(obj){
+		var obj = obj || this.getValue();
 		var name = obj["anim"]["animation-name"] || "example";
 		var className = obj["main"]["className"] || "className";
 		var animStr = "." + className + "{\n";
@@ -123,7 +126,8 @@ class Inputs {
 			if (key == "animation-timing-function" && /\d/.test(obj[key])){
 				var cubic = [0.215, 0.610, 0.355, 1.000];
 				renderCurve(cubic);
-				$(".curve-wrap .cancel").trigger("click");
+				$(".curve-wrap .save").trigger("click");
+				// $("#anim-props [name='" + key + "']").val(obj[key]);
 			}else{
 				$("#anim-props [name='" + key + "']").val(obj[key]);
 			}
