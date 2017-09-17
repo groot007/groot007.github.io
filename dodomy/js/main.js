@@ -8,14 +8,26 @@ $(function(){
 		$(this).closest(".mmenu").removeClass("mmenu--opened");
 	});
 
+	$(".catalog__item").on('mouseleave', function (e) {
+		var that = $(this);
 
-	$(".catalog__item").on('touchstart', function () {
+		if ($(e.target).is(that)) return;
+		setTimeout(function(){
+			that.removeClass("catalog__item--active")
+		}, 200);
+	});
+	$(".catalog__item").on('touchstart ', function () {
         $(this).data('moved', '0');
     })
     .on('touchmove', function () {
         $(this).data('moved', '1');
     })
-    .on('touchend', function () {
+    .on('touchend mouseenter', function (e) {
+    	// console.log(e.type);
+    	if (e.type == "mouseenter" && $(window).width() > 750){
+    		$(this).addClass("catalog__item--active");
+           $(this).find('.slider-brands').slick("setPosition");
+    	}
         if($(this).data('moved') == 0
         	&& $(this).find(".dropdown-menu").length){
            $(this).addClass("catalog__item--active");
@@ -32,11 +44,12 @@ $(function(){
 		}
 	});
 
+
 	$("#lang").niceSelect();
 
 //  ========= SLIDERs  ========
 	$('.slider-brands').slick({
-	  dots: true,
+	  dots: false,
 	  infinite: false,
 	  speed: 300,
 	  slidesToShow: 4,
@@ -91,8 +104,8 @@ $(function(){
 	  slidesToScroll: 1,
 	  waitForAnimate: false,
 	  infinite: true,
-	  nextArrow: "<div class='slick-arrows arrow-next'><i class='arrow-right'></i><i class='circle'></i></div>",
-	  prevArrow: "<div class='slick-arrows arrow-prev'><i class='arrow-left'></i><i class='circle'></i></div>",
+	  nextArrow: "<div class='slick-arrows arrow-next'><i class='angle-right'></i><i class='circle'></i></div>",
+	  prevArrow: "<div class='slick-arrows arrow-prev'><i class='angle-left'></i><i class='circle'></i></div>",
 	});
 
 	$('.main-slider').slick("setPosition");
