@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'custom-font';
   src:
-    url('../fonts/custom-font/fonts/custom-font.ttf?nh0zm0') format('truetype'),
-    url('../fonts/custom-font/fonts/custom-font.woff?nh0zm0') format('woff'),
-    url('../fonts/custom-font/fonts/custom-font.svg?nh0zm0#custom-font') format('svg');
+    url('fonts/custom-font.ttf?ksegsk') format('truetype'),
+    url('fonts/custom-font.woff?ksegsk') format('woff'),
+    url('fonts/custom-font.svg?ksegsk#custom-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -107,4 +107,16 @@ i {
 }
 .angle-double-up:before {
   content: "\f102";
+}
+.angle-left:before {
+  content: "\f104";
+}
+.angle-right:before {
+  content: "\f105";
+}
+.angle-up:before {
+  content: "\f106";
+}
+.angle-down:before {
+  content: "\f107";
 }
