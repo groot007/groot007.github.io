@@ -1,0 +1,512 @@
+@import "mobile/_main.scss";
+
+
+.rec-category{
+	margin-top: 50px;
+	@include min(1024px){
+		margin-top: 100px;
+	}
+
+	[class*="col-"]{
+		padding: 0 5px;
+
+	}
+	&__h-head{
+		margin-bottom: 50px;
+	}
+
+}
+
+
+
+.item-rec-category{
+	background-color: #f8f8f8;
+	padding: 10px;
+	min-height: 300px;
+	height: 300px;
+	margin-bottom: 10px;
+	display: inline-block;
+	text-decoration: none;
+	text-align: left;
+	transition: background-color .4s ease-in-out;
+	@include min(1024px){
+		padding: 40px 25px;
+	}
+	&:hover{
+		background-color: #e8edf2;
+	}
+
+	&__title{
+		padding: 0;
+		text-transform: uppercase;
+		font-size: 26px;
+		color: $grey333;
+		margin-top: 0;
+		font-family: "ProximaNovaExtraBold";
+	}
+
+	&__sub-title{
+		max-width: 100%;
+		color : #777;
+		width: 65%;
+		@include min(993px){
+			width: 50%;
+		}
+		@include min(1024px){
+			width: 65%;
+		}
+	}
+
+	&__details{
+		color: $grey333;
+	}
+
+	&--lamps{
+		background-image: url(../img/rec-category/lamps.png);
+		background-position: right -230px top -10px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -150px top -10px;
+		}
+	}
+
+	&--sofa{
+		background-image: url(../img/rec-category/sofa.png);
+		background-position: right -180px bottom -30px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -100px bottom -30px;
+		}
+	}
+	&--commode{
+		background-image: url(../img/rec-category/commode.png);
+		background-position: right -150px bottom -10px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -90px bottom -10px;
+		}
+	}
+	&--kitchen{
+		background-image: url(../img/rec-category/kitchen.png);
+		background-position: right -165px bottom -70px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -95px bottom -40px;
+		}
+	}
+	&--pouf{
+		background-image: url(../img/rec-category/pouf.png);
+		background-position: right -65px bottom -40px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -15px bottom -40px;
+		}
+	}
+	&--bedroom{
+		background-image: url(../img/rec-category/bedroom.png);
+		background-position: right -120px bottom -70px;
+		background-repeat: no-repeat;
+		@include min(993px){
+			background-position: right -80px bottom -40px;
+		}
+	}
+
+	&--order{
+		padding: 50px 40px;
+		background: $links-color;
+		text-align: center;
+		display: flex;
+		min-height: 300px;
+		align-items: center;
+		margin-left: 0px;
+		&:hover{
+			background: $links-color;
+		}
+		.item-rec-category__title{
+			margin: 0;
+			display: inline-block;
+			text-align: left;
+			font-weight: 400;
+			color: #fff;
+			text-transform: none;
+			padding-left: 60px;
+			background: url(../img/mobile/rec-category/puzzle.png) no-repeat left center;
+		}
+	}
+
+}
+
+
+.best-solution{
+	.more-txt{
+		display: block;
+	}
+	p{
+		line-height: 	24px;
+	}
+	.two-imgs{
+		width: 40%;
+		@include min(1200px){
+			width: auto;
+		}
+	}
+}
+
+.inf-about{
+	@include min(768px){
+		margin-top: 50px;
+	}
+	@include min(992px){
+		margin-top: 100px;
+	}
+	@include min(1400px){
+		margin-top: 140px;
+		max-height: 900px;
+		flex-wrap: nowrap;
+	}
+
+	&__btn{
+		margin-left: 20px;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+
+	&__txt{
+		font-size: 16px;
+		width: 80%;
+		margin: 0 auto 60px auto;
+		@include min(1300px){
+			margin: 0 auto 50px auto;
+			width: 70%;
+
+		}
+	}
+
+	.right-wr{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include min(768px){
+		margin-top: 	0;
+		// height: 	600px;
+		padding: 90px 15px 80px 15px;
+		background-size: cover;
+
+		background-image: linear-gradient(to bottom,#fff 30%,rgba(255,255,255,0) 100%),url(../img/inf-about-bg.jpg);
+		}
+		@include min(1200px){
+			padding: 30px 15px 80px 15px;
+			width: 58%;
+			order: 2;
+		// background-size: contain;
+
+		background-image: linear-gradient(to bottom,#fff 20%,rgba(255,255,255,0) 100%),url(../img/inf-about-bg.jpg);
+		}
+
+		.h-simple{
+			width: 70%;
+			margin: 0 auto;
+			margin-bottom:30px;
+		}
+
+	}
+	.left-wr{
+		height: 700px;
+		display: flex;
+		position: relative;
+		width: 100%;
+		@include min(1200px){
+			order: 1;
+
+			width: 42%;
+		}
+		@include min(1450px){
+			height: 900px;
+		}
+		.block-left{
+			padding: 0 0 0 0;
+			background: #fff url(../img/deskr-1-bg.png) no-repeat center;
+			background-size: contain;
+			background-position: right bottom;
+			// position: relative;
+			background-size: cover;
+			// min-height: 600px;
+			@include min(1024px){
+				position: static;
+				min-height: auto;
+				// padding: 335px 0 0 0;
+			}
+			.deskr{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 50%;
+				padding: 100px 10px 30px 10px;
+				@include min(1024px){
+					height: 50%;
+					width: 50%;
+					position: absolute;
+					top: 0;
+					left: 0;
+
+				}
+				@include min(1600px){
+					padding: 100px 65px 30px 65px;
+				}
+				// padding-top: 30%;
+			}
+		}
+		.block-right{
+			padding: 0 0 0 0;
+			background: #fff url(../img/deskr-2-bg.png) no-repeat;
+			background-size: contain;
+			background-position: left top;
+			position: relative;
+			// min-height: 600px;
+			@include min(1024px){
+				position: static;
+				min-height: auto;
+				// padding: 335px 0 0 0;
+			}
+			@include min(1024px){
+				padding: 0;
+			}
+			.deskr{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				height: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 15px 10px;
+				@include min(1024px){
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					height:50%;
+					width: 50%;
+				}
+				@include min(1600px){
+					padding: 15px 65px;
+				}
+				// height: 350px;
+				// padding: 20% 15px;
+			}
+		}
+		.deskr{
+			&__txt{
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+
+	}
+
+
+}
+
+
+.item-rec-category--order .item-rec-category__title{
+	padding: 60px 0 0 0;
+	text-align: center;
+	background-position: center top;
+}
+
+.best-solution{
+
+	.two-imgs{
+		display: inline-block;
+		float: left;
+		margin: 0 10px 10px 0;
+		text-align: right;
+	}
+	.read-more{
+		display: none;
+	}
+	p{
+		text-align: left;
+	}
+}
+
+
+
+
+
+
+
+
+.tabs{
+	width:70%;
+	margin: 0 auto;
+	&__item{
+		width: 30%;
+		font-size: 20px;
+		margin-left: 5%;
+		letter-spacing: 0;
+		transition: letter-spacing .3s ease;
+		@include min(1200px){
+			width: 22%;
+		}
+		&:hover{
+			letter-spacing: 2px;
+		}
+	}
+}
+
+.slider-products__item{
+	margin: 0 20px;
+}
+.popular-products{
+	.slider-brands{
+		width: calc(100% - 140px);
+		margin-bottom: 	50px;
+		@include min(1200px){
+			width: 100%;
+		}
+	}
+}
+.advanteges{
+	height: 640px;
+	.h-head{
+		@include min(1400px){
+				margin-bottom: 	100px;
+		}
+	}
+	.h-sub-title{
+		text-align: right;
+		padding-bottom: 40px;
+		font-size: 24px;
+		letter-spacing: 4px;
+		&:before{
+			right: -30px;
+		}
+	}
+	&__list{
+		z-index: 	10;
+		margin-top: 80px;
+		@include min(993px){
+			columns: 2;
+		}
+	}
+	&:after{
+		@include min(1920px){
+			z-index: 1;
+			bottom: -280px;
+		border-top: 280px solid #f0f7fa;
+		border-bottom: 0;
+		border-left: 0;
+			border-right: 1920px solid transparent;
+		}
+	}
+	.square{
+		@include min(768px){
+		width: 320px;
+				height: 320px;
+				top: 20%;
+				z-index: 99;
+				left: 15px;
+				border: 20px solid #fff;
+				position: absolute;
+		}
+		@include min(992px){
+				width: 90%;
+				height: 90%;
+				top: 20%;
+				z-index: 99;
+				left: 15px;
+				border: 40px solid #fff;
+				position: absolute;
+		}
+		@include min(1200px){
+			width: 90%;
+		height: 90%;
+		top: 25%;
+		z-index: 99;
+		left: 15px;
+		border: 50px solid #fff;
+		position: absolute;
+		}
+
+	}
+}
+
+.advanteges .with-v-line{
+
+	transform: translateY(20%);
+	max-width:100%;
+	z-index: 99;
+	margin-left: 15%;
+
+	@include min(768px){
+		position: absolute;
+		transform: translateY(35%);
+	}
+	@include min(992px){
+		transform: translateY(24%);
+	}
+	@include min(1200px){
+		transform: translateY(20%);
+	}
+	@include min(1600px){
+		max-width: 66%;
+		margin-left: 11%;
+	}
+	img{
+		transform: translateY(-20%);
+	}
+	&:before{
+
+		@include min(768px){
+			top: 45px;
+		height: 92%;
+		}
+		@include min(992px){
+			height: 76%;
+		}
+		@include min(1200px){
+			top: 45px;
+		height: 63%;
+		}
+		@include min(1400px){
+			top: 13%;
+			height: 56%;
+		}
+		@include min(1600px){
+			top: 12.3%;
+			height: 60%;
+		}
+	}
+	&:after{
+		content: '';
+		display: block;
+		left: -34px;
+		position: absolute;
+
+		background: #000;
+		height: 1px;
+		width: 34px;
+		@include min(768px){
+			top: 45px;
+			height: 1px;
+		}
+
+		@include min(1200px){
+			top: 45px;
+		}
+		@include min(1400px){
+			top: 13%;
+		}
+		@include min(1600px){
+			top: 12.3%;
+		}
+	}
+}
+
+
+
+
+

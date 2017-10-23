@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dodomy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-grid.min.css" /> -->
+
+
+    <link rel="stylesheet" media="(min-width: 750px)" href="css/style.min.css">
+    <link rel="stylesheet" media="(max-width: 749px)" href="css/style-mobile.min.css" />
+
+</head>
+
+<body class="page-catalog">
+    <!-- ============================================== -->
+    <!-- ===============  HEADER ====================== -->
+    <!-- ============================================== -->
+    <header class="header-with-bg">
+        <div class="gradient-overlay"></div>
+        <div class="main-wrap">
+            <div class="site-header__top-head top-head">
+                <div class="top-head__menu-bar menu-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="top-head__mmenu mmenu">
+                    <div class="mmenu__lang lang-change">
+                        <a href="#" class="lang-change__item lang-change__item--active">ua</a>
+                        <a href="#" class="lang-change__item">ru</a>
+                    </div>
+                    <ul class="mmenu__list">
+                        <li class="mmenu__item mmenu__item--popup"><a href="#">Вхід</a>
+                        </li>
+                        <li class="mmenu__item mmenu__item--popup"><a href="#">Реєстрація</a>
+                        </li>
+                        <li class="mmenu__item"><a href="#">Про нас</a>
+                        </li>
+                        <li class="mmenu__item"><a href="#">Доставка</a>
+                        </li>
+                        <li class="mmenu__item"><a href="#">Контакти</a>
+                        </li>
+                    </ul>
+                    <form action="" class="mmenu__search search">
+                        <input class="search__input" type="text" placeholder="Пошук">
+                        <button class="search__btn"><i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <span class="mmenu__close"><i class="fa fa-times"></i></span>
+                </div>
+                <div class="top-head__logo logo">
+                    <a href="#"><img src="img/LOGO.png" alt="">
+                    </a>
+                </div>
+                <div class="top-head__contacts contacts">
+                    <a class="contacts__phone" href="tel:(099) 700 70 70">(099) 700 70 70</a>
+                    <a class="contacts__phone" href="tel:(063) 800 80 80">(063) 800 80 80</a>
+                    <a class="contacts__phone" href="tel:(098) 300 30 30">(098) 300 30 30</a>
+                    <a class="contacts__sign" href="#"><span>Вхід</span> <i class="fa fa-sign-in"></i></a>
+                    <a class="contacts__sign" href="#"><span>Реєстрація</span><i class="fa fa-user-plus"></i></a>
+                </div>
+                <ul class="top-head__main-menu main-menu">
+                    <li class="main-menu__item"><a href="#">Про нас</a>
+                    </li>
+                    <li class="main-menu__item"><a href="#">Доставка</a>
+                    </li>
+                    <li class="main-menu__item"><a href="#">Контакти</a>
+                    </li>
+                </ul>
+                <form action="" class="top-head__search search">
+                    <input class="search__input" type="text" placeholder="Пошук">
+                    <button class="search__btn"><i class="fa fa-search"></i>
+                    </button>
+                </form>
+                <div class="top-head__lang-change lang-change">
+                    <select name="lang" id="lang">
+                        <option value="ua">ua</option>
+                        <option value="ru">ru</option>
+                    </select>
+                </div>
+
+
+                <a href="" class="top-head__shopping-basket shopping-basket">
+                    <i class="shopping-basket__icon fa fa-shopping-basket"></i>
+                    <span class="shopping-basket__counter">0</span>
+                </a>
+            </div>
+            <div class="site-header__catalog catalog">
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-hallway"></i>
+                    </div>
+                    <div class="item-catalog__title">Коридор</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-bedroom"></i>
+                    </div>
+                    <div class="item-catalog__title">Спальня</div>
+                </div>
+                <div class="catalog__item">
+                    <span class="item-catalog__back"><i class="fa fa-angle-double-left"></i>Назад</span>
+                    <div class="item-catalog__icon"><i class="icon icon-kitchen"></i>
+                    </div>
+                    <div class="item-catalog__title">Кухня</div>
+                    <div class="catalog__dropdown-menu dropdown-menu">
+                        <div class="items">
+
+                            <div class="dropdown-menu__item">
+                                <div class="item-dropdown__img">
+                                    <a href="#"><img src="img/dropdown/module-kitchen.png" alt=""></a>
+                                </div>
+                                <div class="item-dropdown__title">
+                                    <a href="#">Модульні кухні</a>
+                                </div>
+
+                            </div>
+                            <div class="dropdown-menu__item">
+                                <div class="item-dropdown__img">
+                                    <a href="#"><img src="img/dropdown/set-kitchen.png" alt=""></a>
+                                </div>
+                                <div class="item-dropdown__title">
+                                    <a href="#">Комплекти кухонь</a>
+                                </div>
+
+                            </div>
+                            <div class="dropdown-menu__item dropdown-menu__item--with-list show-more">
+                                <div class="wrap-absolute">
+                                    <div class="item-dropdown__title">
+                                        <a href="#">Куточки, столи та стільниці</a>
+                                    </div>
+                                    <div class="item-dropdown__img">
+                                        <a href="#"><img src="img/dropdown/table-and-chairs.png" alt=""></a>
+                                    </div>
+
+
+                                    <ul class="item-dropdown__list">
+                                        <li><a href="">Кухонні куточки</a>
+                                        </li>
+                                        <li><a href="">Кухонні стільці</a>
+                                        </li>
+                                        <li><a href="">Табурети в кухню</a>
+                                        </li>
+                                        <li><a href="">Обідні групи в кухню</a>
+                                        </li>
+                                        <li><a href="">Сервірувальні столики для кухні</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu__item dropdown-menu__item--with-list">
+                                <div class="wrap-absolute">
+                                    <div class="item-dropdown__title">
+                                        <a href="#">Стільниці та аксесуари</a>
+                                    </div>
+                                    <div class="item-dropdown__img">
+                                        <a href="#"><img src="img/dropdown/slab.png" alt=""></a>
+                                    </div>
+
+
+                                    <ul class="item-dropdown__list">
+                                        <li><a href="">Стільниці кухонні під будь-який розмір</a>
+                                        </li>
+                                        <li><a href="">Стільниці стандартних розмірів</a>
+                                        </li>
+                                        <li><a href="">Аксесуари для кухні</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu__item dropdown-menu__item--with-list">
+                                <div class="wrap-absolute">
+                                    <div class="item-dropdown__title">
+                                        <a href="#">Кухонні тумби</a>
+                                    </div>
+                                    <div class="item-dropdown__img">
+                                        <a href="#"><img src="img/dropdown/timb.png" alt=""></a>
+                                    </div>
+
+
+                                    <ul class="item-dropdown__list">
+                                        <li><a href="">Нижні кухонні тумби</a>
+                                        </li>
+                                        <li><a href="">Верхні кухонні тумби</a>
+                                        </li>
+                                        <li><a href="">Пенали кухонні</a>
+                                        </li>
+                                        <li><a href="">Кухонні фасади</a>
+                                        </li>
+                                        <li><a href="">Кухонні корпуси</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu__item">
+                                <div class="item-dropdown__img">
+                                    <a href="#"><img src="img/dropdown/puzzle.png" alt=""></a>
+                                </div>
+                                <div class="item-dropdown__title">
+                                    <a href="#">Кухні під замовлення</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu__item">
+                                <div class="item-dropdown__img">
+                                    <a href="#"><img src="img/dropdown/puzzle.png" alt=""></a>
+                                </div>
+                                <div class="item-dropdown__title">
+                                    <a href="#">Кухні під замовлення</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="slider-brands-wr">
+                            <a href="#" class="all-catagories dropdown__show-all">
+                                <img class="all-catagories__arrow" src="img/dropdown/arrow down.png" alt="">
+                            </a>
+
+                            <div class="dropdown-menu__slider slider-brands">
+                                <div>
+                                    <div class="group-hover">
+                                        <img src="img/dropdown/companies/logo 1.png" alt="" />
+                                        <img src="img/dropdown/companies/logo 1 hover.png" alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="group-hover">
+                                        <img src="img/dropdown/companies/logo 2.png" alt="" />
+                                        <img src="img/dropdown/companies/logo 2 hover.png" alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="group-hover">
+                                        <img src="img/dropdown/companies/logo 3.png" alt="" />
+                                        <img src="img/dropdown/companies/logo 3 hover.png" alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="group-hover">
+                                        <img src="img/dropdown/companies/logo 4.png" alt="" />
+                                        <img src="img/dropdown/companies/logo 4 hover.png" alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="group-hover">
+                                        <img src="img/dropdown/companies/logo 5.png" alt="" />
+                                        <img src="img/dropdown/companies/logo 5 hover.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-living-room"></i>
+                    </div>
+                    <div class="item-catalog__title">Вітальня</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon scale2"><i class="icon icon-sofa"></i>
+                    </div>
+                    <div class="item-catalog__title">Дивани</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-commode"></i>
+                    </div>
+                    <div class="item-catalog__title">Комоди</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-office"></i>
+                    </div>
+                    <div class="item-catalog__title">Офіс</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-wardrobe"></i>
+                    </div>
+                    <div class="item-catalog__title">Шафи</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-pouf"></i>
+                    </div>
+                    <div class="item-catalog__title">Пуфи</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon scale2"><i class="icon icon-chairs-and-tables"></i>
+                    </div>
+                    <div class="item-catalog__title">Столи, стільці</div>
+                </div>
+                <div class="catalog__item">
+                    <div class="item-catalog__icon"><i class="icon icon-lamp"></i>
+                    </div>
+                    <div class="item-catalog__title">Люстри</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- =============== END  HEADER ================== -->
+    <!-- ============================================== -->
+
+
+
+
+    <!-- ============================================== -->
+    <!-- =============== MAIN PART (CONTENT) ========== -->
+    <!-- ============================================== -->
+    <div class="container">
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="#">Головна</a></li>
+            <li class="breadcrumbs__item"><a href="#">Столи, стільці</a></li>
+        </ul>
+    </div>
+
+    <div class="catalog-cont">
+        <div class="container">
+            <h2 class="h-simple">Столи, стільці</h2>
+            <div class="row">
+                <div class="col-12  col-md-4 col-xxl-3">
+                    <ul class="side-nav">
+                        <li class="side-nav__list-item">
+                            <a href="#"  class="side-nav__link-item side-nav__link-item--main">
+                                <span>Столи, стільці</span>
+                            </a>
+                        </li>
+                        <li  class="side-nav__list-item">
+                            <a href="#"  class="side-nav__link-item">
+                                <span>Столи</span>
+                            </a>
+                        </li>
+                        <li  class="side-nav__list-item">
+                            <a href="#"  class="side-nav__link-item side-nav__link-item--active">
+                                <span>Стільці</span>
+                            </a>
+                            <ul class="side-nav__sub">
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">Для керівника</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">Комп'ютерні стільці</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item side-nav__link-item--active">Для відвідувачів / персоналу</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">Для дітей</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">Для кафе / кухонні</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">М'які</a></li>
+                                <li class="sub-nav__item"><a href="#" class="side-nav__link-item">Табурети</a></li>
+                            </ul>
+                        </li>
+                        <li  class="side-nav__list-item">
+                            <a href="#"  class="side-nav__link-item">
+                                <span>Обідні групи</span>
+                            </a>
+                        </li>
+                        <li  class="side-nav__list-item">
+                            <a href="#"  class="side-nav__link-item">
+                                <span>Столи, стільці під замовлення</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="filters">
+                        
+
+                        <h4 class="filters-header">Підбір за параметрами</h4>
+                        <div class="price-filter filter">
+                            <div class="inputs-wr">
+                                <span class="price-filter__prefix filter-title">Ціна:</span>
+                                <input class="price-filter__input txt-input min-input" type="text" value=0>
+                                <span class="divider">-</span>
+                                <input class="price-filter__input txt-input max-input" type="text" value=0>
+                                <span class="price-filter__postfix">грн.</span>
+                            </div>
+                            <div class="price-filter__slider slider-range">
+
+                            </div>
+                        </div>
+                        <div class="sort-filter filter">
+                            <h5 class="filter-title">Сортування:</h5>
+                            <select name="sort" id="sort" class="sort-select">
+                                <option value="to-top">Від дешевих до дорогих</option>
+                                <option value="to-down">Від дорогих до дешевих</option>
+                            </select>
+                        </div>
+                        <div class="color-filter filter">
+                            <h5 class="filter-title">Колір:</h5>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="check1" type="checkbox">
+                                <label class="label-check" for="check1"><span class="color-square" style="background: red;"></span>Червоний</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="check2" type="checkbox">
+                                <label class="label-check" for="check2"><span class="color-square" style="background: green;"></span>Зелений</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="check3" type="checkbox">
+                                <label class="label-check" for="check3"><span class="color-square" style="background: blue;"></span>Синій</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="check4" type="checkbox">
+                                <label class="label-check" for="check4"><span class="color-square" style="background: grey;"></span>Сірий</label>
+                            </div>
+                        </div>
+                        <div class="firm-filter filter">
+                            <h5 class="filter-title">Виробник:</h5>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm1" type="checkbox">
+                                <label class="label-check" for="firm1">Signal</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm2" type="checkbox">
+                                <label class="label-check" for="firm2">Halmar</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm3" type="checkbox">
+                                <label class="label-check" for="firm3">VOX</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm4" type="checkbox">
+                                <label class="label-check" for="firm4">BRW</label>
+                            </div>
+                        </div>
+                        <div class="material-filter filter">
+                            <h5 class="filter-title">Матеріал:</h5>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm1" type="checkbox">
+                                <label class="label-check" for="firm1">Шкіра</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm2" type="checkbox">
+                                <label class="label-check" for="firm2">Замінник шкіри</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm3" type="checkbox">
+                                <label class="label-check" for="firm3">Екошкіра</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm4" type="checkbox">
+                                <label class="label-check" for="firm4">Поліестер</label>
+                            </div>
+                        </div>
+                        <div class="material-filter filter">
+                            <h5 class="filter-title">Розмір:</h5>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm1" type="checkbox">
+                                <label class="label-check" for="firm1">1:1</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm2" type="checkbox">
+                                <label class="label-check" for="firm2">20х100</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm3" type="checkbox">
+                                <label class="label-check" for="firm3">100х2</label>
+                            </div>
+                            <div class="checkbox">
+                                <input class="input-checkbox" id="firm4" type="checkbox">
+                                <label class="label-check" for="firm4">2х2</label>
+                            </div>
+                        </div>
+                        <a href="#" class="all-catagories filters__show-all">
+                            <img class="all-catagories__arrow" src="img/dropdown/arrow down.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 col-xxl-9 catalog-products">
+                        <div class="row">
+                            <div class="col-12 col-md-4 col-xxl-3">
+                                <div class="catalog-products__item item-product">
+                                    <a href="#" class="item-product__wr-img">
+                                        <div class="item-product__discount"><span>- 30 %</span></div>
+                                        <img class="item-product__img" src="img/mobile/slider-products/chair.png" alt="">
+                                        <i class="item-product__basket fa fa-shopping-basket"></i>
+                                        <div class="item-product__sticker"><span>Хіт</span></div>
+                                    </a>
+                                    <div class="item-product__wr-description">
+                                        <h4 class="item-product__product-title">Стілець Dior</h4>
+                                        <span class="item-product__current-price">2 150 грн.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-xxl-3">
+                                <div class="catalog-products__item item-product">
+                                    <a href="#" class="item-product__wr-img">
+                                        <div class="item-product__discount"><span>- 30 %</span></div>
+                                        <img class="item-product__img" src="img/mobile/slider-products/chair.png" alt="">
+                                        <i class="item-product__basket fa fa-shopping-basket"></i>
+                                        <div class="item-product__sticker"><span>Хіт</span></div>
+                                    </a>
+                                    <div class="item-product__wr-description">
+                                        <h4 class="item-product__product-title">Стілець Dior</h4>
+                                        <span class="item-product__old-price">2 730 грн.</span>
+                                        <span class="item-product__current-price">2 150 грн.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-xxl-3">
+                                <div class="catalog-products__item item-product">
+                                    <a href="#" class="item-product__wr-img">
+                                        <div class="item-product__discount"><span>- 30 %</span></div>
+                                        <img class="item-product__img" src="img/mobile/slider-products/chair.png" alt="">
+                                        <i class="item-product__basket fa fa-shopping-basket"></i>
+                                        <div class="item-product__sticker"><span>Хіт</span></div>
+                                    </a>
+                                    <div class="item-product__wr-description">
+                                        <h4 class="item-product__product-title">Стілець Dior</h4>
+                                        <span class="item-product__old-price">2 730 грн.</span>
+                                        <span class="item-product__current-price">2 150 грн.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 col-xxl-3">
+                                <div class="catalog-products__item item-product">
+                                    <a href="#" class="item-product__wr-img">
+                                        <div class="item-product__discount"><span>- 30 %</span></div>
+                                        <img class="item-product__img" src="img/mobile/slider-products/chair.png" alt="">
+                                        <i class="item-product__basket fa fa-shopping-basket"></i>
+                                        <div class="item-product__sticker"><span>Хіт</span></div>
+                                    </a>
+                                    <div class="item-product__wr-description">
+                                        <h4 class="item-product__product-title">Стілець Dior</h4>
+                                        <span class="item-product__old-price">2 730 грн.</span>
+                                        <span class="item-product__current-price">2 150 грн.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <a href="#" class="show-more btn btn--reg"><i class="fa fa-repeat" aria-hidden="true"></i>Показати більше</a>
+                    <div class="pagination">
+                        <a href="#" class="pagination__item"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                        <a href="#" class="pagination__item pagination__item--active">1</a>
+                        <a href="#" class="pagination__item">2</a>
+                        <a href="#" class="pagination__item">3</a>
+                        <a href="#" class="pagination__item">4</a>
+                        <a href="#" class="pagination__item"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <h2 class="h-head">Найкращі рішення для Вашого інтер'єру</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="catalog-txt">      
+                            <p>
+                            Багато сімей обмежують свій вибір бюджетом, який виділяють на купівлю меблів.
+        І тут постає питання чи можливо купити недорогі і якісні меблі і чи взагалі поняття “недорого і якісно” існує по відношенню до меблів? У вирішенні подібних питань Вам прийде на допомогу інтернет-магазин меблів dodomy.com.ua. В еру інтернет-покупок, ринок меблів не лишився осторонь. </p><p>Тоді, в чому саме перевага інтернет-магазин меблів dodomy.com.ua і чим він кращий за інших? Цілком справедливе питання, на яке кожен покупець хоче отримати конструктивну відповідь.
+        Серед переваг інтернет-магазин меблів dodomy.com.ua виділимо наступні пункти:
+        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="catalog-txt">
+                            <p>
+                            Багато сімей обмежують свій вибір бюджетом, який виділяють на купівлю меблів.
+        І тут постає питання чи можливо купити недорогі і якісні меблі і чи взагалі поняття “недорого і якісно” існує по відношенню до меблів? У вирішенні подібних питань Вам прийде на допомогу інтернет-магазин меблів dodomy.com.ua. В еру інтернет-покупок, ринок меблів не лишився осторонь. </p><p> Тоді, в чому саме перевага інтернет-магазин меблів dodomy.com.ua і чим він кращий за інших? Цілком справедливе питання, на яке кожен покупець хоче отримати конструктивну відповідь.
+        Серед переваг інтернет-магазин меблів dodomy.com.ua виділимо наступні пункти:
+        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================================== -->
+    <!-- ========== END MAIN PART (CONTENT)============ -->
+    <!-- ============================================== -->
+
+
+
+
+    <!-- ============================================== -->
+    <!-- ================== FOOTER ==================== -->
+    <!-- ============================================== -->
+
+    <footer class="site-footer">
+        <section class="subscribe">
+            <div class="container">
+                <div class="wr-flex">
+                    <hgroup>
+                        <h2 class="h-simple h-simple--light">Хочете дізнаватися про акції першими і отримувати знижки?</h2>
+                        <h3 class="subscribe__sub-title">Залиште свою електронну пошту та завжди залишайтесь в курсі вигідних пропозицій та новинок!</h3>
+                    </hgroup>
+                    <form action="">
+                        <input type="email" name="email" id="email" class="subscribe__input txt-input txt-input--bg-white" placeholder="Введіть свій E-mail">
+                        <input type="submit" class="subscribe__btn btn btn--light" value="Підписатись"></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="contacts-section">
+            <div class="container">
+                <div class="el-wr">__so
+
+
+                    <div class="contacts-section__logo">
+                        <img src="img/LOGO.png" alt="">
+                    </div>
+                    <div class="contacts-section__user-zone">
+                        <a class="contacts-section__sign" href="#"><i class="fa fa-sign-in"></i><span>Вхід</span> </a>
+                        <a class="contacts-section__sign" href="#"><i class="fa fa-user-plus"></i><span>Реєстрація</span></a>
+                    </div>
+
+                    <div class="contacts-section__phones">
+                        <a class="contacts-section__phone" href="tel:(099) 700 70 70">(099) 700 70 70</a>
+                        <a class="contacts-section__phone" href="tel:(063) 800 80 80">(063) 800 80 80</a>
+                        <a class="contacts-section__phone" href="tel:(098) 300 30 30">(098) 300 30 30</a>
+                    </div>
+
+                    <ul class="contacts-section__social social-block">
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-footer">
+            <div class="container">
+                <div class="wr-flex">
+                    <div class="copyright">
+                        <span>2017</span> <i class="fa fa-copyright" aria-hidden="true"></i> <span>dodomy.com.ua</span>
+                    </div>
+                    <div class="webmaestro">
+                        <p>Розробка, підтримка та розкрутка сайту:</p>
+                        <!-- <img src="img/wm_lite.svg" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- ============================================== -->
+    <!-- =============== END FOOTER =================== -->
+    <!-- ============================================== -->
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>
