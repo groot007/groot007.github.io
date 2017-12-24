@@ -4,17 +4,18 @@ $(function(){
 		dots: true,
 		draggable: false,
 		autoplay: true,
-		// fade: true,
   		autoplaySpeed: 2000,
 	});
 
 	$(window).on("load", function(){
-		$(".preloader").delay(500).fadeOut('slow');
+		$(".preloader").delay(500).fadeOut();
 
-		$(".to-left, .to-right").waypoint(function() {
+		setTimeout(function(){
+			$(".to-left, .to-right").waypoint(function() {
+
 			var $el = $(this.element),
-				animClass = '';
-			var delay = +$el.attr("data-delay");
+				animClass = '',
+				delay = +$el.attr("data-delay");
 
 			if (($el).hasClass("to-left")){
 				animClass = 'fadeInRight';
@@ -30,9 +31,9 @@ $(function(){
 				$el.addClass(animClass);
 			}
 
-		  }, { offset: '90%'});
+		  }, { offset: '100%'});
+
+		}, 1000);
+
 	});
-
-
-
 });
