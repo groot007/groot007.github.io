@@ -1,0 +1,135 @@
+@import "mobile/_footer.scss";
+
+
+.subscribe{
+	padding: 30px 0;
+	background-image: linear-gradient(to bottom,rgba(212,78,100,.95) 0,rgba(212,78,100,.95) 100%),
+	url(../img/subscribe-bg.png);
+	background-size: cover;
+	.wr-flex{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		hgroup, form{
+			width: 50%;
+		}
+
+
+	}
+	.h-simple{
+		text-align: left;
+		margin-bottom: 15px;
+	}
+	&__btn{
+		width: 70%;
+
+		@include min(1200px){
+			margin-left: 20px;
+			width: 30%;
+		}
+	}
+	&__input{
+		width: 70%;
+	}
+	&__sub-title{
+		text-align: left;
+		width: 70%;
+	}
+}
+
+
+
+.contacts-section{
+	.el-wr{
+		flex-wrap: nowrap;
+		justify-content: space-between;
+
+	}
+	&__logo, &__user-zone, &__phones, &__social{
+		width: auto;
+	}
+	@include min(1024px){
+
+		&__logo{
+			width: 25%;
+		}
+		&__user-zone{
+			width: 16%;
+		}
+		&__phones{
+			order: 4;
+			width: 16%;
+		}
+		&__social{
+			width: 25%;
+		}
+	}
+	&__phones{
+		text-align: center;
+		@include min(1200px){
+			text-align: right;
+		}
+	}
+
+	&__logo{
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+	&__user-zone{
+		display: flex;
+		align-items: flex-start;
+		width: 30%;
+		margin-left: 5%;
+		flex-direction: column;
+		justify-content: center;
+		text-align: left;
+		@include min(1024px){
+			margin-left: 0;
+			width: 35%;
+			flex-direction: row;
+			align-items: center;;
+		}
+	}
+	&__social{
+		display: flex;
+		width: 15%;
+		align-items: center;
+		justify-content: center;
+		li{
+			margin-left: 15px;
+		}
+	}
+	&__sign{
+		width: auto;
+		margin: 0;
+		@include min(1024px){
+			margin-left: 60px;
+		}
+		&:first-child{
+			@include min(1024px){
+				margin-left: 40px;
+			}
+		}
+	}
+	&__phone{
+		width: 100%;
+		margin-bottom: 10px;
+		display: inline-block;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.bottom-footer{
+	.wr-flex{
+		flex-wrap: nowrap;
+	}
+	.webmaestro{
+		p{
+			margin: 0;
+		}
+	}
+}

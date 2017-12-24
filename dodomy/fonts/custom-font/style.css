@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'custom-font';
   src:
-    url('fonts/custom-font.ttf?ksegsk') format('truetype'),
-    url('fonts/custom-font.woff?ksegsk') format('woff'),
-    url('fonts/custom-font.svg?ksegsk#custom-font') format('svg');
+    url('fonts/custom-font.ttf?690ct2') format('truetype'),
+    url('fonts/custom-font.woff?690ct2') format('woff'),
+    url('fonts/custom-font.svg?690ct2#custom-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-i {
+.icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'custom-font' !important;
   speak: none;
@@ -23,13 +23,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.arrow-left:before {
-  content: "\e90b";
-  color: #d3c29f;
-}
-.arrow-right:before {
-  content: "\e90c";
-  color: #d3c29f;
+.icon-pouf:before {
+  content: "\e908";
+  color: #5d5d5d;
 }
 .icon-bedroom:before {
   content: "\e900";
@@ -63,10 +59,6 @@ i {
   content: "\e907";
   color: #898889;
 }
-.icon-pouf:before {
-  content: "\e908";
-  color: #898889;
-}
 .icon-sofa:before {
   content: "\e909";
   color: #898889;
@@ -74,49 +66,4 @@ i {
 .icon-wardrobe:before {
   content: "\e90a";
   color: #898889;
-}
-.search:before {
-  content: "\f002";
-}
-.close:before {
-  content: "\f00d";
-}
-.remove:before {
-  content: "\f00d";
-}
-.times:before {
-  content: "\f00d";
-}
-.sign-in:before {
-  content: "\f090";
-}
-.angle-double-down:before {
-  content: "\f103";
-}
-.user-plus:before {
-  content: "\f234";
-}
-.shopping-basket:before {
-  content: "\f291";
-}
-.angle-double-left:before {
-  content: "\f100";
-}
-.angle-double-right:before {
-  content: "\f101";
-}
-.angle-double-up:before {
-  content: "\f102";
-}
-.angle-left:before {
-  content: "\f104";
-}
-.angle-right:before {
-  content: "\f105";
-}
-.angle-up:before {
-  content: "\f106";
-}
-.angle-down:before {
-  content: "\f107";
 }

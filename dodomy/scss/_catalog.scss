@@ -1,0 +1,20 @@
+@import "mobile/_catalog.scss";
+
+.page-catalog{
+    .site-header__top-head{
+        &:after{
+            display: none;
+        }
+    }
+    .site-header__catalog{
+        display: flex;
+    }
+
+
+}
+
+.pagination{
+	&__item{
+		margin: 0 8px;
+	}
+}

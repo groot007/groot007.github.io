@@ -1,0 +1,28 @@
+@import "mobile/_404.scss";
+
+
+.page-404{
+	.site-header__catalog {
+		display: flex;
+	}
+
+	.cont-404{
+		// display: flex;
+		padding: 7% 0;
+		text-align: center;
+
+		.h-simple{
+			font-size: 50px;
+			line-height: 60px;
+			margin: 0 0 20px 0;
+		}
+		.flex-last{
+			order: 12;
+		}
+
+		&__msg{
+			font-size: 20px;
+			color: #333;
+		}
+	}
+}

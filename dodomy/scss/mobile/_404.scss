@@ -1,0 +1,26 @@
+.page-404{
+	.site-header__catalog {
+		display: none;
+	}
+	.page-404-wr{
+		background: #d9dadc url(../img/404-bg.jpg) no-repeat center/cover;
+	}
+	.header-with-bg{
+		background: none;
+		// padding-bottom: 100vh;
+	}
+	.cont-404{
+		padding: 20px 0;
+		text-align: center;
+		
+
+		.h-simple{
+			font-size: 30px;
+			margin: 0 0 20px 0;
+		}
+		
+		&__msg{
+			color: #333;
+		}
+	}
+}

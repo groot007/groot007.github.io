@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'custom-font';
+  src:
+    url('../fonts/custom-font/fonts/custom-font.ttf?nh0zm0') format('truetype'),
+    url('../fonts/custom-font/fonts/custom-font.woff?nh0zm0') format('woff'),
+    url('../fonts/custom-font/fonts/custom-font.svg?nh0zm0#custom-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom-font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pouf:before {
+  content: "\e908";
+  color: #898889;
+}
+.icon-bedroom:before {
+  content: "\e900";
+  color: #898889;
+}
+.icon-chairs-and-tables:before {
+  content: "\e901";
+  color: #898889;
+}
+.icon-commode:before {
+  content: "\e902";
+  color: #898889;
+}
+.icon-hallway:before {
+  content: "\e903";
+  color: #898889;
+}
+.icon-kitchen:before {
+  content: "\e904";
+  color: #898889;
+}
+.icon-lamp:before {
+  content: "\e905";
+  color: #898889;
+}
+.icon-living-room:before {
+  content: "\e906";
+  color: #898889;
+}
+.icon-office:before {
+  content: "\e907";
+  color: #898889;
+}
+.icon-sofa:before {
+  content: "\e909";
+  color: #898889;
+}
+.icon-wardrobe:before {
+  content: "\e90a";
+  color: #898889;
+}

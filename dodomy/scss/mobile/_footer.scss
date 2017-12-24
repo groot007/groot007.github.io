@@ -1,0 +1,169 @@
+// ===== SUBSCRIBE ====
+
+.subscribe{
+	padding: 50px 0;
+	background-image: linear-gradient(to bottom, rgba(212,78,100,0.95) 0%,rgba(212,78,100,0.95) 100%), url(../img/mobile/subscribe-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: right 0 bottom 0px;
+	color: #fff;
+	hgroup, form{
+		display: inline-block;
+	}
+
+	&__sub-title{
+		font-weight: 400;
+		font-size: 14px;
+		margin-top: 0;
+	}
+
+	&__input, &__btn{
+		width: 100%;
+		max-width: 300px;
+	}
+	&__input{
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+}
+
+// ===== end SUBSRIBE ===
+
+
+// ====== FOOOTER
+
+.bottom-footer{
+	background-color: $purple;
+	color: #fff;
+	padding: 20px 0;
+	text-align: center;
+	.wr-flex{
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: center;
+	}
+
+
+	&:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.copyright{
+		display: flex;
+		align-items: center;
+	}
+	.webmaestro{
+		width: 80%;
+		p{
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
+			text-align: right;
+			justify-content: flex-end;
+			height: 60px;
+			float: right;
+			padding: 10px 80px 10px 0;
+			background: url(../img/wm_lite.svg) no-repeat right center;
+			background-size: 60px 60px;
+		}
+		img{
+			max-width: 100px;
+		}
+	}
+}
+
+// ===== end FOOTER
+
+// ==== CONTACTS ====
+
+.contacts-section{
+	padding: 20px 0;
+	.el-wr{
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	&__sign{
+		text-align: left;
+		color:  $purple;
+		width: 100%;
+		display: inline-block;
+		font-family: $Museo;
+		.fa{
+			font-size: 20px;
+			margin-right: 8px;
+		}
+	}
+	&__phone{
+		color: #898889;
+		display: inline-block;
+		width: 100%;
+		text-decoration: none;
+	}
+	&__social{
+		width: 100%;
+		margin-top: 15px;
+
+		li{
+			margin-left: 40px;
+			&:first-child{
+				margin-left: 0;
+			}
+			a{
+				.fa{
+					font-size: 22px;
+				}
+			}
+		}
+	}
+
+	&__logo{
+		width: 70%;
+		margin-bottom: 15px;
+	}
+
+	&__user-zone, &__phones{
+		width: 50%;
+	}
+	&__phones{
+		text-align: right;
+	}
+
+}
+
+// ==== end CONTACTS ==
+
+
+.social-block{
+	list-style-type: none;
+	padding: 0;
+	li{
+		display: inline-block;
+		&:first-child{
+			margin-left: 0;
+		}
+		a{
+			border: 1px solid #898889;
+			border-radius: 50%;
+			display: inline-block;
+			width:35px;
+			background: transparent;
+			height: 35px;
+			text-align: center;
+			line-height: 38px;
+			color: #898889;
+			transition: background .4s ease;
+			.fa{
+				font-size: 22px;
+			}
+			&:hover{
+				background: $purple;
+				border: 1px solid $purple;
+				.fa{
+					color: #fff;
+				}
+			}
+		}
+	}
+}
