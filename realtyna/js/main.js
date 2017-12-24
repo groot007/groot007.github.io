@@ -8,7 +8,6 @@ $(function(){
 	});
 
 	$(window).on("load", function(){
-		$(".preloader").addClass("hide");
 
 		setTimeout(function(){
 			$(".to-left, .to-right").waypoint(function() {
