@@ -23,13 +23,7 @@ $(function(){
 				animClass = 'fadeInLeft';
 			}
 
-			if ($(window).width() > 768){
-				setTimeout(function(){
-					$el.addClass(animClass);
-				}, delay);
-			}else{
-				$el.addClass(animClass);
-			}
+			$el.addClass(animClass);
 
 		  }, { offset: '100%'});
 
