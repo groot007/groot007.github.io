@@ -7,26 +7,20 @@ $(function(){
   		autoplaySpeed: 2000,
 	});
 
-	$(window).on("load", function(){
+	$(".to-left, .to-right").waypoint(function() {
 
-		setTimeout(function(){
-			$(".to-left, .to-right").waypoint(function() {
+		var $el = $(this.element),
+			animClass = '',
+			delay = +$el.attr("data-delay");
 
-			var $el = $(this.element),
-				animClass = '',
-				delay = +$el.attr("data-delay");
+		if (($el).hasClass("to-left")){
+			animClass = 'fadeInRight';
+		}else if (($el).hasClass("to-right")){
+			animClass = 'fadeInLeft';
+		}
 
-			if (($el).hasClass("to-left")){
-				animClass = 'fadeInRight';
-			}else if (($el).hasClass("to-right")){
-				animClass = 'fadeInLeft';
-			}
+		$el.addClass(animClass);
 
-			$el.addClass(animClass);
+  	}, { offset: '100%'});
 
-		  }, { offset: '100%'});
-
-		}, 1000);
-
-	});
 });
